@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DenisResitko</title>
+    <title>Desktop</title>
     <link rel="stylesheet" href="https://api.ssps.cajthaml.eu/file/64d9f18f79dad891e8a07c73">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -156,22 +156,22 @@
             </section>
         </section>
         <section class="email-card-body">
-            <form action="process_form.php" method="post">
+            <form action="https://formspree.io/f/mzbnyqna" method="POST">
                 <section class="form-container">
                     <div class="input-group">
                         <label for="first-name">Your Name</label>
-                        <input type="text" id="first-name" placeholder="First Name">
-                        <input type="text" id="last-name" placeholder="Last Name">
+                        <input type="text" name="first-name" placeholder="First Name">
+                        <input type="text" name="last-name" placeholder="Last Name">
                     </div>
                     <div class="input-group">
                         <label for="email">Your Email*</label>
-                        <input type="email" id="email" placeholder="example@email.com">
+                        <input type="email" name="email" placeholder="example@email.com">
                     </div>
                     <div class="input-group">
                         <label for="number1">Phone</label>
-                        <input type="text" id="number1" placeholder="###">
-                        <input type="text" id="number2" placeholder="###">
-                        <input type="text" id="number3" placeholder="###">
+                        <input type="text" name="number1" placeholder="###">
+                        <input type="text" name="number2" placeholder="###">
+                        <input type="text" name="number3" placeholder="###">
                     </div>
                     <div class="input-group">
                         <label for="subject">Message Subject*</label>
@@ -190,7 +190,7 @@
                         <span id="character-counter">0/400</span>
                     </div>
                     <hr>
-                    <input type="submit" value="SEND MAIL">
+                    <input type="submit" name="submit" value="SEND MAIL">
                 </section>
             </form>
         </section>
