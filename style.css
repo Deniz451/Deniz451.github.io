@@ -1,0 +1,121 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../photos/login_backround.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    color: white;
+    user-select: none;
+    overflow: hidden;
+}
+
+input{
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.332);
+    border: 0;
+}
+
+form{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pfp-container{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pfp{
+    width: 100px;
+    height: 100px;
+    background-image: url("../photos/pfp3.svg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+}
+
+#password{
+    height: 22px;
+}
+
+#submit{
+    width: 65px;
+    height: 20px;
+}
+
+#submit:hover{
+    cursor: pointer;
+}
+
+
+input[type="password"] {
+    color: white;
+}
+
+input[type="text"] {
+    color: white;
+}
+
+
+input[type="password"]::placeholder {
+    color: white;
+    padding-left: 10px;
+}
+
+input[type="text"]::placeholder {
+    color: white;
+    padding-left: 10px;
+}
+
+input[type="submit"]{
+    color: white;
+}
+
+img{
+    position: absolute;
+    left: 140px;
+    top: 4px;
+}
+
+img:hover{
+    cursor: pointer;
+}
+
+#view{
+    display: none;
+}
+
+#hide{
+    display: block;
+}
+
+@media only screen and (max-width: 850px) {
+    .pfp-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .pfp {
+        width: 75px;
+        height: 75px;
+    }
+
+
+}

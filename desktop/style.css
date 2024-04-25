@@ -1,0 +1,1206 @@
+/*#region Body*/
+body{
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../photos/desktop_background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+html, body {
+    touch-action: manipulation;
+}
+/*#endregion*/
+
+/*#region Scrollbar*/
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bab9b9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+/*#endregion*/
+
+/*#region Desktop*/
+.app{
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.app:hover{
+    cursor: pointer;
+}
+/*#endregion*/
+
+/*#region Navbar*/
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: 30px;
+    background-color: rgb(56,84,171);
+    backdrop-filter: blur(5px);
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.navbar-icons-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    gap: 15px;
+    padding-left: 20px;
+}
+
+.navbar-icons-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-right: 20px;
+}
+
+.navbar-dropdown-container{
+    position: relative;
+    display: inline-block;
+}
+
+.navbar-section{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-section:hover{
+    cursor: pointer;
+}
+
+.navbar-section-dropdown{
+    display: none;
+    position: absolute;
+    top: 30px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.navbar-section-dropdown > p,
+.navbar-section-dropdown > a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar-section-dropdown p:hover, 
+.navbar-section-dropdown a:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+  
+.navbar-dropdown-container:hover .navbar-section-dropdown {display: block;}
+
+a{
+    color: black;
+}
+
+u:hover,
+a:hover{
+    color: rgb(115, 0, 255);
+}
+/*#endregion*/
+
+/*#region Taskbar*/
+.taskbar-container{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    bottom: 5px;
+    width: 90%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.144);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.taskbar-apps-container{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.taskbar-dots-container{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 90px;
+}
+
+.notepad-card-dot{
+    width: 4px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0;
+}
+
+.blender-card-dot{
+    width: 4px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0;
+}
+
+.vscode-card-dot{
+    width: 4px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0;
+}
+
+.unity-card-dot{
+    width: 4px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0;
+
+}
+
+.email-card-dot{
+    width: 4px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0;
+}
+
+.taskbar-icons:hover{
+    cursor: pointer;
+}
+
+.app-pop-up-container{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 43px;
+    position: absolute;
+    left: 0;
+    top: -45px;
+}
+
+.app-pop-up {
+    width: 50px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.31);
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    border-radius: 10px;
+}
+
+.notepad-pop-up {
+    opacity: 0;
+}
+
+.email-pop-up {
+    opacity: 0;
+}
+
+.blender-pop-up {
+    opacity: 0;
+}
+
+.vscode-pop-up {
+    opacity: 0;
+}
+
+.unity-pop-up {
+    opacity: 0;
+}
+/*#endregion*/
+
+/*#region Applications*/
+.buttons{
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    gap: 10px;
+}
+
+.button-close{
+    width: 16px;
+    height: 16px;
+    border: 0;
+    border-radius: 10px;
+    background-color: rgb(250,94,86);
+}
+
+.button-minimize{
+    width: 16px;
+    height: 16px;
+    border: 0;
+    border-radius: 10px;
+    background-color: rgb(254,188,46);
+}
+
+.button-maximize{
+    width: 16px;
+    height: 16px;
+    border: 0;
+    border-radius: 10px;
+    background-color: rgb(40,200,64);
+}
+
+.button-close:hover,
+.button-minimize:hover,
+.button-maximize:hover{
+    cursor: pointer;
+}
+
+/*#endregion*/
+
+/*#region Notepad*/
+.notepad-card{
+    width: 900px;
+    height: 500px;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    resize: both;
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 1200px;
+    min-height: 300px;
+    max-height: 1200px;
+}
+
+.notepad-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 5%;
+    min-height: 25px;
+    max-height: 25px;
+    background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    bottom: 0;
+    cursor: move;
+}
+
+.notepad-card-body{
+    width: 100%;
+    height: 95%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    overflow: auto;
+}
+
+.notepad-card p{
+    padding-left: 15px;
+}
+/*#endregion*/
+
+/*#region Email*/
+.email-card{
+    width: 900px;
+    height: 500px;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    resize: both;
+    overflow: hidden;
+    min-width: 750px;
+    max-width: 1200px;
+    min-height: 450px;
+    max-height: 1200px;
+}
+
+.email-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 5%;
+    min-height: 25px;
+    max-height: 25px;
+    background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    bottom: 0;
+    cursor: move;
+}
+
+.email-card-body{
+    width: 100%;
+    height: 95%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.input-group label {
+    flex-basis: 150px;
+}
+
+.input-group input,
+.form-container textarea {
+    flex-grow: 1;
+}
+
+.form-container input{
+    height: 25px;
+}
+
+#content{
+    height: 100px;
+}
+
+.form-container > input[type="submit"]{
+    width: 175px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.686);
+}
+
+.form-container > input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+.form-container input::placeholder{
+    user-select: none;
+}
+
+hr{
+    width: 700px;
+    border-top: 1px solid black;
+}
+
+.form-container select{
+    height: 30px;
+}
+
+#content {
+
+    height: 100px;
+    resize: none;
+}
+#character-counter {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+/*#endregion*/
+
+/*#region Blender*/
+.blender-card{
+    width: 900px;
+    height: 500px;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    resize: vertical;
+    overflow: hidden;
+    min-height: 100px;
+    max-height: 1200px;
+}
+
+.blender-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 5%;
+    background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: move;
+    min-height: 25px;
+    max-height: 25px;
+}
+
+.blender-card-body{
+    width: 100%;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.blender-card-body-navbar{
+    width: 20%;
+    height: 100%;
+    background-color: rgb(93, 74, 74);
+    border-bottom-left-radius: 10px;
+    gap: 50px;
+    overflow-y: scroll;
+}
+
+.blender-card-body-navbar-projects-container{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.blender-card-body-main{
+    width: 80%;
+    height: 100%; 
+    overflow-y: scroll;
+    background-color: black;
+}
+
+.blender-card-body-main-projects-container{
+    width: 100%;
+    height: auto;
+}
+/*#endregion*/
+
+/*#region Vscode*/
+.vscode-card{
+    width: 900px;
+    height: 500px;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    resize: vertical;
+    overflow: hidden;
+    min-height: 100px;
+    max-height: 1200px;
+}
+
+.vscode-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 5%;
+    background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: move;
+    min-height: 25px;
+    max-height: 25px;
+}
+
+
+.vscode-card-body{
+    width: 100%;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.vscode-card-body-navbar{
+    width: 20%;
+    height: 100%;
+    background-color: rgb(93, 74, 74);
+    border-bottom-left-radius: 10px;
+    gap: 50px;
+    overflow-y: scroll;
+}
+
+.vscode-card-body-navbar-projects-container{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.vscode-card-body-main{
+    width: 80%;
+    height: 100%; 
+    overflow-y: scroll;
+    background-color: black;
+}
+
+.vscode-card-body-main-projects-container{
+    width: 100%;
+    height: auto;
+}
+
+/*#endregion*/
+
+/*#region Unity*/
+.unity-card{
+    width: 900px;
+    height: 500px;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    resize: vertical;
+    overflow: hidden;
+    min-height: 100px;
+    max-height: 1200px;
+}
+
+.unity-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 5%;
+    background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: move;
+    min-height: 25px;
+    max-height: 25px;
+}
+
+.unity-card-body{
+    width: 100%;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.unity-card-body-navbar{
+    width: 20%;
+    height: 100%;
+    background-color: rgb(93, 74, 74);
+    border-bottom-left-radius: 10px;
+    gap: 50px;
+    overflow-y: scroll;
+}
+
+.unity-card-body-navbar-projects-container{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.unity-card-body-main{
+    width: 80%;
+    height: 100%; 
+    overflow-y: scroll;
+    background-color: black;
+}
+
+.unity-card-body-main-projects-container{
+    width: 100%;
+    height: auto;
+}
+/*#endregion*/
+
+/*#region VScode Projects*/
+.vscode-project-1-preview{
+    width: 100px;
+    height: 150px;
+    background-color: pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.vscode-project-2-preview{
+    width: 100px;
+    height: 150px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.vscode-project-3-preview{
+    width: 100px;
+    height: 150px;
+    background-color: brown;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.vscode-project-4-preview{
+    width: 100px;
+    height: 150px;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.vscode-project-1{
+    width: 100%;
+    height: 1000px;
+    background-color: pink;
+    display: block;
+}
+
+.vscode-project-2{
+    width: 100%;
+    height: 500px;
+    background-color: green;
+    display: none;
+}
+
+.vscode-project-3{
+    width: 100%;
+    height: 1500px;
+    background-color: brown;
+    display: none;
+}
+
+.vscode-project-4{
+    width: 100%;
+    height: 1500px;
+    background-color: blue;
+    display: none;
+}
+
+.vscode-project-preview{
+    cursor: pointer;
+}
+/*#endregion*/
+
+/*#region Blender projects*/
+.blender-project-1-preview{
+    width: 100px;
+    height: 150px;
+    background-color: purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.blender-project-2-preview{
+    width: 100px;
+    height: 150px;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.blender-project-3-preview{
+    width: 100px;
+    height: 150px;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.blender-project-4-preview{
+    width: 100px;
+    height: 150px;
+    background-color: lightcoral;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.blender-project-1{
+    width: 100%;
+    height: 1000px;
+    background-color: purple;
+    display: block;
+}
+
+.blender-project-2{
+    width: 100%;
+    height: 500px;
+    background-color: yellow;
+    display: none;
+}
+
+.blender-project-3{
+    width: 100%;
+    height: 1500px;
+    background-color: antiquewhite;
+    display: none;
+}
+
+.blender-project-4{
+    width: 100%;
+    height: 1500px;
+    background-color: lightcoral;
+    display: none;
+}
+
+.blender-project-preview{
+    cursor: pointer;
+}
+/*#endregion*/
+
+/*#region Unity projects*/
+.unity-project-1-preview{
+    width: 100px;
+    height: 150px;
+    background-color: honeydew;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.unity-project-2-preview{
+    width: 100px;
+    height: 150px;
+    background-color: azure;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.unity-project-3-preview{
+    width: 100px;
+    height: 150px;
+    background-color: teal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.unity-project-4-preview{
+    width: 100px;
+    height: 150px;
+    background-color: lemonchiffon;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.unity-project-1{
+    width: 100%;
+    height: 1500px;
+    background-color: honeydew;
+    display: block;
+}
+
+.unity-project-2{
+    width: 100%;
+    height: 500px;
+    background-color: azure;
+    display: none;
+}
+
+.unity-project-3{
+    width: 100%;
+    height: 1500px;
+    background-color: teal;
+    display: none;
+}
+
+.unity-project-4{
+    width: 100%;
+    height: 1500px;
+    background-color: lemonchiffon;
+    display: none;
+}
+
+.unity-project-preview{
+    cursor: pointer;
+}
+
+.unity-card-body-main-projects-container  p{
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.project-name{
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.project-preview-name{
+    font-weight: 800;
+}
+
+.indicators-container{
+    width: 100px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.indicators{
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.384);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.indicators:hover{
+    cursor: pointer;
+}
+
+.gallery{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+/*#endregion*/
+
+/*#region Blender mobile projects*/
+.blender-mobile-project-1{
+    width: 100%;
+    height: 1000px;
+    background-color: purple;
+    display: block;
+}
+
+.blender-mobile-project-2{
+    width: 100%;
+    height: 500px;
+    background-color: yellow;
+    display: none;
+}
+
+.blender-mobile-project-3{
+    width: 100%;
+    height: 1500px;
+    background-color: antiquewhite;
+    display: none;
+}
+
+.blender-mobile-project-4{
+    width: 100%;
+    height: 1500px;
+    background-color: lightcoral;
+    display: none;
+}
+/*#endregion*/
+
+/*#region VSCode mobile projects*/
+.vscode-mobile-project-1{
+    width: 100%;
+    height: 1000px;
+    background-color: pink;
+    display: block;
+}
+
+.vscode-mobile-project-2{
+    width: 100%;
+    height: 500px;
+    background-color: green;
+    display: none;
+}
+
+.vscode-mobile-project-3{
+    width: 100%;
+    height: 1500px;
+    background-color: brown;
+    display: none;
+}
+
+.vscode-mobile-project-4{
+    width: 100%;
+    height: 1500px;
+    background-color: blue;
+    display: none;
+}
+/*#endregion*/
+
+/*#region Unity mobile projects*/
+.unity-mobile-project-1{
+    width: 100%;
+    height: 1000px;
+    background-color: honeydew;
+    display: block;
+}
+
+.unity-mobile-project-2{
+    width: 100%;
+    height: 500px;
+    background-color: azure;
+    display: none;
+}
+
+.unity-mobile-project-3{
+    width: 100%;
+    height: 1500px;
+    background-color: teal;
+    display: none;
+}
+
+.unity-mobile-project-4{
+    width: 100%;
+    height: 1500px;
+    background-color: lemonchiffon;
+    display: none;
+}
+/*#endregion*/
+
+/*#region Aler card*/
+.alert-card{
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    user-select: none;
+}
+
+.alert-card-header{
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(to bottom, #eaebed, #d2d1d2);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: solid rgb(203,202,201) 1px;
+    cursor: move;
+}
+
+.alert-card-body{
+    width: 100%;
+    height: 90%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: solid rgb(203,202,201) 1px;
+    border-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-card-body-image{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-card-body-text{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.alert-card-body-text > button{
+    width: 75px;
+    height: 25px;
+    align-self: flex-end;
+    margin-right: 20px;
+    background: linear-gradient(to bottom, #5eaeff, #0c75ff);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+
+.alert-card-body-text > button:hover{
+    background: linear-gradient(to bottom, #7cbcfc, #2d88ff);
+}
+
+.alert-card-body-image > img{
+    margin-bottom: 70px;
+}
+
+/*#endregion*/
+
+/*#region Mobile*/
+.desktop-mobile{
+    width: 100%;
+    height: 95%;
+    position: absolute;
+    justify-content: center;
+    gap: 70px;
+    top: 30px;
+    display: none;
+}
+
+.desktop-mobile-app-notepad{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    overflow-y: scroll;
+}
+
+.desktop-mobile-app-blender{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    overflow-y: scroll;
+}
+
+.desktop-mobile-app-vscode{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    overflow-y: scroll;
+}
+
+.desktop-mobile-app-unity{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    overflow-y: scroll;
+}
+
+.mobile-app{
+    user-select: none;
+    -webkit-user-drag: none;
+    margin-top: 50px;
+}
+
+.mobile-app:hover{
+    cursor: pointer;
+}
+
+.mobile-notepad{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.desktop-mobile-app-navbar{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    height: 5%;
+    position: fixed;
+    color: rgb(226,170,31);
+}
+
+.desktop-mobile-app-navbar > img{
+    transform: rotate(180deg);
+    margin-left: 15px;
+}
+
+.mobile-notepad-body{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+/*#endregion*/
+
+/*#region Responsivity*/
+@media(max-width: 900px){
+    .taskbar-container{
+        display: none;
+    }
+
+    .navbar-icons-left{
+        display: none;
+    }
+
+    .navbar-icons-right{
+        padding-right: 0;
+        padding-left: 20px;
+    }
+
+    .desktop-mobile{
+        display: flex;
+    }
+}
+
+@media(max-width: 370px){
+    .desktop-mobile{
+        gap: 40px;
+    }
+}
+/*#endregion*/
+
+
