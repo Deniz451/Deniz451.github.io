@@ -5,7 +5,7 @@ body{
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-image: url("../photos/desktop_background.jpg");
+    background-image: url("../photos/desktop_background_compressed.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -120,12 +120,12 @@ html, body {
   
 .navbar-dropdown-container:hover .navbar-section-dropdown {display: block;}
 
-a{
+.navbar a{
     color: black;
 }
 
-u:hover,
-a:hover{
+.navbar u:hover,
+.navbar a:hover{
     color: rgb(115, 0, 255);
 }
 /*#endregion*/

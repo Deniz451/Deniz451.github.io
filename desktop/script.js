@@ -31,7 +31,7 @@ const maxOffset = 60;
 
 document.querySelectorAll(".app").forEach((element) => {
     element.addEventListener("click", () => {
-    const target = document.querySelector(element.dataset.target)
+    const target = document.querySelector(element.dataset.target + "-card")
     const dot = document.querySelector("." + target.classList[0] + "-dot");
 
     if (!target.style.display || target.style.display === "none") {
@@ -348,5 +348,17 @@ const counter = document.getElementById('character-counter');
 textarea.addEventListener('input', function() {
     const length = textarea.value.length;
     counter.textContent = length + '/400';
+});
+//#endregion
+
+//#region Display app name
+document.querySelectorAll(".app").forEach((element) => {
+    const target = document.querySelector(element.dataset.target + "-pop-up")
+    element.addEventListener("mouseenter", () => {
+    target.style.opacity = 1
+    });
+    element.addEventListener('mouseleave', function() {
+        target.style.opacity = 0
+    });
 });
 //#endregion
