@@ -4,7 +4,7 @@ const alertCard = document.querySelector(".alert-card");
 document.addEventListener('DOMContentLoaded', function() {
     const hasVisited = localStorage.getItem('hasVisited');
 
-    if (hasVisited === "false") {
+    if (hasVisited === null || hasVisited === undefined) {
         alertCard.style.display = "block";
     }
 });
