@@ -160,43 +160,22 @@ html, body {
     display: flex;
     align-items: start;
     justify-content: center;
-    gap: 90px;
+    gap: 91px;
 }
 
-.notepad-card-dot{
-    width: 4px;
-    height: 4px;
-    border-radius: 10px;
-    background-color: white;
-    opacity: 0;
-}
-
-.blender-card-dot{
-    width: 4px;
-    height: 4px;
-    border-radius: 10px;
-    background-color: white;
-    opacity: 0;
-}
-
-.vscode-card-dot{
-    width: 4px;
-    height: 4px;
-    border-radius: 10px;
-    background-color: white;
-    opacity: 0;
-}
-
-.unity-card-dot{
-    width: 4px;
-    height: 4px;
-    border-radius: 10px;
-    background-color: white;
-    opacity: 0;
-
-}
-
-.email-card-dot{
+.notepad-card-dot,
+.blender-card-dot,
+.vscode-card-dot,
+.unity-card-dot,
+.email-card-dot,
+.calculator-card-dot,
+.clock-card-dot,
+.contacts-card-dot,
+.stickies-card-dot,
+.settings-card-dot,
+.photos-card-dot,
+.music-card-dot
+{
     width: 4px;
     height: 4px;
     border-radius: 10px;
@@ -233,25 +212,22 @@ html, body {
     border-radius: 10px;
 }
 
-.notepad-pop-up {
+.notepad-pop-up,
+.email-pop-up,
+.blender-pop-up,
+.vscode-pop-up,
+.unity-pop-up,
+.calculator-pop-up,
+.clock-pop-up,
+.contacts-pop-up,
+.stickies-pop-up,
+.settings-pop-up,
+.photos-pop-up,
+.music-pop-up
+{
     opacity: 0;
 }
 
-.email-pop-up {
-    opacity: 0;
-}
-
-.blender-pop-up {
-    opacity: 0;
-}
-
-.vscode-pop-up {
-    opacity: 0;
-}
-
-.unity-pop-up {
-    opacity: 0;
-}
 /*#endregion*/
 
 /*#region Applications*/
@@ -660,6 +636,300 @@ hr{
 .unity-card-body-main-projects-container{
     width: 100%;
     height: auto;
+}
+/*#endregion*/
+
+/*#region Calculator*/
+.calculator-card{
+    width: 900px;
+    height: 500px;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    resize: both;
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 1200px;
+    min-height: 300px;
+    max-height: 1200px;
+}
+
+.calculator-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 5%;
+    min-height: 25px;
+    max-height: 25px;
+    background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    bottom: 0;
+    cursor: move;
+}
+
+.calculator-card-body{
+    width: 100%;
+    height: 95%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    overflow: auto;
+}
+/*#endregion*/
+
+/*#region Clock*/
+.clock-card{
+    width: 900px;
+    height: 500px;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    resize: both;
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 1200px;
+    min-height: 300px;
+    max-height: 1200px;
+}
+
+.clock-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 5%;
+    min-height: 25px;
+    max-height: 25px;
+    background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    bottom: 0;
+    cursor: move;
+}
+
+.clock-card-body{
+    width: 100%;
+    height: 95%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    overflow: auto;
+}
+/*#endregion*/
+
+/*#region Contacts*/
+.contacts-card{
+    width: 900px;
+    height: 500px;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    resize: both;
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 1200px;
+    min-height: 300px;
+    max-height: 1200px;
+}
+
+.contacts-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 5%;
+    min-height: 25px;
+    max-height: 25px;
+    background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    bottom: 0;
+    cursor: move;
+}
+
+.contacts-card-body{
+    width: 100%;
+    height: 95%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    overflow: auto;
+}
+/*#endregion*/
+
+/*#region Settings*/
+.settings-card{
+    width: 900px;
+    height: 500px;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    resize: both;
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 1200px;
+    min-height: 300px;
+    max-height: 1200px;
+}
+
+.settings-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 5%;
+    min-height: 25px;
+    max-height: 25px;
+    background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    bottom: 0;
+    cursor: move;
+}
+
+.settings-card-body{
+    width: 100%;
+    height: 95%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    overflow: auto;
+}
+/*#endregion*/
+
+/*#region Photos*/
+.photos-card{
+    width: 900px;
+    height: 500px;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    resize: both;
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 1200px;
+    min-height: 300px;
+    max-height: 1200px;
+}
+
+.photos-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 5%;
+    min-height: 25px;
+    max-height: 25px;
+    background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    bottom: 0;
+    cursor: move;
+}
+
+.photos-card-body{
+    width: 100%;
+    height: 95%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    overflow: auto;
+}
+/*#endregion*/
+
+/*#region Music*/
+.music-card{
+    width: 900px;
+    height: 500px;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    resize: both;
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 1200px;
+    min-height: 300px;
+    max-height: 1200px;
+}
+
+.music-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 5%;
+    min-height: 25px;
+    max-height: 25px;
+    background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    bottom: 0;
+    cursor: move;
+}
+
+.music-card-body{
+    width: 100%;
+    height: 95%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    overflow: auto;
+}
+/*#endregion*/
+
+/*#region Stickies*/
+.stickies-card{
+    width: 900px;
+    height: 500px;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    resize: both;
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 1200px;
+    min-height: 300px;
+    max-height: 1200px;
+}
+
+.stickies-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 5%;
+    min-height: 25px;
+    max-height: 25px;
+    background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    bottom: 0;
+    cursor: move;
+}
+
+.stickies-card-body{
+    width: 100%;
+    height: 95%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    overflow: auto;
 }
 /*#endregion*/
 

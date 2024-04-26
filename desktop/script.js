@@ -9,15 +9,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-const initialPosition = {
+const alertCardInitialPosition = {
     top: alertCard.style.top,
     left: alertCard.style.left
 };
 
 makeDraggable(alertCard);
 
-alertCard.style.top = initialPosition.top;
-alertCard.style.left = initialPosition.left;
+alertCard.style.top = alertCardInitialPosition.top;
+alertCard.style.left = alertCardInitialPosition.left;
 
 document.getElementById("alert-card-button-close").addEventListener("click", () => {
     alertCard.style.display = "none";
@@ -56,6 +56,8 @@ document.querySelectorAll(".app").forEach((element) => {
 //#endregion
 
 //#region App buttons
+let cardsInitialPosition = {};
+
 document.querySelectorAll(".button-close").forEach((element) => {
     element.addEventListener("click", () => {
         const target = document.querySelector(element.dataset.target)
@@ -75,6 +77,12 @@ document.querySelectorAll(".button-close").forEach((element) => {
 document.querySelectorAll(".button-maximize").forEach((element) => {
     element.addEventListener("click", () => {
         const target = document.querySelector(element.dataset.target)
+        
+        cardsInitialPosition = {
+            top: target.style.top,
+            left: target.style.left
+        };
+
         if (target.requestFullscreen) {
             target.requestFullscreen();
         } else if (target.mozRequestFullScreen) {
@@ -95,6 +103,9 @@ document.querySelectorAll(".button-minimize").forEach((element) => {
                 document.exitFullscreen();
             }
         }
+
+        target.style.top = cardsInitialPosition.top;
+        target.style.left = cardsInitialPosition.left;
     });
 });
 //#endregion

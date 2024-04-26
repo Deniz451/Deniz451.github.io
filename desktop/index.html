@@ -161,22 +161,22 @@
                 <section class="form-container">
                     <div class="input-group">
                         <label for="first-name">Your Name</label>
-                        <input type="text" name="first-name" placeholder="First Name">
-                        <input type="text" name="last-name" placeholder="Last Name">
+                        <input type="text" name="first-name" id="first-name"placeholder="First Name" autocomplete="on">
+                        <input type="text" name="last-name" id="last-name"placeholder="Last Name" autocomplete="on">
                     </div>
                     <div class="input-group">
                         <label for="email">Your Email*</label>
-                        <input type="email" name="email" placeholder="example@email.com">
+                        <input type="email" name="email" id="email" placeholder="example@email.com" autocomplete="on">
                     </div>
                     <div class="input-group">
                         <label for="number1">Phone</label>
-                        <input type="text" name="number1" placeholder="###">
-                        <input type="text" name="number2" placeholder="###">
-                        <input type="text" name="number3" placeholder="###">
+                        <input type="text" name="number1" id="number1" placeholder="###" autocomplete="off">
+                        <input type="text" name="number2" id="number2" placeholder="###" autocomplete="off">
+                        <input type="text" name="number3" id="number3" placeholder="###" autocomplete="off">
                     </div>
                     <div class="input-group">
                         <label for="subject">Message Subject*</label>
-                        <input type="text" name="otherSubject" id="otherSubject" style="display: none;" placeholder="Subject">
+                        <input type="text" name="otherSubject" id="otherSubject" style="display: none;" placeholder="Subject" autocomplete="off">
                         <select name="subject" id="subject">
                             <option value="" disabled selected>Subject</option>
                             <option value="Colaboration">Colaboration</option>
@@ -187,7 +187,7 @@
                     </div>
                     <div class="input-group">
                         <label for="content">Message*</label>
-                        <textarea id="content" name="content" maxlength="400"></textarea>
+                        <textarea id="content" name="content" maxlength="400" autocomplete="off"></textarea>
                         <span id="character-counter">0/400</span>
                     </div>
                     <hr>
@@ -321,6 +321,83 @@
         </section>
     </div>
 
+    <div class="calculator-card app-window">
+        <section class="calculator-card-header">
+            <section class="buttons">
+                <button class="button-close" data-target=".calculator-card"></button>
+                <button class="button-minimize" data-target=".calculator-card"></button>
+                <button class="button-maximize" data-target=".calculator-card"></button>
+            </section>
+        </section>
+        <section class="calculator-card-body"></section>
+    </div>
+
+    <div class="clock-card app-window">
+        <section class="clock-card-header">
+            <section class="buttons">
+                <button class="button-close" data-target=".clock-card"></button>
+                <button class="button-minimize" data-target=".clock-card"></button>
+                <button class="button-maximize" data-target=".clock-card"></button>
+            </section>
+        </section>
+        <section class="clock-card-body"></section>
+    </div>
+
+    <div class="settings-card app-window">
+        <section class="settings-card-header">
+            <section class="buttons">
+                <button class="button-close" data-target=".settings-card"></button>
+                <button class="button-minimize" data-target=".settings-card"></button>
+                <button class="button-maximize" data-target=".settings-card"></button>
+            </section>
+        </section>
+        <section class="settings-card-body"></section>
+    </div>
+
+    <div class="photos-card app-window">
+        <section class="photos-card-header">
+            <section class="buttons">
+                <button class="button-close" data-target=".photos-card"></button>
+                <button class="button-minimize" data-target=".photos-card"></button>
+                <button class="button-maximize" data-target=".photos-card"></button>
+            </section>
+        </section>
+        <section class="photos-card-body"></section>
+    </div>
+
+    <div class="contacts-card app-window">
+        <section class="contacts-card-header">
+            <section class="buttons">
+                <button class="button-close" data-target=".contacts-card"></button>
+                <button class="button-minimize" data-target=".contacts-card"></button>
+                <button class="button-maximize" data-target=".contacts-card"></button>
+            </section>
+        </section>
+        <section class="contacts-card-body"></section>
+    </div>
+
+    <div class="music-card app-window">
+        <section class="music-card-header">
+            <section class="buttons">
+                <button class="button-close" data-target=".music-card"></button>
+                <button class="button-minimize" data-target=".music-card"></button>
+                <button class="button-maximize" data-target=".music-card"></button>
+            </section>
+        </section>
+        <section class="music-card-body"></section>
+    </div>
+
+    <div class="stickies-card app-window">
+        <section class="stickies-card-header">
+            <section class="buttons">
+                <button class="button-close" data-target=".stickies-card"></button>
+                <button class="button-minimize" data-target=".stickies-card"></button>
+                <button class="button-maximize" data-target=".stickies-card"></button>
+            </section>
+        </section>
+        <section class="stickies-card-body"></section>
+    </div>
+
     <footer class="taskbar-container">
         <section class="app-pop-up-container">
             <div class="app-pop-up notepad-pop-up">Notepad</div>
@@ -328,13 +405,27 @@
             <div class="app-pop-up vscode-pop-up">VS Code</div>
             <div class="app-pop-up unity-pop-up">Unity</div>
             <div class="app-pop-up email-pop-up">Mail</div>
+            <div class="app-pop-up calculator-pop-up">Calculator</div>
+            <div class="app-pop-up clock-pop-up">Clock</div>
+            <div class="app-pop-up contacts-pop-up">Contacts</div>
+            <div class="app-pop-up stickies-pop-up">Stickies</div>
+            <div class="app-pop-up settings-pop-up">Settings</div>
+            <div class="app-pop-up photos-pop-up">Photos</div>
+            <div class="app-pop-up music-pop-up">Music</div>
         </section>
         <section class="taskbar-apps-container">
-            <img src="..\photos\notepad.png" alt="notepad" class="app" width="45px" height="45px" data-target=".notepad">
-            <img src="..\photos\blender2.png" alt="blender" class="app" width="45px" height="45px" data-target=".blender">
-            <img src="..\photos\vscode2.png" alt="vscode" class="app" width="45px" height="45px" data-target=".vscode">
-            <img src="..\photos\unity3.png" alt="unity" class="app" width="45px" height="45px" data-target=".unity">
-            <img src="..\photos\email3.png" alt="email" class="app" width="45px" height="45px" data-target=".email">
+            <img src="../photos/notepad.png" alt="notepad" class="app" width="45px" height="45px" data-target=".notepad">
+            <img src="../photos/blender2.png" alt="blender" class="app" width="45px" height="45px" data-target=".blender">
+            <img src="../photos/vscode2.png" alt="vscode" class="app" width="45px" height="45px" data-target=".vscode">
+            <img src="../photos/unity3.png" alt="unity" class="app" width="45px" height="45px" data-target=".unity">
+            <img src="../photos/email3.png" alt="email" class="app" width="45px" height="45px" data-target=".email">
+            <img src="../photos/calculator.png" alt="calculator" class="app" width="45px" height="45px" data-target=".calculator">
+            <img src="../photos/clock.png" alt="clock" class="app" width="45px" height="45px" data-target=".clock">
+            <img src="../photos/contacts.png" alt="contacts" class="app" width="45px" height="45px" data-target=".contacts">
+            <img src="../photos/stickies.png" alt="stickies" class="app" width="45px" height="45px" data-target=".stickies">
+            <img src="../photos/settings.png" alt="settings" class="app" width="45px" height="45px" data-target=".settings">
+            <img src="../photos/photos.png" alt="photos" class="app" width="45px" height="45px" data-target=".photos">
+            <img src="../photos/music.png" alt="music" class="app" width="45px" height="45px" data-target=".music">
         </section>
         <section class="taskbar-dots-container">
             <div class="notepad-card-dot"></div>
@@ -342,6 +433,13 @@
             <div class="vscode-card-dot"></div>
             <div class="unity-card-dot"></div>
             <div class="email-card-dot"></div>
+            <div class="calculator-card-dot"></div>
+            <div class="clock-card-dot"></div>
+            <div class="contacts-card-dot"></div>
+            <div class="stickies-card-dot"></div>
+            <div class="settings-card-dot"></div>
+            <div class="photos-card-dot"></div>
+            <div class="music-card-dot"></div>
         </section>
     </footer>
 
