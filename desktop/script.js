@@ -35,9 +35,17 @@ document.querySelectorAll(".app").forEach((element) => {
     const dot = document.querySelector("." + target.classList[0] + "-dot");
 
     if (!target.style.display || target.style.display === "none") {
-        const offset = Math.floor(Math.random() * (maxOffset - minOffset + 1)) + minOffset;
-        target.style.top = 70 + offset + "px";
-        target.style.left = 300 + offset + "px";
+
+        if(cardsInitialPosition.length === undefined){
+            const offset = Math.floor(Math.random() * (maxOffset - minOffset + 1)) + minOffset;
+            target.style.top = 70 + offset + "px";
+            target.style.left = 300 + offset + "px";
+        }
+        else {
+            target.style.top = cardsInitialPosition.top;
+            target.style.left = cardsInitialPosition.left;
+        }
+
         document.querySelectorAll(".app-window").forEach((element) => {
             element.style.zIndex = "1"
         })
@@ -53,6 +61,10 @@ document.querySelectorAll(".app").forEach((element) => {
     });
 });
 
+/*document.querySelector(".text-link").addEventListener("click", (element) => {
+    const target = document.querySelector(element.dataset.target)
+
+})*/
 //#endregion
 
 //#region App buttons
@@ -67,6 +79,11 @@ document.querySelectorAll(".button-close").forEach((element) => {
                 document.exitFullscreen();
             }
         }
+
+        cardsInitialPosition = {
+            top: target.style.top,
+            left: target.style.left
+        };
         
         const dot = document.querySelector("." + target.classList[0] + "-dot");
         dot.style.opacity = 0;
@@ -77,7 +94,7 @@ document.querySelectorAll(".button-close").forEach((element) => {
 document.querySelectorAll(".button-maximize").forEach((element) => {
     element.addEventListener("click", () => {
         const target = document.querySelector(element.dataset.target)
-        
+
         cardsInitialPosition = {
             top: target.style.top,
             left: target.style.left
@@ -343,7 +360,6 @@ window.addEventListener('touchmove', function(event) {
 document.getElementById("subject").addEventListener("change", function() {
     var select = document.getElementById("subject");
     var otherSubjectInput = document.getElementById("otherSubject");
-    console.log(select.value);
     if (select.value === "other") {
         otherSubjectInput.style.display = "block";
     } else {

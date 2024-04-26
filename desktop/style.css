@@ -317,6 +317,11 @@ html, body {
 .notepad-card p{
     padding-left: 15px;
 }
+
+.notepad-card u:hover,
+.notepad-card a:hover{
+    color: rgb(115, 0, 255);
+}
 /*#endregion*/
 
 /*#region Email*/
