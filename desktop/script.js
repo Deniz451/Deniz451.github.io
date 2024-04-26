@@ -60,11 +60,6 @@ document.querySelectorAll(".app").forEach((element) => {
     }
     });
 });
-
-/*document.querySelector(".text-link").addEventListener("click", (element) => {
-    const target = document.querySelector(element.dataset.target)
-
-})*/
 //#endregion
 
 //#region App buttons
@@ -128,7 +123,8 @@ document.querySelectorAll(".button-minimize").forEach((element) => {
 //#endregion
 
 function makeDraggable(element) {
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    let header;
 
     if (!element.style.top) {
         element.style.top = "0px";
@@ -137,19 +133,41 @@ function makeDraggable(element) {
         element.style.left = "0px";
     }
 
-    let header = element.querySelector("." + element.classList[0] + "-header");
+    if (element.querySelector("." + element.classList[0] + "-header") != null) {
+        header = element.querySelector("." + element.classList[0] + "-header");
+        header.addEventListener("mouseenter", () => {
+            header.style.cursor = 'grab';
+        });
 
-    header.onmousedown = dragMouseDown;
+        header.addEventListener("mouseleave", () => {
+            if (!isDragging) {
+                header.style.cursor = 'default';
+            }
+        });
+
+        header.onmousedown = dragMouseDown;
+    } else {
+        element.onmousedown = dragMouseDown;
+    }
 
     function dragMouseDown(e) {
         e = e || window.event;
         e.preventDefault();
-        
-        if (e.target === header || header.contains(e.target)) {
+
+        if (header != null) {
+            if (e.target === header || header.contains(e.target)) {
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
+                header.style.cursor = 'grabbing';
+            }
+        } else {
             pos3 = e.clientX;
             pos4 = e.clientY;
             document.onmouseup = closeDragElement;
             document.onmousemove = elementDrag;
+            element.style.cursor = 'grabbing';
         }
     }
 
@@ -182,6 +200,22 @@ function makeDraggable(element) {
     }
 
     function closeDragElement() {
+        const deleteIcon = document.getElementById('trash-bin');
+        const deleteRect = deleteIcon.getBoundingClientRect();
+
+        if (pos3 >= deleteRect.left &&
+            pos3 <= deleteRect.right &&
+            pos4 >= deleteRect.top &&
+            pos4 <= deleteRect.bottom &&
+            element.classList[0] === "new-sticky") {
+            
+            console.log("added to trash bin");
+            element.remove();
+            deleteIcon.src = "../photos/trash-full.png";
+        }
+
+        if (header != null) header.style.cursor = 'default';
+        else element.style.cursor = 'default';
         document.onmouseup = null;
         document.onmousemove = null;
     }
@@ -388,4 +422,170 @@ document.querySelectorAll(".app").forEach((element) => {
         target.style.opacity = 0
     });
 });
+//#endregion
+
+//#region Painting
+const canvas = document.getElementById('canvas');
+const context = canvas.getContext('2d');
+
+context.fillStyle = '#FFFFFF';
+context.fillRect(0, 0, canvas.width, canvas.height);
+
+let isDrawing = false;
+
+let lineWidth = 1;
+let lineCap = 'round';
+let lineColor = '#000000';
+
+canvas.addEventListener('mousedown', startDrawing);
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mouseup', stopDrawing);
+canvas.addEventListener('mouseout', stopDrawing);
+
+function startDrawing(e) {
+    isDrawing = true;
+    draw(e);
+}
+
+function draw(e) {
+    if (!isDrawing) return;
+    
+    const pos = getMousePos(canvas, e);
+    const x = pos.x;
+    const y = pos.y;
+
+    context.lineWidth = lineWidth;
+    context.lineCap = lineCap;
+    context.strokeStyle = lineColor;
+    
+    context.lineTo(x, y);
+    context.stroke();
+    
+    context.beginPath();
+    context.moveTo(x, y);
+}
+
+function getMousePos(canvas, evt) {
+    var rect = canvas.getBoundingClientRect(),
+        scaleX = canvas.width / rect.width,
+        scaleY = canvas.height / rect.height;
+
+    return {
+        x: (evt.clientX - rect.left) * scaleX,
+        y: (evt.clientY - rect.top) * scaleY
+    };
+}
+
+function stopDrawing() {
+    isDrawing = false;
+    context.beginPath();
+}
+
+document.getElementById("lineWidthSlider").addEventListener("change", (event) => {
+    const element = event.target;
+    console.log(element);
+    console.log(element.value);
+    lineWidth = element.value;
+});
+
+document.querySelectorAll('.color-buttons button').forEach((element) => {
+    element.addEventListener("click", () => {
+        lineColor = element.value;
+    });
+});
+
+document.querySelector('.painting-card-body img').addEventListener("click", () => {
+    document.querySelector(".canvas-sidebar").style.display = "flex";
+});
+
+document.querySelector('.canvas-sidebar img').addEventListener("click", () => {
+    document.querySelector(".canvas-sidebar").style.display = "none";
+});
+//#endregion
+
+//#region Sticky note
+const element = document.querySelector('.stickies-card-body img');
+let isDragging = false;
+let hasTextInput;
+
+element.addEventListener("mouseenter", () => {
+    element.style.cursor = 'grab';
+});
+
+element.addEventListener("mouseleave", () => {
+    if (!isDragging) {
+        element.style.cursor = 'default';
+    }
+});
+
+element.addEventListener("mousedown", (event) => {
+    event.preventDefault();
+    isDragging = true;
+    element.style.cursor = 'grabbing';
+
+    let cursorX = event.clientX;
+    let cursorY = event.clientY;
+
+    const sticky = document.createElement('img');
+    sticky.src = "../photos/sticky-note2.png";
+    sticky.alt = 'sticky';
+    sticky.width = 200;
+    sticky.height = 200;
+    sticky.classList.add('new-sticky');
+
+    sticky.style.left = cursorX + 'px';
+    sticky.style.top = cursorY + 'px';
+
+    document.body.appendChild(sticky);
+    makeDraggable(sticky);
+
+    const text = document.createElement('input');
+    text.setAttribute('type', 'text');
+    text.setAttribute('placeholder', 'Enter text here');
+    text.classList.add("sticky-text");
+    sticky.appendChild(text);
+    console.log(sticky);
+
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseup", onMouseUp);
+
+    function onMouseMove(event) {
+        cursorX = event.clientX;
+        cursorY = event.clientY;
+        sticky.style.left = cursorX + 'px';
+        sticky.style.top = cursorY + 'px';
+    }
+
+    function onMouseUp() {
+        isDragging = false;
+        element.style.cursor = 'grab';
+        document.removeEventListener("mousemove", onMouseMove);
+        document.removeEventListener("mouseup", onMouseUp);
+    }
+});
+//#endregion
+
+//#region Navbar clock
+function startTime() {
+    const today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let day = today.getDate();
+    let monthNames = ["Jan", "Feb", "March", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let month = monthNames[today.getMonth()];
+    let ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    m = checkTime(m);
+    document.querySelector('.navbar-time').innerHTML =  month + " " + day + " " + h + ":" + m + " " + ampm;
+    setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+
+startTime();
 //#endregion

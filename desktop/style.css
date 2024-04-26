@@ -128,6 +128,16 @@ html, body {
 .navbar a:hover{
     color: rgb(115, 0, 255);
 }
+
+.navbar-time{
+    height: 30px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 13px;
+}
 /*#endregion*/
 
 /*#region Taskbar*/
@@ -151,7 +161,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 30px;
 }
 
 .taskbar-dots-container{
@@ -160,7 +170,7 @@ html, body {
     display: flex;
     align-items: start;
     justify-content: center;
-    gap: 91px;
+    gap: 71px;
 }
 
 .notepad-card-dot,
@@ -174,7 +184,9 @@ html, body {
 .stickies-card-dot,
 .settings-card-dot,
 .photos-card-dot,
-.music-card-dot
+.music-card-dot,
+.painting-card-dot,
+.trash-card-dot
 {
     width: 4px;
     height: 4px;
@@ -193,7 +205,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 43px;
+    gap: 23px;
     position: absolute;
     left: 0;
     top: -45px;
@@ -223,11 +235,21 @@ html, body {
 .stickies-pop-up,
 .settings-pop-up,
 .photos-pop-up,
-.music-pop-up
+.music-pop-up,
+.painting-pop-up,
+.trash-pop-up
 {
     opacity: 0;
 }
 
+.taskbar-container hr{
+    position: absolute;
+    right: 315px;
+    height: 45px;
+    width: 0px;
+    border: 0;
+    border-right: 1px solid white;
+}
 /*#endregion*/
 
 /*#region Applications*/
@@ -301,7 +323,6 @@ html, body {
     border-top-right-radius: 10px;
     border: solid #a2a2a2 1px;
     bottom: 0;
-    cursor: move;
 }
 
 .notepad-card-body{
@@ -352,7 +373,6 @@ html, body {
     border-top-right-radius: 10px;
     border: solid #a2a2a2 1px;
     bottom: 0;
-    cursor: move;
 }
 
 .email-card-body{
@@ -460,7 +480,6 @@ hr{
     background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    cursor: move;
     min-height: 25px;
     max-height: 25px;
 }
@@ -528,7 +547,6 @@ hr{
     background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    cursor: move;
     min-height: 25px;
     max-height: 25px;
 }
@@ -598,7 +616,6 @@ hr{
     background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    cursor: move;
     min-height: 25px;
     max-height: 25px;
 }
@@ -672,7 +689,6 @@ hr{
     border-top-right-radius: 10px;
     border: solid #a2a2a2 1px;
     bottom: 0;
-    cursor: move;
 }
 
 .calculator-card-body{
@@ -714,7 +730,6 @@ hr{
     border-top-right-radius: 10px;
     border: solid #a2a2a2 1px;
     bottom: 0;
-    cursor: move;
 }
 
 .clock-card-body{
@@ -756,7 +771,6 @@ hr{
     border-top-right-radius: 10px;
     border: solid #a2a2a2 1px;
     bottom: 0;
-    cursor: move;
 }
 
 .contacts-card-body{
@@ -798,7 +812,6 @@ hr{
     border-top-right-radius: 10px;
     border: solid #a2a2a2 1px;
     bottom: 0;
-    cursor: move;
 }
 
 .settings-card-body{
@@ -840,7 +853,6 @@ hr{
     border-top-right-radius: 10px;
     border: solid #a2a2a2 1px;
     bottom: 0;
-    cursor: move;
 }
 
 .photos-card-body{
@@ -882,7 +894,6 @@ hr{
     border-top-right-radius: 10px;
     border: solid #a2a2a2 1px;
     bottom: 0;
-    cursor: move;
 }
 
 .music-card-body{
@@ -924,10 +935,213 @@ hr{
     border-top-right-radius: 10px;
     border: solid #a2a2a2 1px;
     bottom: 0;
-    cursor: move;
 }
 
 .stickies-card-body{
+    width: 100%;
+    height: 95%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-sticky{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
+
+.sticky-text{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px; /* Increase width for better visibility */
+    height: 40px; /* Increase height for better visibility */
+    background-color: white;
+    z-index: 4; /* Ensure it's above the sticky note */
+    padding: 5px; /* Add padding for better appearance */
+    border: 1px solid black; /* Add a border for visibility */
+}
+/*#endregion*/
+
+/*#region Painting*/
+.painting-card{
+    width: 900px;
+    height: 500px;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    resize: both;
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 1200px;
+    min-height: 300px;
+    max-height: 1200px;
+}
+
+.painting-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 5%;
+    min-height: 25px;
+    max-height: 25px;
+    background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    bottom: 0;
+}
+
+.painting-card-body{
+    width: 100%;
+    height: 95%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    display: flex;
+}
+
+.canvas-sidebar{
+    position: absolute;
+    left: 0;
+    top: 25px;
+    display: none;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    gap: 50px;
+    width: 135px;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.321);
+    border-bottom-left-radius: 10px;
+}
+
+canvas{
+    width: 100%; /*900*/
+    height: 100%; /*475*/
+    border-bottom-left-radius: 10px;
+}
+
+.color-buttons{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.color-buttons button{
+    width: 20px;
+    height: 20px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.color-buttons button:hover{
+    cursor: pointer;
+}
+
+.painting-card-body > img {
+    position: absolute;
+    left: 20px;
+    top: 40px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.canvas-sidebar > input[type="range"]{
+    width: 100px;
+    margin-top: 70px;
+}
+
+.canvas-sidebar > img{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+.color-buttons button:nth-of-type(1){
+    background-color: white;
+}
+.color-buttons button:nth-of-type(2){
+    background-color: pink;
+}
+.color-buttons button:nth-of-type(3){
+    background-color: lightblue;
+}
+.color-buttons button:nth-of-type(4){
+    background-color: blue;
+}
+.color-buttons button:nth-of-type(5){
+    background-color: yellow;
+}
+.color-buttons button:nth-of-type(6){
+    background-color: orange;
+}
+.color-buttons button:nth-of-type(7){
+    background-color: green;
+}
+.color-buttons button:nth-of-type(8){
+    background-color: red;
+}
+.color-buttons button:nth-of-type(9){
+    background-color: purple;
+}
+.color-buttons button:nth-of-type(10){
+    background-color: brown;
+}
+.color-buttons button:nth-of-type(11){
+    background-color: gray;
+}
+.color-buttons button:nth-of-type(12){
+    background-color: black;
+}
+/*#endregion*/
+
+/*#region Trash bin*/
+.trash-card{
+    width: 900px;
+    height: 500px;
+    display: none;
+    position: absolute;
+    z-index: 2;
+    resize: both;
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 1200px;
+    min-height: 300px;
+    max-height: 1200px;
+}
+
+.trash-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 5%;
+    min-height: 25px;
+    max-height: 25px;
+    background: linear-gradient(to bottom, #e9e9e9, #bab9b9);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: solid #a2a2a2 1px;
+    bottom: 0;
+}
+
+.trash-card-body{
     width: 100%;
     height: 95%;
     background-color: white;
@@ -1477,5 +1691,4 @@ hr{
     }
 }
 /*#endregion*/
-
 

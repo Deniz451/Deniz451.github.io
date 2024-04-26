@@ -48,6 +48,7 @@
 
         </section>
         <section class="navbar-icons-right">
+            <div class="navbar-time"></div>
             <img src="..\icons\battery.png" alt="battery" class="taskbar-icons" width="16px" height="16px">
             <img src="..\icons\wifi.png" alt="wifi" class="taskbar-icons" width="16px" height="16px">
             <img src="..\icons\search.png" alt="search" class="taskbar-icons" id="full-screen-request-button" width="16px" height="16px">
@@ -395,7 +396,52 @@
                 <button class="button-maximize" data-target=".stickies-card"></button>
             </section>
         </section>
-        <section class="stickies-card-body"></section>
+        <section class="stickies-card-body">
+            <img src="../photos/sticky-note1.png" alt="sticky-note" width="200px" height="200px">
+        </section>
+    </div>
+
+    <div class="painting-card app-window">
+        <section class="painting-card-header">
+            <section class="buttons">
+                <button class="button-close" data-target=".painting-card"></button>
+                <button class="button-minimize" data-target=".painting-card"></button>
+                <button class="button-maximize" data-target=".painting-card"></button>
+            </section>
+        </section>
+        <section class="painting-card-body">
+            <img src="../icons/arrow2.png" alt="menu" width="30px" height="30px">
+            <section class="canvas-sidebar">
+                <img src="../icons/arrow2.png" alt="menu" width="30px" height="30px">
+                <input type="range" min="1" max="10" value="1" id="lineWidthSlider">
+                <div class="color-buttons">
+                    <button value="#ffffff"></button>
+                    <button value="#ffccff"></button>
+                    <button value="#ccffff"></button>
+                    <button value="#0066cc"></button>
+                    <button value="#ffff00"></button>
+                    <button value="#ff9933"></button>
+                    <button value="#66cc00"></button>
+                    <button value="#f00000"></button>
+                    <button value="#b266ff"></button>
+                    <button value="#663300"></button>
+                    <button value="#a0a0a0"></button>
+                    <button value="#000000"></button>
+                </div>
+            </section>
+            <canvas id="canvas" width="765" height="475"></canvas>
+        </section>
+    </div>
+
+    <div class="trash-card app-window">
+        <section class="trash-card-header">
+            <section class="buttons">
+                <button class="button-close" data-target=".trash-card"></button>
+                <button class="button-minimize" data-target=".trash-card"></button>
+                <button class="button-maximize" data-target=".trash-card"></button>
+            </section>
+        </section>
+        <section class="trash-card-body"></section>
     </div>
 
     <footer class="taskbar-container">
@@ -409,9 +455,11 @@
             <div class="app-pop-up clock-pop-up">Clock</div>
             <div class="app-pop-up contacts-pop-up">Contacts</div>
             <div class="app-pop-up stickies-pop-up">Stickies</div>
-            <div class="app-pop-up settings-pop-up">Settings</div>
             <div class="app-pop-up photos-pop-up">Photos</div>
             <div class="app-pop-up music-pop-up">Music</div>
+            <div class="app-pop-up painting-pop-up">Painting</div>
+            <div class="app-pop-up settings-pop-up">Settings</div>
+            <div class="app-pop-up trash-pop-up">Trash bin</div>
         </section>
         <section class="taskbar-apps-container">
             <img src="../photos/notepad.png" alt="notepad" class="app" width="45px" height="45px" data-target=".notepad">
@@ -423,9 +471,12 @@
             <img src="../photos/clock.png" alt="clock" class="app" width="45px" height="45px" data-target=".clock">
             <img src="../photos/contacts.png" alt="contacts" class="app" width="45px" height="45px" data-target=".contacts">
             <img src="../photos/stickies.png" alt="stickies" class="app" width="45px" height="45px" data-target=".stickies">
-            <img src="../photos/settings.png" alt="settings" class="app" width="45px" height="45px" data-target=".settings">
             <img src="../photos/photos.png" alt="photos" class="app" width="45px" height="45px" data-target=".photos">
             <img src="../photos/music.png" alt="music" class="app" width="45px" height="45px" data-target=".music">
+            <hr>
+            <img src="../photos/paint.png" alt="painting" class="app" width="45px" height="45px" data-target=".painting">
+            <img src="../photos/settings.png" alt="settings" class="app" width="45px" height="45px" data-target=".settings">
+            <img src="../photos/trash-empty.png" alt="trash" id="trash-bin" class="app" width="45px" height="45px" data-target=".trash">
         </section>
         <section class="taskbar-dots-container">
             <div class="notepad-card-dot"></div>
@@ -437,9 +488,11 @@
             <div class="clock-card-dot"></div>
             <div class="contacts-card-dot"></div>
             <div class="stickies-card-dot"></div>
-            <div class="settings-card-dot"></div>
             <div class="photos-card-dot"></div>
             <div class="music-card-dot"></div>
+            <div class="painting-card-dot"></div>
+            <div class="settings-card-dot"></div>
+            <div class="trash-card-dot"></div>
         </section>
     </footer>
 
