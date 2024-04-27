@@ -122,6 +122,7 @@ document.querySelectorAll(".button-minimize").forEach((element) => {
 });
 //#endregion
 
+//#region Make draggable function
 function makeDraggable(element) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     let header;
@@ -154,20 +155,12 @@ function makeDraggable(element) {
         e = e || window.event;
         e.preventDefault();
 
-        if (header != null) {
-            if (e.target === header || header.contains(e.target)) {
-                pos3 = e.clientX;
-                pos4 = e.clientY;
-                document.onmouseup = closeDragElement;
-                document.onmousemove = elementDrag;
-                header.style.cursor = 'grabbing';
-            }
-        } else {
+        if (e.target === header || header.contains(e.target)) {
             pos3 = e.clientX;
             pos4 = e.clientY;
             document.onmouseup = closeDragElement;
             document.onmousemove = elementDrag;
-            element.style.cursor = 'grabbing';
+            header.style.cursor = 'grabbing';
         }
     }
 
@@ -207,19 +200,19 @@ function makeDraggable(element) {
             pos3 <= deleteRect.right &&
             pos4 >= deleteRect.top &&
             pos4 <= deleteRect.bottom &&
-            element.classList[0] === "new-sticky") {
+            element.classList[0] === "sticky-container") {
             
             console.log("added to trash bin");
             element.remove();
             deleteIcon.src = "../photos/trash-full.png";
         }
 
-        if (header != null) header.style.cursor = 'default';
-        else element.style.cursor = 'default';
+        header.style.cursor = 'default';
         document.onmouseup = null;
         document.onmousemove = null;
     }
 }
+//#endregion
 
 //#region Display project with project preview
 document.querySelectorAll(".vscode-project-preview").forEach((element) => {
@@ -425,11 +418,11 @@ document.querySelectorAll(".app").forEach((element) => {
 //#endregion
 
 //#region Painting
-const canvas = document.getElementById('canvas');
-const context = canvas.getContext('2d');
+const paintingCanvas = document.getElementById('paintingCanvas');
+const context = paintingCanvas.getContext('2d');
 
 context.fillStyle = '#FFFFFF';
-context.fillRect(0, 0, canvas.width, canvas.height);
+context.fillRect(0, 0, paintingCanvas.width, paintingCanvas.height);
 
 let isDrawing = false;
 
@@ -437,10 +430,10 @@ let lineWidth = 1;
 let lineCap = 'round';
 let lineColor = '#000000';
 
-canvas.addEventListener('mousedown', startDrawing);
-canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mouseup', stopDrawing);
-canvas.addEventListener('mouseout', stopDrawing);
+paintingCanvas.addEventListener('mousedown', startDrawing);
+paintingCanvas.addEventListener('mousemove', draw);
+paintingCanvas.addEventListener('mouseup', stopDrawing);
+paintingCanvas.addEventListener('mouseout', stopDrawing);
 
 function startDrawing(e) {
     isDrawing = true;
@@ -450,7 +443,7 @@ function startDrawing(e) {
 function draw(e) {
     if (!isDrawing) return;
     
-    const pos = getMousePos(canvas, e);
+    const pos = getMousePos(paintingCanvas, e);
     const x = pos.x;
     const y = pos.y;
 
@@ -465,10 +458,10 @@ function draw(e) {
     context.moveTo(x, y);
 }
 
-function getMousePos(canvas, evt) {
-    var rect = canvas.getBoundingClientRect(),
-        scaleX = canvas.width / rect.width,
-        scaleY = canvas.height / rect.height;
+function getMousePos(paintingCanvas, evt) {
+    var rect = paintingCanvas.getBoundingClientRect(),
+        scaleX = paintingCanvas.width / rect.width,
+        scaleY = paintingCanvas.height / rect.height;
 
     return {
         x: (evt.clientX - rect.left) * scaleX,
@@ -483,8 +476,6 @@ function stopDrawing() {
 
 document.getElementById("lineWidthSlider").addEventListener("change", (event) => {
     const element = event.target;
-    console.log(element);
-    console.log(element.value);
     lineWidth = element.value;
 });
 
@@ -498,9 +489,13 @@ document.querySelector('.painting-card-body img').addEventListener("click", () =
     document.querySelector(".canvas-sidebar").style.display = "flex";
 });
 
-document.querySelector('.canvas-sidebar img').addEventListener("click", () => {
+document.querySelector('.canvas-sidebar img:nth-of-type(1)').addEventListener("click", () => {
     document.querySelector(".canvas-sidebar").style.display = "none";
 });
+
+document.querySelector(".canvas-sidebar > img:nth-of-type(2)").addEventListener("click", () => {
+    context.clearRect(0, 0, paintingCanvas.width, paintingCanvas.height);
+})
 //#endregion
 
 //#region Sticky note
@@ -526,25 +521,32 @@ element.addEventListener("mousedown", (event) => {
     let cursorX = event.clientX;
     let cursorY = event.clientY;
 
-    const sticky = document.createElement('img');
-    sticky.src = "../photos/sticky-note2.png";
-    sticky.alt = 'sticky';
-    sticky.width = 200;
-    sticky.height = 200;
-    sticky.classList.add('new-sticky');
+    const sticky = document.createElement('div');
+    sticky.classList.add('sticky-container');
+
+    const stickyHeader = document.createElement('section');
+    stickyHeader.classList.add('sticky-container-header');
+
+    const stickyImg = document.createElement('img');
+    stickyImg.src = "../photos/sticky-note2.png";
+    stickyImg.alt = 'sticky';
+    stickyImg.width = 200;
+    stickyImg.height = 200;
+
+    const text = document.createElement('textarea');
+    text.setAttribute('placeholder', 'Enter text here');
+    text.maxLength = 90;
+    text.classList.add("sticky-text");
+
+    sticky.appendChild(stickyHeader);
+    sticky.appendChild(stickyImg);
+    sticky.appendChild(text);
 
     sticky.style.left = cursorX + 'px';
     sticky.style.top = cursorY + 'px';
 
     document.body.appendChild(sticky);
     makeDraggable(sticky);
-
-    const text = document.createElement('input');
-    text.setAttribute('type', 'text');
-    text.setAttribute('placeholder', 'Enter text here');
-    text.classList.add("sticky-text");
-    sticky.appendChild(text);
-    console.log(sticky);
 
     document.addEventListener("mousemove", onMouseMove);
     document.addEventListener("mouseup", onMouseUp);
@@ -588,4 +590,79 @@ function checkTime(i) {
 }
 
 startTime();
+//#endregion
+
+//#region Canvas clock
+const clockCanvas = document.querySelector(".clock-card-body canvas");
+const ctx = clockCanvas.getContext("2d");
+
+let radius = 150;
+ctx.translate(clockCanvas.width / 2, clockCanvas.height / 2);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+    drawFace(ctx, radius);
+    drawNumbers(ctx, radius);
+    drawTime(ctx, radius);
+}
+  
+function drawFace(ctx, radius) {  
+    ctx.beginPath();
+    ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+
+    ctx.lineWidth = radius*0.1;
+    ctx.stroke();
+  
+    ctx.beginPath();
+    ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
+    ctx.fillStyle = 'black';
+    ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+    ctx.font = radius * 0.15 + "px arial";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    for(let num = 1; num < 13; num++){
+        let ang = num * Math.PI / 6;
+        ctx.rotate(ang);
+        ctx.translate(0, -radius * 0.85);
+        ctx.rotate(-ang);
+        ctx.fillText(num.toString(), 0, 0);
+        ctx.rotate(ang);
+        ctx.translate(0, radius * 0.85);
+        ctx.rotate(-ang);
+    }
+}
+
+function drawTime(ctx, radius) {
+    const now = new Date();
+    let hour = now.getHours();
+    let minute = now.getMinutes();
+    let second = now.getSeconds();
+
+    hour = hour%12;
+    hour = (hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+
+    minute = (minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+
+    second = (second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+  
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
 //#endregion

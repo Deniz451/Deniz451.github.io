@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="navbar">
@@ -31,7 +34,8 @@
                 <p class="navbar-section" data-translate="language">Language</p>
                 <div class="navbar-section-dropdown">
                     <p>English</p>
-                    <p>Czech</p>
+                    <p>Čeština</p>
+                    <p>Русский</p>
                 </div>
             </div>
             
@@ -341,7 +345,9 @@
                 <button class="button-maximize" data-target=".clock-card"></button>
             </section>
         </section>
-        <section class="clock-card-body"></section>
+        <section class="clock-card-body">
+            <canvas  width="850" height="450"></canvas>
+        </section>
     </div>
 
     <div class="settings-card app-window">
@@ -428,8 +434,9 @@
                     <button value="#a0a0a0"></button>
                     <button value="#000000"></button>
                 </div>
+                <img src="../icons/clear.png" alt="clear" width="30px" height="30px">
             </section>
-            <canvas id="canvas" width="765" height="475"></canvas>
+            <canvas id="paintingCanvas" width="765" height="475"></canvas>
         </section>
     </div>
 
