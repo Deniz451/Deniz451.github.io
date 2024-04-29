@@ -1,26 +1,26 @@
-//#region Alert card
-const alertCard = document.querySelector(".alert-card");
+//#region Attention card
+const attentionCard = document.querySelector(".attention-card");
 
 document.addEventListener('DOMContentLoaded', function() {
     const hasVisited = localStorage.getItem('hasVisited');
 
     if (hasVisited === null || hasVisited === undefined) {
-        alertCard.style.display = "block";
+        attentionCard.style.display = "block";
     }
 });
 
-const alertCardInitialPosition = {
-    top: alertCard.style.top,
-    left: alertCard.style.left
+const attentionCardInitialPosition = {
+    top: attentionCard.style.top,
+    left: attentionCard.style.left
 };
 
-makeDraggable(alertCard);
+makeDraggable(attentionCard);
 
-alertCard.style.top = alertCardInitialPosition.top;
-alertCard.style.left = alertCardInitialPosition.left;
+attentionCard.style.top = attentionCardInitialPosition.top;
+attentionCard.style.left = attentionCardInitialPosition.left;
 
-document.getElementById("alert-card-button-close").addEventListener("click", () => {
-    alertCard.style.display = "none";
+document.getElementById("attention-card-button-close").addEventListener("click", () => {
+    attentionCard.style.display = "none";
     localStorage.setItem('hasVisited', true);
 });
 //#endregion
@@ -202,9 +202,11 @@ function makeDraggable(element) {
             pos4 <= deleteRect.bottom &&
             element.classList[0] === "sticky-container") {
             
-            console.log("added to trash bin");
+            deletedItemsCount++;
+            deletedItemsContent.push(element.querySelector('textarea').value);
             element.remove();
             deleteIcon.src = "../photos/trash-full.png";
+            updateTrashBin();
         }
 
         header.style.cursor = 'default';
@@ -259,14 +261,17 @@ document.querySelectorAll(".unity-project-preview").forEach((element) => {
 //#endregion
 
 //#region Enter/exit full screen
-document.getElementById('full-screen-request-button').addEventListener('click', () => {
+const fullScreenBtn = document.getElementById('full-screen-request-button')
+fullScreenBtn.addEventListener('click', () => {
     if (document.fullscreenElement || 
         document.webkitFullscreenElement || 
         document.mozFullScreenElement || 
         document.msFullscreenElement) {
         exitFullscreen();
+        fullScreenBtn.src = "../icons/zoom.png"
     } else {
         requestFullscreen();
+        fullScreenBtn.src = "../icons/unzoom.png"
     }
 });
 
@@ -501,7 +506,6 @@ document.querySelector(".canvas-sidebar > img:nth-of-type(2)").addEventListener(
 //#region Sticky note
 const element = document.querySelector('.stickies-card-body img');
 let isDragging = false;
-let hasTextInput;
 
 element.addEventListener("mouseenter", () => {
     element.style.cursor = 'grab';
@@ -664,5 +668,45 @@ function drawHand(ctx, pos, length, width) {
     ctx.lineTo(0, -length);
     ctx.stroke();
     ctx.rotate(-pos);
+}
+//#endregion
+
+//#region Trash bin
+let deletedItemsArr = [];
+let deletedItemsContent = [];
+let deletedItemsCount = 0;
+const trashBinBody = document.querySelector(".trash-card-body");
+const alertCard = document.querySelector(".alert-card");
+
+function updateTrashBin(){
+    const deletedItemName = document.createElement('p');
+    deletedItemName.textContent = "Sticky note " + deletedItemsCount;
+    deletedItemsArr.push(deletedItemName.innerHTML);
+    deletedItemName.addEventListener("click", displayAlert);
+    trashBinBody.appendChild(deletedItemName);
+};
+
+function displayAlert() {
+    alertCard.style.display = "block";
+}
+
+document.getElementById("alert-card-button-no").addEventListener("click", () => {
+    alertCard.style.display = "none";
+});
+document.getElementById("alert-card-button-yes").addEventListener("click", function() {
+    alertCard.style.display = "none";
+    restoreDeletedItem();
+});
+
+function restoreDeletedItem(){
+    console.log(deletedItemsCount);
+    deletedItemsCount--;
+    console.log(deletedItemsCount);
+
+
+    if (deletedItemsCount == 0){
+        const deleteIcon = document.getElementById('trash-bin');
+        deleteIcon.src = "../photos/trash-empty.png";
+    }
 }
 //#endregion

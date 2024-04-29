@@ -138,6 +138,10 @@ html, body {
     color: white;
     font-size: 13px;
 }
+
+.navbar-section-dropdown img {
+    margin-left: 5px;
+}
 /*#endregion*/
 
 /*#region Taskbar*/
@@ -1178,6 +1182,13 @@ hr{
     border-bottom-right-radius: 10px;
     border: solid #a2a2a2 1px;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.trash-card-body > p:hover {
+    background-color: rgba(0, 0, 0, 0.219);
+    cursor: pointer;
 }
 /*#endregion*/
 
@@ -1538,8 +1549,8 @@ hr{
 }
 /*#endregion*/
 
-/*#region Aler card*/
-.alert-card{
+/*#region Attention card*/
+.attention-card{
     width: 400px;
     height: 200px;
     position: absolute;
@@ -1550,7 +1561,7 @@ hr{
     user-select: none;
 }
 
-.alert-card-header{
+.attention-card-header{
     width: 100%;
     height: 10%;
     background: linear-gradient(to bottom, #eaebed, #d2d1d2);
@@ -1560,7 +1571,7 @@ hr{
     cursor: move;
 }
 
-.alert-card-body{
+.attention-card-body{
     width: 100%;
     height: 90%;
     background-color: white;
@@ -1573,7 +1584,7 @@ hr{
     justify-content: center;
 }
 
-.alert-card-body-image{
+.attention-card-body-image{
     width: 25%;
     height: 100%;
     display: flex;
@@ -1581,7 +1592,7 @@ hr{
     justify-content: center;
 }
 
-.alert-card-body-text{
+.attention-card-body-text{
     width: 75%;
     height: 100%;
     display: flex;
@@ -1590,7 +1601,7 @@ hr{
     gap: 20px;
 }
 
-.alert-card-body-text > button{
+.attention-card-body-text > button{
     width: 75px;
     height: 25px;
     align-self: flex-end;
@@ -1601,14 +1612,85 @@ hr{
     border-radius: 5px;
 }
 
-.alert-card-body-text > button:hover{
+.attention-card-body-text > button:hover{
     background: linear-gradient(to bottom, #7cbcfc, #2d88ff);
+    cursor: pointer;
 }
 
-.alert-card-body-image > img{
+.attention-card-body-image > img{
     margin-bottom: 70px;
 }
 
+/*#endregion*/
+
+/*#region Alert card*/
+.alert-card{
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    user-select: none;
+    z-index: 5;
+}
+
+.alert-card-header{
+    width: 100%;
+    height: 15%;
+    background: linear-gradient(to bottom, #eaebed, #d2d1d2);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: solid rgb(203,202,201) 1px;
+}
+
+.alert-card-body{
+    width: 100%;
+    height: 85%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: solid rgb(203,202,201) 1px;
+    border-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.alert-card-body-text{
+    width: 90%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-card-body-buttons{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.alert-card-body-buttons > button{
+    width: 55px;
+    height: 25px;
+    align-self: flex-end;
+    background: linear-gradient(to bottom, #5eaeff, #0c75ff);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.alert-card-body-buttons > button:hover{
+    background: linear-gradient(to bottom, #7cbcfc, #2d88ff);
+    cursor: pointer;
+}
 /*#endregion*/
 
 /*#region Mobile*/
