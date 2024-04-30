@@ -308,6 +308,7 @@ document.querySelectorAll(".mobile-app").forEach((element) => {
         target.style.display = "block";
         Array.from(target.children).forEach(child => {
             child.style.display = "flex";
+            document.querySelector(".mobile-taskbar").style.display = "none";
         });
     }
     });
@@ -319,6 +320,7 @@ document.querySelectorAll(".desktop-mobile-app-navbar-close-icon").forEach((elem
     element.addEventListener("click", () => {
     const target = document.querySelector(element.dataset.target)
     target.style.display = "none";
+    document.querySelector(".mobile-taskbar").style.display = "flex";
     });
 });
 //#endregion
@@ -583,6 +585,7 @@ function startTime() {
     h = h % 12 || 12;
     m = checkTime(m);
     document.querySelector('.navbar-time').innerHTML =  month + " " + day + " " + h + ":" + m + " " + ampm;
+    document.querySelector('.mobile-header-time').innerHTML = h + ":" + m;
     setTimeout(startTime, 1000);
 }
 

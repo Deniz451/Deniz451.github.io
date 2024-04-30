@@ -15,55 +15,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="navbar">
-        <section class="navbar-icons-left">
-            <p class="taskbar-icons"><b>Preview</b></p>
-            <p class="taskbar-icons">File</p>
-            <p class="taskbar-icons">Edit</p>
-            <p class="taskbar-icons">View</p>
+    <div class="mobile">
+        <header class="mobile-header">
+            <div class="mobile-header-time"></div>
+            <section class="mobile-header-icons">
+                <img src="../icons/zoom.png" alt="zoom" width="16px" height="16px">
+                <img src="../icons/wifi.png" alt="wifi" width="16px" height="16px">
+                <img src="../icons/signal.png" alt="signal" width="16px" height="16px">
+            </section>
+        </header>
 
-            <div class="navbar-dropdown-container">
-                <p class="navbar-section" data-translate="language">Theme</p>
-                <div class="navbar-section-dropdown">
-                    <p>Light</p>
-                    <p>Dark</p>
-                </div>
-            </div>
+        <div class="mobile-apps-container">
+            <section class="desktop-mobile-row">
+                <img src="..\photos\notepad.png" alt="notepad" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-notepad">
+                <img src="..\photos\blender.svg.png" alt="blender" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-blender">
+                <img src="..\photos\vscode.png" alt="vscode" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-vscode">
+                <img src="..\photos\unity.svg" alt="unity" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-unity">
+            </section>
+            <section class="desktop-mobile-row">
+                <img src="../photos/email3.png" alt="email" class="app" width="50px" height="50px" data-target=".desktop-mobile-app-email">
+                <img src="../photos/calculator.png" alt="calculator" class="app" width="50px" height="50px" data-target=".caldesktop-mobile-app-calculator">
+                <img src="../photos/clock.png" alt="clock" class="app" width="50px" height="50px" data-target=".desktop-mobile-app-clock">
+                <img src="../photos/contacts.png" alt="contacts" class="app" width="50px" height="50px" data-target=".desktop-mobile-app-contacts">
+            </section>
+            <section class="desktop-mobile-row">
+                <img src="../photos/photos.png" alt="photos" class="app" width="50px" height="50px" data-target=".desktop-mobile-app-photos">
+                <img src="../photos/music.png" alt="music" class="app" width="50px" height="50px" data-target=".desktop-mobile-app-music">
+                <img src="../photos/paint.png" alt="painting" class="app" width="50px" height="50px" data-target=".desktop-mobile-app-painting">
+                <img src="../photos/settings.png" alt="settings" class="app" width="50px" height="50px" data-target=".desktop-mobile-app-settings">
+            </section>
+        </div>
 
-            <div class="navbar-dropdown-container">
-                <p class="navbar-section" data-translate="language">Language</p>
-                <div class="navbar-section-dropdown">
-                    <p>English</p>
-                    <p>Čeština</p>
-                    <p>Русский</p>
-                </div>
-            </div>
-            
-            <div class="navbar-dropdown-container">
-                <p class="navbar-section">Socials</p>
-                <div class="navbar-section-dropdown">
-                    <a href="https://www.instagram.com/denis.resitko/">Instagram <img src="../icons/link.png" alt="link" width="9px" height="9px"></a>
-                    <a href="https://www.facebook.com/denis.resitko/">Facebook <img src="../icons/link.png" alt="link" width="9px" height="9px"></a>
-                    <a href="https://github.com/Deniz451">GitHub <img src="../icons/link.png" alt="link" width="9px" height="9px"></a>
-                </div>
-            </div>
-            
-            <p class="taskbar-icons">Help</p>
-
-        </section>
-        <section class="navbar-icons-right">
-            <div class="navbar-time"></div>
-            <img src="../icons/battery.png" alt="battery" class="taskbar-icons" width="16px" height="16px">
-            <img src="../icons/wifi.png" alt="wifi" class="taskbar-icons" width="16px" height="16px">
-            <img src="../icons/zoom.png" alt="zoom" class="taskbar-icons" id="full-screen-request-button" width="16px" height="16px">
-        </section>
-    </header>
-
-    <div class="desktop-mobile">
-        <img src="..\photos\notepad.png" alt="notepad" class="mobile-app" width="35px" height="35px" data-target=".desktop-mobile-app-notepad">
-        <img src="..\photos\blender.svg.png" alt="blender" class="mobile-app" width="35px" height="35px" data-target=".desktop-mobile-app-blender">
-        <img src="..\photos\vscode.png" alt="vscode" class="mobile-app" width="35px" height="35px" data-target=".desktop-mobile-app-vscode">
-        <img src="..\photos\unity.svg" alt="unity" class="mobile-app" width="35px" height="35px" data-target=".desktop-mobile-app-unity">
 
         <div class="desktop-mobile-app-notepad">
             <header class="desktop-mobile-app-navbar">
@@ -72,22 +54,21 @@
             </header>
             <section class="mobile-notepad">
                 <article class="mobile-notepad-body">
-                    <br>
+                    <br> <br> <br>
                     <p>Hello, I’m Denis!</p>
                     <br>
-                    <p>I’m a computer science student at <a href="https://www.ssps.cz/">SSPS</a>.</p>
+                    <p>I’m a computer science student at Smíchovská průmyslová škola a gymnázium (<a href="https://www.ssps.cz/">SSPS</a>)</p>
                     <p>You can find out about me and my projects more in this portfolio i made just for you!</p>
                     <p>Have a look around my desktop and see if you can find anything interesting.</p>
-                    <p>If any of the projects caught your attantion, you can find out more about them on my <a href="https://www.github.com/">GitHub</a></p>
-                    <p>If you’re having trouble finding anything that interests you, you can alwas look in the "Help" tab in the top left corner of the desktop</p>
+                    <p>If any of the projects caught your attantion, you can find out more about them on my <a href="https://github.com/Deniz451">GitHub</a></p>
+                    <p>If you’re having trouble finding anything that interests you, you can alwas look in the "Help" tab in the top left corner of the desktop.</p>
                     <br>
                     <p>Have fun and enjoy!</p>
                     <br> <br> <br>
-                    <p>Don’t hesitate to contact me!</p>
+                    <p>Don’t hesitate to <u class="app" data-target=".email">contact me!</u></p>
                     <p>I’m open to collaborations or job offers.</p>
                     <br>
-                    <a href="https://www.instagram.com/">Instagram</a>
-                    <p>Num.: 123 123 123</p>
+                    <p>Num.: +420 730 983 943</p>
                 </article>
             </section>
         </div>
@@ -124,411 +105,466 @@
             <section class="unity-mobile-project-3"></section>
             <section class="unity-mobile-project-4"></section>
         </div>
+
+        <div class="mobile-taskbar">
+            <img src="..\photos\notepad.png" alt="notepad" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-notepad">
+            <img src="..\photos\blender.svg.png" alt="blender" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-blender">
+            <img src="..\photos\vscode.png" alt="vscode" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-vscode">
+            <img src="..\photos\unity.svg" alt="unity" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-unity">
+        </div>
     </div>
 
-    <div class="notepad-card app-window">
-        <section class="notepad-card-header">
-            <section class="buttons">
-                <button class="button-close" data-target=".notepad-card"></button>
-                <button class="button-minimize" data-target=".notepad-card"></button>
-                <button class="button-maximize" data-target=".notepad-card"></button>
+    <div class="computer">
+        <header class="navbar">
+            <section class="navbar-icons-left">
+                <p class="taskbar-icons"><b>Preview</b></p>
+                <p class="taskbar-icons">File</p>
+                <p class="taskbar-icons">Edit</p>
+                <p class="taskbar-icons">View</p>
+    
+                <div class="navbar-dropdown-container">
+                    <p class="navbar-section" data-translate="language">Theme</p>
+                    <div class="navbar-section-dropdown">
+                        <p>Light</p>
+                        <p>Dark</p>
+                    </div>
+                </div>
+    
+                <div class="navbar-dropdown-container">
+                    <p class="navbar-section" data-translate="language">Language</p>
+                    <div class="navbar-section-dropdown">
+                        <p>English</p>
+                        <p>Čeština</p>
+                        <p>Русский</p>
+                    </div>
+                </div>
+                
+                <div class="navbar-dropdown-container">
+                    <p class="navbar-section">Socials</p>
+                    <div class="navbar-section-dropdown">
+                        <a href="https://www.instagram.com/denis.resitko/">Instagram <img src="../icons/link.png" alt="link" width="9px" height="9px"></a>
+                        <a href="https://www.facebook.com/denis.resitko/">Facebook <img src="../icons/link.png" alt="link" width="9px" height="9px"></a>
+                        <a href="https://github.com/Deniz451">GitHub <img src="../icons/link.png" alt="link" width="9px" height="9px"></a>
+                    </div>
+                </div>
+                
+                <p class="taskbar-icons">Help</p>
+    
             </section>
-        </section>
-        <section class="notepad-card-body">
-            <br>
-            <p>Hello, I’m Denis!</p>
-            <br>
-            <p>I’m a computer science student at Smíchovská průmyslová škola a gymnázium (<a href="https://www.ssps.cz/">SSPS</a>)</p>
-            <p>You can find out about me and my projects more in this portfolio i made just for you!</p>
-            <p>Have a look around my desktop and see if you can find anything interesting.</p>
-            <p>If any of the projects caught your attantion, you can find out more about them on my <a href="https://github.com/Deniz451">GitHub</a></p>
-            <p>If you’re having trouble finding anything that interests you, you can alwas look in the "Help" tab in the top left corner of the desktop.</p>
-            <br>
-            <p>Have fun and enjoy!</p>
-            <br> <br> <br>
-            <p>Don’t hesitate to <u class="app" data-target=".email">contact me!</u></p>
-            <p>I’m open to collaborations or job offers.</p>
-            <br>
-            <p>Num.: +420 730 983 943</p>
-        </section>
-    </div>
+            <section class="navbar-icons-right">
+                <div class="navbar-time"></div>
+                <img src="../icons/battery.png" alt="battery" class="taskbar-icons" width="16px" height="16px">
+                <img src="../icons/wifi.png" alt="wifi" class="taskbar-icons" width="16px" height="16px">
+                <img src="../icons/zoom.png" alt="zoom" class="taskbar-icons" id="full-screen-request-button" width="16px" height="16px">
+            </section>
+        </header>
 
-    <div class="email-card app-window">
-        <section class="email-card-header">
-            <section class="buttons">
-                <button class="button-close" data-target=".email-card"></button>
-                <button class="button-minimize" data-target=".email-card"></button>
-                <button class="button-maximize" data-target=".email-card"></button>
-            </section>
-        </section>
-        <section class="email-card-body">
-            <form action="https://formspree.io/f/mzbnyqna" method="POST">
-                <section class="form-container">
-                    <div class="input-group">
-                        <label for="first-name">Your Name</label>
-                        <input type="text" name="first-name" id="first-name"placeholder="First Name" autocomplete="on">
-                        <input type="text" name="last-name" id="last-name"placeholder="Last Name" autocomplete="on">
-                    </div>
-                    <div class="input-group">
-                        <label for="email">Your Email*</label>
-                        <input type="email" name="email" id="email" placeholder="example@email.com" autocomplete="on">
-                    </div>
-                    <div class="input-group">
-                        <label for="number1">Phone</label>
-                        <input type="text" name="number1" id="number1" placeholder="###" autocomplete="off">
-                        <input type="text" name="number2" id="number2" placeholder="###" autocomplete="off">
-                        <input type="text" name="number3" id="number3" placeholder="###" autocomplete="off">
-                    </div>
-                    <div class="input-group">
-                        <label for="subject">Message Subject*</label>
-                        <input type="text" name="otherSubject" id="otherSubject" style="display: none;" placeholder="Subject" autocomplete="off">
-                        <select name="subject" id="subject">
-                            <option value="" disabled selected>Subject</option>
-                            <option value="Colaboration">Colaboration</option>
-                            <option value="work-offer">Work offer</option>
-                            <option value="question">Question</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label for="content">Message*</label>
-                        <textarea id="content" name="content" maxlength="400" autocomplete="off"></textarea>
-                        <span id="character-counter">0/400</span>
-                    </div>
-                    <hr>
-                    <input type="submit" name="submit" value="SEND MAIL">
+        <div class="notepad-card app-window">
+            <section class="notepad-card-header">
+                <section class="buttons">
+                    <button class="button-close" data-target=".notepad-card"></button>
+                    <button class="button-minimize" data-target=".notepad-card"></button>
+                    <button class="button-maximize" data-target=".notepad-card"></button>
                 </section>
-            </form>
-        </section>
-    </div>
-
-    <div class="blender-card app-window">
-        <section class="blender-card-header">
-            <section class="buttons">
-                <button class="button-close" data-target=".blender-card"></button>
-                <button class="button-minimize" data-target=".blender-card"></button>
-                <button class="button-maximize" data-target=".blender-card"></button>
             </section>
-        </section>
-        <section class="blender-card-body">
-            <section class="blender-card-body-navbar">
-                <div class="blender-card-body-navbar-projects-container">
-                    <article class="blender-project-1-preview blender-project-preview" data-target=".blender-project-1">
-                        <p class="project-preview-name">Project 1</p>
-                    </article>
-                    <article class="blender-project-2-preview blender-project-preview" data-target=".blender-project-2">
-                        <p class="project-preview-name">Project 2</p>
-                    </article>
-                    <article class="blender-project-3-preview blender-project-preview" data-target=".blender-project-3">
-                        <p class="project-preview-name">Project 3</p>
-                    </article>
-                    <article class="blender-project-4-preview blender-project-preview" data-target=".blender-project-4">
-                        <p class="project-preview-name">Project 4</p>
-                    </article>
-                </div>
+            <section class="notepad-card-body">
+                <br>
+                <p>Hello, I’m Denis!</p>
+                <br>
+                <p>I’m a computer science student at Smíchovská průmyslová škola a gymnázium (<a href="https://www.ssps.cz/">SSPS</a>)</p>
+                <p>You can find out about me and my projects more in this portfolio i made just for you!</p>
+                <p>Have a look around my desktop and see if you can find anything interesting.</p>
+                <p>If any of the projects caught your attantion, you can find out more about them on my <a href="https://github.com/Deniz451">GitHub</a></p>
+                <p>If you’re having trouble finding anything that interests you, you can alwas look in the "Help" tab in the top left corner of the desktop.</p>
+                <br>
+                <p>Have fun and enjoy!</p>
+                <br> <br> <br>
+                <p>Don’t hesitate to <u class="app" data-target=".email">contact me!</u></p>
+                <p>I’m open to collaborations or job offers.</p>
+                <br>
+                <p>Num.: +420 730 983 943</p>
             </section>
-            <section class="blender-card-body-main">
-                <div class="blender-card-body-main-projects-container">
-                    <article class="blender-project-1"></article>
-                    <article class="blender-project-2"></article>
-                    <article class="blender-project-3"></article>
-                    <article class="blender-project-4"></article>
-                </div>
+        </div>
+    
+        <div class="email-card app-window">
+            <section class="email-card-header">
+                <section class="buttons">
+                    <button class="button-close" data-target=".email-card"></button>
+                    <button class="button-minimize" data-target=".email-card"></button>
+                    <button class="button-maximize" data-target=".email-card"></button>
+                </section>
             </section>
-        </section>
-    </div>
-
-    <div class="vscode-card app-window">
-        <section class="vscode-card-header">
-            <section class="buttons">
-                <button class="button-close" data-target=".vscode-card"></button>
-                <button class="button-minimize" data-target=".vscode-card"></button>
-                <button class="button-maximize" data-target=".vscode-card"></button>
+            <section class="email-card-body">
+                <form action="https://formspree.io/f/mzbnyqna" method="POST">
+                    <section class="form-container">
+                        <div class="input-group">
+                            <label for="first-name">Your Name</label>
+                            <input type="text" name="first-name" id="first-name"placeholder="First Name" autocomplete="on">
+                            <input type="text" name="last-name" id="last-name"placeholder="Last Name" autocomplete="on">
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Your Email*</label>
+                            <input type="email" name="email" id="email" placeholder="example@email.com" autocomplete="on">
+                        </div>
+                        <div class="input-group">
+                            <label for="number1">Phone</label>
+                            <input type="text" name="number1" id="number1" placeholder="###" autocomplete="off">
+                            <input type="text" name="number2" id="number2" placeholder="###" autocomplete="off">
+                            <input type="text" name="number3" id="number3" placeholder="###" autocomplete="off">
+                        </div>
+                        <div class="input-group">
+                            <label for="subject">Message Subject*</label>
+                            <input type="text" name="otherSubject" id="otherSubject" style="display: none;" placeholder="Subject" autocomplete="off">
+                            <select name="subject" id="subject">
+                                <option value="" disabled selected>Subject</option>
+                                <option value="Colaboration">Colaboration</option>
+                                <option value="work-offer">Work offer</option>
+                                <option value="question">Question</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="content">Message*</label>
+                            <textarea id="content" name="content" maxlength="400" autocomplete="off"></textarea>
+                            <span id="character-counter">0/400</span>
+                        </div>
+                        <hr>
+                        <input type="submit" name="submit" value="SEND MAIL">
+                    </section>
+                </form>
             </section>
-        </section>
-        <section class="vscode-card-body">
-            <section class="vscode-card-body-navbar">
-                <div class="vscode-card-body-navbar-projects-container">
-                    <article class="vscode-project-1-preview vscode-project-preview" data-target=".vscode-project-1">
-                        <p class="project-preview-name">Project 1</p>
-                    </article>
-                    <article class="vscode-project-2-preview vscode-project-preview" data-target=".vscode-project-2">
-                        <p class="project-preview-name">Project 2</p>
-                    </article>
-                    <article class="vscode-project-3-preview vscode-project-preview" data-target=".vscode-project-3">
-                        <p class="project-preview-name">Project 3</p>
-                    </article>
-                    <article class="vscode-project-4-preview vscode-project-preview" data-target=".vscode-project-4">
-                        <p class="project-preview-name">Project 4</p>
-                    </article>
-                </div>
+        </div>
+    
+        <div class="blender-card app-window">
+            <section class="blender-card-header">
+                <section class="buttons">
+                    <button class="button-close" data-target=".blender-card"></button>
+                    <button class="button-minimize" data-target=".blender-card"></button>
+                    <button class="button-maximize" data-target=".blender-card"></button>
+                </section>
             </section>
-            <section class="vscode-card-body-main">
-                <div class="vscode-card-body-main-projects-container">
-                    <article class="vscode-project-1" data-target=".vscode-card"></article>
-                    <article class="vscode-project-2" data-target=".vscode-card"></article>
-                    <article class="vscode-project-3" data-target=".vscode-card"></article>
-                    <article class="vscode-project-4" data-target=".vscode-card"></article>
-                </div>
+            <section class="blender-card-body">
+                <section class="blender-card-body-navbar">
+                    <div class="blender-card-body-navbar-projects-container">
+                        <article class="blender-project-1-preview blender-project-preview" data-target=".blender-project-1">
+                            <p class="project-preview-name">Project 1</p>
+                        </article>
+                        <article class="blender-project-2-preview blender-project-preview" data-target=".blender-project-2">
+                            <p class="project-preview-name">Project 2</p>
+                        </article>
+                        <article class="blender-project-3-preview blender-project-preview" data-target=".blender-project-3">
+                            <p class="project-preview-name">Project 3</p>
+                        </article>
+                        <article class="blender-project-4-preview blender-project-preview" data-target=".blender-project-4">
+                            <p class="project-preview-name">Project 4</p>
+                        </article>
+                    </div>
+                </section>
+                <section class="blender-card-body-main">
+                    <div class="blender-card-body-main-projects-container">
+                        <article class="blender-project-1"></article>
+                        <article class="blender-project-2"></article>
+                        <article class="blender-project-3"></article>
+                        <article class="blender-project-4"></article>
+                    </div>
+                </section>
             </section>
-        </section>
-    </div>
-
-    <div class="unity-card app-window">
-        <section class="unity-card-header">
-            <section class="buttons">
-                <button class="button-close" data-target=".unity-card"></button>
-                <button class="button-minimize" data-target=".unity-card"></button>
-                <button class="button-maximize" data-target=".unity-card"></button>
+        </div>
+    
+        <div class="vscode-card app-window">
+            <section class="vscode-card-header">
+                <section class="buttons">
+                    <button class="button-close" data-target=".vscode-card"></button>
+                    <button class="button-minimize" data-target=".vscode-card"></button>
+                    <button class="button-maximize" data-target=".vscode-card"></button>
+                </section>
             </section>
-        </section>
-        <section class="unity-card-body">
-            <section class="unity-card-body-navbar">
-                <div class="unity-card-body-navbar-projects-container">
-                    <article class="unity-project-1-preview unity-project-preview" data-target=".unity-project-1">
-                        <p class="project-preview-name">Project 1</p>
-                        <p class="project-preview-name">Descent</p>
-                    </article>
-                    <article class="unity-project-2-preview unity-project-preview" data-target=".unity-project-2">
-                        <p class="project-preview-name">Project 2</p>
-                    </article>
-                    <article class="unity-project-3-preview unity-project-preview" data-target=".unity-project-3">
-                        <p class="project-preview-name">Project 3</p>
-                    </article>
-                    <article class="unity-project-4-preview unity-project-preview" data-target=".unity-project-4">
-                        <p class="project-preview-name">Project 4</p>
-                    </article>
-                </div>
+            <section class="vscode-card-body">
+                <section class="vscode-card-body-navbar">
+                    <div class="vscode-card-body-navbar-projects-container">
+                        <article class="vscode-project-1-preview vscode-project-preview" data-target=".vscode-project-1">
+                            <p class="project-preview-name">Project 1</p>
+                        </article>
+                        <article class="vscode-project-2-preview vscode-project-preview" data-target=".vscode-project-2">
+                            <p class="project-preview-name">Project 2</p>
+                        </article>
+                        <article class="vscode-project-3-preview vscode-project-preview" data-target=".vscode-project-3">
+                            <p class="project-preview-name">Project 3</p>
+                        </article>
+                        <article class="vscode-project-4-preview vscode-project-preview" data-target=".vscode-project-4">
+                            <p class="project-preview-name">Project 4</p>
+                        </article>
+                    </div>
+                </section>
+                <section class="vscode-card-body-main">
+                    <div class="vscode-card-body-main-projects-container">
+                        <article class="vscode-project-1" data-target=".vscode-card"></article>
+                        <article class="vscode-project-2" data-target=".vscode-card"></article>
+                        <article class="vscode-project-3" data-target=".vscode-card"></article>
+                        <article class="vscode-project-4" data-target=".vscode-card"></article>
+                    </div>
+                </section>
             </section>
-            <section class="unity-card-body-main">
-                <div class="unity-card-body-main-projects-container">
-                    <article class="unity-project-1">
-                        <p class="project-name">Descent</p>
-                        <p><u>Info:</u></p>
-                        <p>Descent is my Unity 2d game. It’s a top-down arcade game. Where you need to "descent" through all 9 circles of hell all the way to the lowest circle to fight Satan.</p>
-                        <p><u>Gallery:</u></p>
-                        <section class="gallery">
-                            <img src="../photos/unity-project-1-photo-1.png" alt="photo1" class="photo-slides" width="450px" height="300px">
-                            <img src="../photos/unity-project-1-photo-2.png" alt="photo2" class="photo-slides" width="450px" height="300px">
-                            <img src="../photos/unity-project-1-photo-3.png" alt="photo3" class="photo-slides" width="450px" height="300px">
-                            <section class="indicators-container">
-                                <div class="indicators" data-value="0">1</div>
-                                <div class="indicators" data-value="1">2</div>
-                                <div class="indicators" data-value="2">3</div>
+        </div>
+    
+        <div class="unity-card app-window">
+            <section class="unity-card-header">
+                <section class="buttons">
+                    <button class="button-close" data-target=".unity-card"></button>
+                    <button class="button-minimize" data-target=".unity-card"></button>
+                    <button class="button-maximize" data-target=".unity-card"></button>
+                </section>
+            </section>
+            <section class="unity-card-body">
+                <section class="unity-card-body-navbar">
+                    <div class="unity-card-body-navbar-projects-container">
+                        <article class="unity-project-1-preview unity-project-preview" data-target=".unity-project-1">
+                            <p class="project-preview-name">Project 1</p>
+                            <p class="project-preview-name">Descent</p>
+                        </article>
+                        <article class="unity-project-2-preview unity-project-preview" data-target=".unity-project-2">
+                            <p class="project-preview-name">Project 2</p>
+                        </article>
+                        <article class="unity-project-3-preview unity-project-preview" data-target=".unity-project-3">
+                            <p class="project-preview-name">Project 3</p>
+                        </article>
+                        <article class="unity-project-4-preview unity-project-preview" data-target=".unity-project-4">
+                            <p class="project-preview-name">Project 4</p>
+                        </article>
+                    </div>
+                </section>
+                <section class="unity-card-body-main">
+                    <div class="unity-card-body-main-projects-container">
+                        <article class="unity-project-1">
+                            <p class="project-name">Descent</p>
+                            <p><u>Info:</u></p>
+                            <p>Descent is my Unity 2d game. It’s a top-down arcade game. Where you need to "descent" through all 9 circles of hell all the way to the lowest circle to fight Satan.</p>
+                            <p><u>Gallery:</u></p>
+                            <section class="gallery">
+                                <img src="../photos/unity-project-1-photo-1.png" alt="photo1" class="photo-slides" width="450px" height="300px">
+                                <img src="../photos/unity-project-1-photo-2.png" alt="photo2" class="photo-slides" width="450px" height="300px">
+                                <img src="../photos/unity-project-1-photo-3.png" alt="photo3" class="photo-slides" width="450px" height="300px">
+                                <section class="indicators-container">
+                                    <div class="indicators" data-value="0">1</div>
+                                    <div class="indicators" data-value="1">2</div>
+                                    <div class="indicators" data-value="2">3</div>
+                                </section>
                             </section>
-                        </section>
-                    </article>
-                    <article class="unity-project-2"></article>
-                    <article class="unity-project-3"></article>
-                    <article class="unity-project-4"></article>
-                </div>
+                        </article>
+                        <article class="unity-project-2"></article>
+                        <article class="unity-project-3"></article>
+                        <article class="unity-project-4"></article>
+                    </div>
+                </section>
             </section>
-        </section>
-    </div>
-
-    <div class="calculator-card app-window">
-        <section class="calculator-card-header">
-            <section class="buttons">
-                <button class="button-close" data-target=".calculator-card"></button>
-                <button class="button-minimize" data-target=".calculator-card"></button>
-                <button class="button-maximize" data-target=".calculator-card"></button>
+        </div>
+    
+        <div class="calculator-card app-window">
+            <section class="calculator-card-header">
+                <section class="buttons">
+                    <button class="button-close" data-target=".calculator-card"></button>
+                    <button class="button-minimize" data-target=".calculator-card"></button>
+                    <button class="button-maximize" data-target=".calculator-card"></button>
+                </section>
             </section>
-        </section>
-        <section class="calculator-card-body"></section>
-    </div>
-
-    <div class="clock-card app-window">
-        <section class="clock-card-header">
-            <section class="buttons">
-                <button class="button-close" data-target=".clock-card"></button>
-                <button class="button-minimize" data-target=".clock-card"></button>
-                <button class="button-maximize" data-target=".clock-card"></button>
+            <section class="calculator-card-body"></section>
+        </div>
+    
+        <div class="clock-card app-window">
+            <section class="clock-card-header">
+                <section class="buttons">
+                    <button class="button-close" data-target=".clock-card"></button>
+                    <button class="button-minimize" data-target=".clock-card"></button>
+                    <button class="button-maximize" data-target=".clock-card"></button>
+                </section>
             </section>
-        </section>
-        <section class="clock-card-body">
-            <canvas  width="850" height="450"></canvas>
-        </section>
-    </div>
-
-    <div class="settings-card app-window">
-        <section class="settings-card-header">
-            <section class="buttons">
-                <button class="button-close" data-target=".settings-card"></button>
-                <button class="button-minimize" data-target=".settings-card"></button>
-                <button class="button-maximize" data-target=".settings-card"></button>
+            <section class="clock-card-body">
+                <canvas  width="850" height="450"></canvas>
             </section>
-        </section>
-        <section class="settings-card-body"></section>
-    </div>
-
-    <div class="photos-card app-window">
-        <section class="photos-card-header">
-            <section class="buttons">
-                <button class="button-close" data-target=".photos-card"></button>
-                <button class="button-minimize" data-target=".photos-card"></button>
-                <button class="button-maximize" data-target=".photos-card"></button>
+        </div>
+    
+        <div class="settings-card app-window">
+            <section class="settings-card-header">
+                <section class="buttons">
+                    <button class="button-close" data-target=".settings-card"></button>
+                    <button class="button-minimize" data-target=".settings-card"></button>
+                    <button class="button-maximize" data-target=".settings-card"></button>
+                </section>
             </section>
-        </section>
-        <section class="photos-card-body"></section>
-    </div>
-
-    <div class="contacts-card app-window">
-        <section class="contacts-card-header">
-            <section class="buttons">
-                <button class="button-close" data-target=".contacts-card"></button>
-                <button class="button-minimize" data-target=".contacts-card"></button>
-                <button class="button-maximize" data-target=".contacts-card"></button>
+            <section class="settings-card-body"></section>
+        </div>
+    
+        <div class="photos-card app-window">
+            <section class="photos-card-header">
+                <section class="buttons">
+                    <button class="button-close" data-target=".photos-card"></button>
+                    <button class="button-minimize" data-target=".photos-card"></button>
+                    <button class="button-maximize" data-target=".photos-card"></button>
+                </section>
             </section>
-        </section>
-        <section class="contacts-card-body"></section>
-    </div>
-
-    <div class="music-card app-window">
-        <section class="music-card-header">
-            <section class="buttons">
-                <button class="button-close" data-target=".music-card"></button>
-                <button class="button-minimize" data-target=".music-card"></button>
-                <button class="button-maximize" data-target=".music-card"></button>
+            <section class="photos-card-body"></section>
+        </div>
+    
+        <div class="contacts-card app-window">
+            <section class="contacts-card-header">
+                <section class="buttons">
+                    <button class="button-close" data-target=".contacts-card"></button>
+                    <button class="button-minimize" data-target=".contacts-card"></button>
+                    <button class="button-maximize" data-target=".contacts-card"></button>
+                </section>
             </section>
-        </section>
-        <section class="music-card-body"></section>
-    </div>
-
-    <div class="stickies-card app-window">
-        <section class="stickies-card-header">
-            <section class="buttons">
-                <button class="button-close" data-target=".stickies-card"></button>
-                <button class="button-minimize" data-target=".stickies-card"></button>
-                <button class="button-maximize" data-target=".stickies-card"></button>
+            <section class="contacts-card-body"></section>
+        </div>
+    
+        <div class="music-card app-window">
+            <section class="music-card-header">
+                <section class="buttons">
+                    <button class="button-close" data-target=".music-card"></button>
+                    <button class="button-minimize" data-target=".music-card"></button>
+                    <button class="button-maximize" data-target=".music-card"></button>
+                </section>
             </section>
-        </section>
-        <section class="stickies-card-body">
-            <img src="../photos/sticky-note1.png" alt="sticky-note" width="200px" height="200px">
-        </section>
-    </div>
-
-    <div class="painting-card app-window">
-        <section class="painting-card-header">
-            <section class="buttons">
-                <button class="button-close" data-target=".painting-card"></button>
-                <button class="button-minimize" data-target=".painting-card"></button>
-                <button class="button-maximize" data-target=".painting-card"></button>
+            <section class="music-card-body"></section>
+        </div>
+    
+        <div class="stickies-card app-window">
+            <section class="stickies-card-header">
+                <section class="buttons">
+                    <button class="button-close" data-target=".stickies-card"></button>
+                    <button class="button-minimize" data-target=".stickies-card"></button>
+                    <button class="button-maximize" data-target=".stickies-card"></button>
+                </section>
             </section>
-        </section>
-        <section class="painting-card-body">
-            <img src="../icons/arrow2.png" alt="menu" width="30px" height="30px">
-            <section class="canvas-sidebar">
+            <section class="stickies-card-body">
+                <img src="../photos/sticky-note1.png" alt="sticky-note" width="200px" height="200px">
+            </section>
+        </div>
+    
+        <div class="painting-card app-window">
+            <section class="painting-card-header">
+                <section class="buttons">
+                    <button class="button-close" data-target=".painting-card"></button>
+                    <button class="button-minimize" data-target=".painting-card"></button>
+                    <button class="button-maximize" data-target=".painting-card"></button>
+                </section>
+            </section>
+            <section class="painting-card-body">
                 <img src="../icons/arrow2.png" alt="menu" width="30px" height="30px">
-                <input type="range" min="1" max="10" value="1" id="lineWidthSlider">
-                <div class="color-buttons">
-                    <button value="#ffffff"></button>
-                    <button value="#ffccff"></button>
-                    <button value="#ccffff"></button>
-                    <button value="#0066cc"></button>
-                    <button value="#ffff00"></button>
-                    <button value="#ff9933"></button>
-                    <button value="#66cc00"></button>
-                    <button value="#f00000"></button>
-                    <button value="#b266ff"></button>
-                    <button value="#663300"></button>
-                    <button value="#a0a0a0"></button>
-                    <button value="#000000"></button>
+                <section class="canvas-sidebar">
+                    <img src="../icons/arrow2.png" alt="menu" width="30px" height="30px">
+                    <input type="range" min="1" max="10" value="1" id="lineWidthSlider">
+                    <div class="color-buttons">
+                        <button value="#ffffff"></button>
+                        <button value="#ffccff"></button>
+                        <button value="#ccffff"></button>
+                        <button value="#0066cc"></button>
+                        <button value="#ffff00"></button>
+                        <button value="#ff9933"></button>
+                        <button value="#66cc00"></button>
+                        <button value="#f00000"></button>
+                        <button value="#b266ff"></button>
+                        <button value="#663300"></button>
+                        <button value="#a0a0a0"></button>
+                        <button value="#000000"></button>
+                    </div>
+                    <img src="../icons/clear.png" alt="clear" width="30px" height="30px">
+                </section>
+                <canvas id="paintingCanvas" width="765" height="475"></canvas>
+            </section>
+        </div>
+    
+        <div class="trash-card app-window">
+            <section class="trash-card-header">
+                <section class="buttons">
+                    <button class="button-close" data-target=".trash-card"></button>
+                    <button class="button-minimize" data-target=".trash-card"></button>
+                    <button class="button-maximize" data-target=".trash-card"></button>
+                </section>
+            </section>
+            <section class="trash-card-body"></section>
+        </div>
+    
+        <footer class="taskbar-container">
+            <section class="app-pop-up-container">
+                <div class="app-pop-up notepad-pop-up">Notepad</div>
+                <div class="app-pop-up blender-pop-up">Blender</div>
+                <div class="app-pop-up vscode-pop-up">VS Code</div>
+                <div class="app-pop-up unity-pop-up">Unity</div>
+                <div class="app-pop-up email-pop-up">Mail</div>
+                <div class="app-pop-up calculator-pop-up">Calculator</div>
+                <div class="app-pop-up clock-pop-up">Clock</div>
+                <div class="app-pop-up contacts-pop-up">Contacts</div>
+                <div class="app-pop-up stickies-pop-up">Stickies</div>
+                <div class="app-pop-up photos-pop-up">Photos</div>
+                <div class="app-pop-up music-pop-up">Music</div>
+                <div class="app-pop-up painting-pop-up">Painting</div>
+                <div class="app-pop-up settings-pop-up">Settings</div>
+                <div class="app-pop-up trash-pop-up">Trash bin</div>
+            </section>
+            <section class="taskbar-apps-container">
+                <img src="../photos/notepad.png" alt="notepad" class="app" width="45px" height="45px" data-target=".notepad">
+                <img src="../photos/blender2.png" alt="blender" class="app" width="45px" height="45px" data-target=".blender">
+                <img src="../photos/vscode2.png" alt="vscode" class="app" width="45px" height="45px" data-target=".vscode">
+                <img src="../photos/unity3.png" alt="unity" class="app" width="45px" height="45px" data-target=".unity">
+                <img src="../photos/email3.png" alt="email" class="app" width="45px" height="45px" data-target=".email">
+                <img src="../photos/calculator.png" alt="calculator" class="app" width="45px" height="45px" data-target=".calculator">
+                <img src="../photos/clock.png" alt="clock" class="app" width="45px" height="45px" data-target=".clock">
+                <img src="../photos/contacts.png" alt="contacts" class="app" width="45px" height="45px" data-target=".contacts">
+                <img src="../photos/stickies.png" alt="stickies" class="app" width="45px" height="45px" data-target=".stickies">
+                <img src="../photos/photos.png" alt="photos" class="app" width="45px" height="45px" data-target=".photos">
+                <img src="../photos/music.png" alt="music" class="app" width="45px" height="45px" data-target=".music">
+                <hr>
+                <img src="../photos/paint.png" alt="painting" class="app" width="45px" height="45px" data-target=".painting">
+                <img src="../photos/settings.png" alt="settings" class="app" width="45px" height="45px" data-target=".settings">
+                <img src="../photos/trash-empty.png" alt="trash" id="trash-bin" class="app" width="45px" height="45px" data-target=".trash">
+            </section>
+            <section class="taskbar-dots-container">
+                <div class="notepad-card-dot"></div>
+                <div class="blender-card-dot"></div>
+                <div class="vscode-card-dot"></div>
+                <div class="unity-card-dot"></div>
+                <div class="email-card-dot"></div>
+                <div class="calculator-card-dot"></div>
+                <div class="clock-card-dot"></div>
+                <div class="contacts-card-dot"></div>
+                <div class="stickies-card-dot"></div>
+                <div class="photos-card-dot"></div>
+                <div class="music-card-dot"></div>
+                <div class="painting-card-dot"></div>
+                <div class="settings-card-dot"></div>
+                <div class="trash-card-dot"></div>
+            </section>
+        </footer>
+    
+        <div class="attention-card">
+            <section class="attention-card-header"></section>
+            <section class="attention-card-body">
+                <div class="attention-card-body-image">
+                    <img src="../photos/caution.png" alt="attention" width="70px" height="70px">
                 </div>
-                <img src="../icons/clear.png" alt="clear" width="30px" height="30px">
+                <div class="attention-card-body-text">
+                    <b>Attention!</b>
+                    <p>For better experience i suggest to turn on the fullscreen with the icon in the top right corner</p>
+                    <button id="attention-card-button-close">OK</button>
+                </div>
             </section>
-            <canvas id="paintingCanvas" width="765" height="475"></canvas>
-        </section>
-    </div>
-
-    <div class="trash-card app-window">
-        <section class="trash-card-header">
-            <section class="buttons">
-                <button class="button-close" data-target=".trash-card"></button>
-                <button class="button-minimize" data-target=".trash-card"></button>
-                <button class="button-maximize" data-target=".trash-card"></button>
+        </div>
+    
+        <div class="alert-card">
+            <section class="alert-card-header"></section>
+            <section class="alert-card-body">
+                <div class="alert-card-body-text">
+                    <p>Are you sure you want to restore this item?</p>
+                </div>
+                <div class="alert-card-body-buttons">
+                    <button id="alert-card-button-yes">YES</button>
+                    <button id="alert-card-button-no">NO</button>
+                </div>
             </section>
-        </section>
-        <section class="trash-card-body"></section>
+        </div>
     </div>
 
-    <footer class="taskbar-container">
-        <section class="app-pop-up-container">
-            <div class="app-pop-up notepad-pop-up">Notepad</div>
-            <div class="app-pop-up blender-pop-up">Blender</div>
-            <div class="app-pop-up vscode-pop-up">VS Code</div>
-            <div class="app-pop-up unity-pop-up">Unity</div>
-            <div class="app-pop-up email-pop-up">Mail</div>
-            <div class="app-pop-up calculator-pop-up">Calculator</div>
-            <div class="app-pop-up clock-pop-up">Clock</div>
-            <div class="app-pop-up contacts-pop-up">Contacts</div>
-            <div class="app-pop-up stickies-pop-up">Stickies</div>
-            <div class="app-pop-up photos-pop-up">Photos</div>
-            <div class="app-pop-up music-pop-up">Music</div>
-            <div class="app-pop-up painting-pop-up">Painting</div>
-            <div class="app-pop-up settings-pop-up">Settings</div>
-            <div class="app-pop-up trash-pop-up">Trash bin</div>
-        </section>
-        <section class="taskbar-apps-container">
-            <img src="../photos/notepad.png" alt="notepad" class="app" width="45px" height="45px" data-target=".notepad">
-            <img src="../photos/blender2.png" alt="blender" class="app" width="45px" height="45px" data-target=".blender">
-            <img src="../photos/vscode2.png" alt="vscode" class="app" width="45px" height="45px" data-target=".vscode">
-            <img src="../photos/unity3.png" alt="unity" class="app" width="45px" height="45px" data-target=".unity">
-            <img src="../photos/email3.png" alt="email" class="app" width="45px" height="45px" data-target=".email">
-            <img src="../photos/calculator.png" alt="calculator" class="app" width="45px" height="45px" data-target=".calculator">
-            <img src="../photos/clock.png" alt="clock" class="app" width="45px" height="45px" data-target=".clock">
-            <img src="../photos/contacts.png" alt="contacts" class="app" width="45px" height="45px" data-target=".contacts">
-            <img src="../photos/stickies.png" alt="stickies" class="app" width="45px" height="45px" data-target=".stickies">
-            <img src="../photos/photos.png" alt="photos" class="app" width="45px" height="45px" data-target=".photos">
-            <img src="../photos/music.png" alt="music" class="app" width="45px" height="45px" data-target=".music">
-            <hr>
-            <img src="../photos/paint.png" alt="painting" class="app" width="45px" height="45px" data-target=".painting">
-            <img src="../photos/settings.png" alt="settings" class="app" width="45px" height="45px" data-target=".settings">
-            <img src="../photos/trash-empty.png" alt="trash" id="trash-bin" class="app" width="45px" height="45px" data-target=".trash">
-        </section>
-        <section class="taskbar-dots-container">
-            <div class="notepad-card-dot"></div>
-            <div class="blender-card-dot"></div>
-            <div class="vscode-card-dot"></div>
-            <div class="unity-card-dot"></div>
-            <div class="email-card-dot"></div>
-            <div class="calculator-card-dot"></div>
-            <div class="clock-card-dot"></div>
-            <div class="contacts-card-dot"></div>
-            <div class="stickies-card-dot"></div>
-            <div class="photos-card-dot"></div>
-            <div class="music-card-dot"></div>
-            <div class="painting-card-dot"></div>
-            <div class="settings-card-dot"></div>
-            <div class="trash-card-dot"></div>
-        </section>
-    </footer>
-
-    <div class="attention-card">
-        <section class="attention-card-header"></section>
-        <section class="attention-card-body">
-            <div class="attention-card-body-image">
-                <img src="../photos/caution.png" alt="attention" width="70px" height="70px">
-            </div>
-            <div class="attention-card-body-text">
-                <b>Attention!</b>
-                <p>For better experience i suggest to turn on the fullscreen with the icon in the top right corner</p>
-                <button id="attention-card-button-close">OK</button>
-            </div>
-        </section>
-    </div>
-
-    <div class="alert-card">
-        <section class="alert-card-header"></section>
-        <section class="alert-card-body">
-            <div class="alert-card-body-text">
-                <p>Are you sure you want to restore this item?</p>
-            </div>
-            <div class="alert-card-body-buttons">
-                <button id="alert-card-button-yes">YES</button>
-                <button id="alert-card-button-no">NO</button>
-            </div>
-        </section>
-    </div>
+    
 
     <script src="script.js"></script>
 </body>
