@@ -12,20 +12,87 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="pfp-container">
-        <section class="pfp"></section>
-        <p>Guest</p>
-    </div>
+    <section class="computer">
+        <div class="pfp-container">
+            <section class="pfp"></section>
+            <p>Guest</p>
+        </div>
+    
+        <form id="form">
+            <input type="password" name="password" id="password" placeholder="Enter password"/>
+            <img src="../icons/view.png" alt="view" id="view">
+            <img src="../icons/hide.png" alt="hide"id="hide">
+            <input type="submit" value="Log in" id="submit"/>
+        </form>
+    </section>
 
-    <form id="form">
-        <input type="password" name="password" id="password" placeholder="Enter password"/>
-        <img src="../icons/view.png" alt="view" id="view">
-        <img src="../icons/hide.png" alt="hide"id="hide">
-        <input type="submit" value="Log in" id="submit"/>
-    </form>
+    <section class="mobile-home-screen">
+        
+        <header>
+            <img src="../icons/zoom.png" alt="zoom" width="16px" height="16px">
+            <img src="../icons/wifi.png" alt="wifi" width="16px" height="16px">
+            <img src="../icons/signal.png" alt="signal" width="16px" height="16px">
+        </header>
 
+        <div class="clock-container">
+            <div class="clock-date"></div>
+            <div class="clock-time"></div>
+        </div>
+
+        <footer>
+            <p>Swipe to unlock</p>
+            <hr>
+        </footer>
+    </section>
+
+    <section class="mobile-lock-screen">
+
+        <header>
+            <img src="../icons/zoom.png" alt="zoom" width="16px" height="16px">
+            <img src="../icons/wifi.png" alt="wifi" width="16px" height="16px">
+            <img src="../icons/signal.png" alt="signal" width="16px" height="16px">
+        </header>
+
+        <div class="password-container">
+            <p>Enter Passcode</p>
+            <div class="password-preview">
+                <section class="circle"></section>
+                <section class="circle"></section>
+                <section class="circle"></section>
+                <section class="circle"></section>
+            </div>
+        </div>
+
+        <div class="buttons-container">
+            <section class="buttons-container-row1">
+                <button value="1">1</button>
+                <button value="2">2</button>
+                <button value="3">3</button>
+            </section>
+            <section class="buttons-container-row2">
+                <button value="4">4</button>
+                <button value="5">5</button>
+                <button value="6">6</button>
+            </section>
+            <section class="buttons-container-row3">
+                <button value="7">7</button>
+                <button value="8">8</button>
+                <button value="9">9</button>
+            </section>
+            <section class="buttons-container-row4">
+                <button value="0">0</button>
+            </section>
+        </div>
+
+        <footer>
+            <hr>
+        </footer>
+    </section>
 
     <script src="script.js"></script>
 </body>
