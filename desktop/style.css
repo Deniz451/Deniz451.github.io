@@ -46,6 +46,8 @@ html, body {
 }
 /*#endregion*/
 
+/*#region Computer*/
+
 /*#region Desktop*/
 .app{
     user-select: none;
@@ -1518,96 +1520,6 @@ hr{
 
 /*#endregion*/
 
-/*#region Blender mobile projects*/
-.blender-mobile-project-1{
-    width: 100%;
-    height: 1000px;
-    background-color: purple;
-    display: block;
-}
-
-.blender-mobile-project-2{
-    width: 100%;
-    height: 500px;
-    background-color: yellow;
-    display: none;
-}
-
-.blender-mobile-project-3{
-    width: 100%;
-    height: 1500px;
-    background-color: antiquewhite;
-    display: none;
-}
-
-.blender-mobile-project-4{
-    width: 100%;
-    height: 1500px;
-    background-color: lightcoral;
-    display: none;
-}
-/*#endregion*/
-
-/*#region VSCode mobile projects*/
-.vscode-mobile-project-1{
-    width: 100%;
-    height: 1000px;
-    background-color: pink;
-    display: block;
-}
-
-.vscode-mobile-project-2{
-    width: 100%;
-    height: 500px;
-    background-color: green;
-    display: none;
-}
-
-.vscode-mobile-project-3{
-    width: 100%;
-    height: 1500px;
-    background-color: brown;
-    display: none;
-}
-
-.vscode-mobile-project-4{
-    width: 100%;
-    height: 1500px;
-    background-color: blue;
-    display: none;
-}
-/*#endregion*/
-
-/*#region Unity mobile projects*/
-.unity-mobile-project-1{
-    width: 100%;
-    height: 1000px;
-    background-color: honeydew;
-    display: block;
-}
-
-.unity-mobile-project-2{
-    width: 100%;
-    height: 500px;
-    background-color: azure;
-    display: none;
-}
-
-.unity-mobile-project-3{
-    width: 100%;
-    height: 1500px;
-    background-color: teal;
-    display: none;
-}
-
-.unity-mobile-project-4{
-    width: 100%;
-    height: 1500px;
-    background-color: lemonchiffon;
-    display: none;
-}
-/*#endregion*/
-
 /*#region Attention card*/
 .attention-card{
     width: 400px;
@@ -1752,6 +1664,8 @@ hr{
 }
 /*#endregion*/
 
+/*#endregion*/
+
 /*#region Mobile*/
 .mobile{
     width: 100%;
@@ -1766,6 +1680,12 @@ hr{
     overflow: hidden;
 }
 
+.mobile-app{
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/*#region Navbar*/
 .mobile-header{
     width: 100%;
     height: 30px;
@@ -1795,6 +1715,26 @@ hr{
     width: 150px;
 }
 
+.desktop-mobile-app-navbar{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    height: 5%;
+    position: fixed;
+    top: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(226,170,31);
+}
+
+.desktop-mobile-app-navbar > img{
+    transform: rotate(180deg);
+    margin-left: 15px;
+}
+/*#endregion*/
+
+/*#region Screen*/
 .desktop-mobile-row{
     display: flex;
     align-items: center;
@@ -1813,7 +1753,9 @@ hr{
     flex-direction: column;
     gap: 60px;
 }
+/*#endregion*/
 
+/*#region Notepad*/
 .desktop-mobile-app-notepad{
     width: 100%;
     height: 100%;
@@ -1822,63 +1764,14 @@ hr{
     overflow-y: scroll;
 }
 
-.desktop-mobile-app-notepad p {
+.mobile-notepad-body p {
     margin-left: 15px;
-}
-
-.desktop-mobile-app-blender{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: none;
-    overflow-y: scroll;
-}
-
-.desktop-mobile-app-vscode{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: none;
-    overflow-y: scroll;
-}
-
-.desktop-mobile-app-unity{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: none;
-    overflow-y: scroll;
-}
-
-.mobile-app{
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-.mobile-app:hover{
-    cursor: pointer;
 }
 
 .mobile-notepad{
     width: 100%;
     height: 100%;
     background-color: white;
-}
-
-.desktop-mobile-app-navbar{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    width: 100%;
-    height: 5%;
-    position: fixed;
-    top: 15px;
-    color: rgb(226,170,31);
-}
-
-.desktop-mobile-app-navbar > img{
-    transform: rotate(180deg);
-    margin-left: 15px;
 }
 
 .mobile-notepad-body{
@@ -1888,7 +1781,183 @@ hr{
     flex-direction: column;
     margin-top: 30px;
 }
+/*#endregion*/
 
+/*#region Bledner*/
+.desktop-mobile-app-blender{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    overflow-y: scroll;
+}
+/*#endregion*/
+
+/*#region VSCode*/
+.desktop-mobile-app-vscode{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    overflow-y: scroll;
+}
+/*#endregion*/
+
+/*#region Unity*/
+.desktop-mobile-app-unity{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    overflow-y: scroll;
+}
+/*#endregion*/
+
+/*#region Email*/
+.desktop-mobile-app-email{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    overflow-y: scroll;
+}
+
+.desktop-mobile-app-email-body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-body-color);
+    display: flex;
+    flex-direction: column;
+}
+/*#endregion*/
+
+/*#region Calculator*/
+.desktop-mobile-app-calculator{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    overflow-y: scroll;
+}
+
+.desktop-mobile-app-calculator-body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-body-color);
+    display: flex;
+    flex-direction: column;
+}
+/*#endregion*/
+
+/*#region Clock*/
+.desktop-mobile-app-clock{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    overflow-y: scroll;
+}
+
+.desktop-mobile-app-clock-body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-body-color);
+    display: flex;
+    flex-direction: column;
+}
+/*#endregion*/
+
+/*#region Contacts*/
+.desktop-mobile-app-contacts{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    overflow-y: scroll;
+}
+
+.desktop-mobile-app-contacts-body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-body-color);
+    display: flex;
+    flex-direction: column;
+}
+/*#endregion*/
+
+/*#region Photos*/
+.desktop-mobile-app-photos{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    overflow-y: scroll;
+}
+
+.desktop-mobile-app-photos-body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-body-color);
+    display: flex;
+    flex-direction: column;
+}
+/*#endregion*/
+
+/*#region Music*/
+.desktop-mobile-app-music{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    overflow-y: scroll;
+}
+
+.desktop-mobile-app-music-body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-body-color);
+    display: flex;
+    flex-direction: column;
+}
+/*#endregion*/
+
+/*#region Painting*/
+.desktop-mobile-app-painting{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    overflow-y: scroll;
+}
+
+.desktop-mobile-app-painting-body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-body-color);
+    display: flex;
+    flex-direction: column;
+}
+/*#endregion*/
+
+/*#region Settings*/
+.desktop-mobile-app-settings{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    overflow-y: scroll;
+}
+
+.desktop-mobile-app-settings-body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-body-color);
+    display: flex;
+    flex-direction: column;
+}
+/*#endregion*/
+
+/*#region Taskbar*/
 .mobile-taskbar{
     position: fixed;
     left: 50%;
@@ -1904,6 +1973,143 @@ hr{
     border-radius: 15px;
     backdrop-filter: blur(5px);
 }
+/*#endregion*/
+
+/*#region Blender mobile projects*/
+.blender-mobile-project-1{
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-body-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.blender-mobile-project-2{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(248, 248, 248);
+    display: none;
+    flex-direction: column;
+}
+
+.blender-mobile-project-3{
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-body-color);
+    display: none;
+    flex-direction: column;
+}
+
+.blender-mobile-project-4{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(248, 248, 248);
+    display: none;
+    flex-direction: column;
+}
+
+.desktop-mobile-app-blender article {
+    padding-top: 50px;
+    padding-left: 30px;
+}
+
+.desktop-mobile-app-blender article > p:nth-of-type(1){
+    padding-bottom: 15px;
+}
+
+.mobile-project-name{
+    font-size: 40px;
+    font-weight: 800;
+    padding-top: 30px;
+}
+/*#endregion*/
+
+/*#region VSCode mobile projects*/
+.vscode-mobile-project-1{
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-body-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.vscode-mobile-project-2{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(248, 248, 248);
+    display: none;
+    flex-direction: column;
+}
+
+.vscode-mobile-project-3{
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-body-color);
+    display: none;
+    flex-direction: column;
+}
+
+.vscode-mobile-project-4{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(248, 248, 248);
+    display: none;
+    flex-direction: column;
+}
+
+.desktop-mobile-app-vscode article {
+    padding-top: 50px;
+    padding-left: 30px;
+}
+
+.desktop-mobile-app-vscode article > p:nth-of-type(1){
+    padding-bottom: 15px;
+}
+/*#endregion*/
+
+/*#region Unity mobile projects*/
+.unity-mobile-project-1{
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-body-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.unity-mobile-project-2{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(248, 248, 248);
+    display: none;
+    flex-direction: column;
+}
+
+.unity-mobile-project-3{
+    width: 100%;
+    height: 100%;
+    background-color: var(--card-body-color);
+    display: none;
+    flex-direction: column;
+}
+
+.unity-mobile-project-4{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(248, 248, 248);
+    display: none;
+    flex-direction: column;
+}
+
+.desktop-mobile-app-unity article {
+    padding-top: 50px;
+    padding-left: 30px;
+}
+
+.desktop-mobile-app-unity article > p:nth-of-type(1){
+    padding-bottom: 15px;
+}
+/*#endregion*/
+
 /*#endregion*/
 
 /*#region Responsivity*/
@@ -1923,7 +2129,6 @@ hr{
     }
 }
 /*#endregion*/
-
 
 .navbar-icons-right > img:nth-of-type(3){
     cursor: pointer;
