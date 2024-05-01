@@ -28,12 +28,12 @@
         <div class="mobile-apps-container">
             <section class="desktop-mobile-row">
                 <img src="..\photos\notepad.png" alt="notepad" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-notepad">
-                <img src="..\photos\blender.svg.png" alt="blender" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-blender">
+                <img src="..\photos\blender.png" alt="blender" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-blender">
                 <img src="..\photos\vscode.png" alt="vscode" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-vscode">
-                <img src="..\photos\unity.svg" alt="unity" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-unity">
+                <img src="..\photos\unity.png" alt="unity" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-unity">
             </section>
             <section class="desktop-mobile-row">
-                <img src="../photos/email3.png" alt="email" class="app" width="50px" height="50px" data-target=".desktop-mobile-app-email">
+                <img src="../photos/email.png" alt="email" class="app" width="50px" height="50px" data-target=".desktop-mobile-app-email">
                 <img src="../photos/calculator.png" alt="calculator" class="app" width="50px" height="50px" data-target=".caldesktop-mobile-app-calculator">
                 <img src="../photos/clock.png" alt="clock" class="app" width="50px" height="50px" data-target=".desktop-mobile-app-clock">
                 <img src="../photos/contacts.png" alt="contacts" class="app" width="50px" height="50px" data-target=".desktop-mobile-app-contacts">
@@ -49,7 +49,7 @@
 
         <div class="desktop-mobile-app-notepad">
             <header class="desktop-mobile-app-navbar">
-                <img src="../icons/arrow.png" alt="arrow" class="desktop-mobile-app-navbar-close-icon" width="20px" height="20px" data-target=".desktop-mobile-app-notepad">
+                <img src="../icons/arrow-mobile-app.png" alt="arrow" class="desktop-mobile-app-navbar-close-icon" width="20px" height="20px" data-target=".desktop-mobile-app-notepad">
                 <p>Notepad</p>
             </header>
             <section class="mobile-notepad">
@@ -75,7 +75,7 @@
 
         <div class="desktop-mobile-app-blender">
             <header class="desktop-mobile-app-navbar">
-                <img src="../icons/arrow.png" alt="arrow" class="desktop-mobile-app-navbar-close-icon" width="20px" height="20px" data-target=".desktop-mobile-app-blender">
+                <img src="../icons/arrow-mobile-app.png" alt="arrow" class="desktop-mobile-app-navbar-close-icon" width="20px" height="20px" data-target=".desktop-mobile-app-blender">
                 <p>Blender</p>
             </header>
             <section class="blender-mobile-project-1"></section>
@@ -86,7 +86,7 @@
 
         <div class="desktop-mobile-app-vscode">
             <header class="desktop-mobile-app-navbar">
-                <img src="../icons/arrow.png" alt="arrow" class="desktop-mobile-app-navbar-close-icon" width="20px" height="20px" data-target=".desktop-mobile-app-vscode">
+                <img src="../icons/arrow-mobile-app.png" alt="arrow" class="desktop-mobile-app-navbar-close-icon" width="20px" height="20px" data-target=".desktop-mobile-app-vscode">
                 <p>VSCode</p>
             </header>
             <section class="vscode-mobile-project-1"></section>
@@ -97,7 +97,7 @@
 
         <div class="desktop-mobile-app-unity">
             <header class="desktop-mobile-app-navbar">
-                <img src="../icons/arrow.png" alt="arrow" class="desktop-mobile-app-navbar-close-icon" width="20px" height="20px" data-target=".desktop-mobile-app-unity">
+                <img src="../icons/arrow-mobile-app.png" alt="arrow" class="desktop-mobile-app-navbar-close-icon" width="20px" height="20px" data-target=".desktop-mobile-app-unity">
                 <p>Unity</p>
             </header>
             <section class="unity-mobile-project-1"></section>
@@ -108,9 +108,9 @@
 
         <div class="mobile-taskbar">
             <img src="..\photos\notepad.png" alt="notepad" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-notepad">
-            <img src="..\photos\blender.svg.png" alt="blender" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-blender">
+            <img src="..\photos\blender.png" alt="blender" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-blender">
             <img src="..\photos\vscode.png" alt="vscode" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-vscode">
-            <img src="..\photos\unity.svg" alt="unity" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-unity">
+            <img src="..\photos\unity.png" alt="unity" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-unity">
         </div>
     </div>
 
@@ -125,17 +125,17 @@
                 <div class="navbar-dropdown-container">
                     <p class="navbar-section" data-translate="language">Theme</p>
                     <div class="navbar-section-dropdown">
-                        <p>Light</p>
-                        <p>Dark</p>
+                        <p id="theme-btn-light">Light</p>
+                        <p id="theme-btn-dark">Dark</p>
                     </div>
                 </div>
     
                 <div class="navbar-dropdown-container">
                     <p class="navbar-section" data-translate="language">Language</p>
                     <div class="navbar-section-dropdown">
-                        <p>English</p>
-                        <p>Čeština</p>
-                        <p>Русский</p>
+                        <p id="en">English</p>
+                        <p id="cs">Čeština</p>
+                        <p id="ru">Русский</p>
                     </div>
                 </div>
                 
@@ -248,24 +248,32 @@
                     <div class="blender-card-body-navbar-projects-container">
                         <article class="blender-project-1-preview blender-project-preview" data-target=".blender-project-1">
                             <p class="project-preview-name">Project 1</p>
+                            <p class="project-preview-name">Example</p>
+                            <p class="project-preview-name">name</p>
                         </article>
                         <article class="blender-project-2-preview blender-project-preview" data-target=".blender-project-2">
                             <p class="project-preview-name">Project 2</p>
+                            <p class="project-preview-name">Example</p>
+                            <p class="project-preview-name">name</p>
                         </article>
                         <article class="blender-project-3-preview blender-project-preview" data-target=".blender-project-3">
                             <p class="project-preview-name">Project 3</p>
+                            <p class="project-preview-name">Example</p>
+                            <p class="project-preview-name">name</p>
                         </article>
                         <article class="blender-project-4-preview blender-project-preview" data-target=".blender-project-4">
                             <p class="project-preview-name">Project 4</p>
+                            <p class="project-preview-name">Example</p>
+                            <p class="project-preview-name">name</p>
                         </article>
                     </div>
                 </section>
                 <section class="blender-card-body-main">
                     <div class="blender-card-body-main-projects-container">
-                        <article class="blender-project-1"></article>
-                        <article class="blender-project-2"></article>
-                        <article class="blender-project-3"></article>
-                        <article class="blender-project-4"></article>
+                        <section class="blender-project-1"></section>
+                        <section class="blender-project-2"></section>
+                        <section class="blender-project-3"></section>
+                        <section class="blender-project-4"></section>
                     </div>
                 </section>
             </section>
@@ -284,24 +292,32 @@
                     <div class="vscode-card-body-navbar-projects-container">
                         <article class="vscode-project-1-preview vscode-project-preview" data-target=".vscode-project-1">
                             <p class="project-preview-name">Project 1</p>
+                            <p class="project-preview-name">Example</p>
+                            <p class="project-preview-name">name</p>
                         </article>
                         <article class="vscode-project-2-preview vscode-project-preview" data-target=".vscode-project-2">
                             <p class="project-preview-name">Project 2</p>
+                            <p class="project-preview-name">Example</p>
+                            <p class="project-preview-name">name</p>
                         </article>
                         <article class="vscode-project-3-preview vscode-project-preview" data-target=".vscode-project-3">
                             <p class="project-preview-name">Project 3</p>
+                            <p class="project-preview-name">Example</p>
+                            <p class="project-preview-name">name</p>
                         </article>
                         <article class="vscode-project-4-preview vscode-project-preview" data-target=".vscode-project-4">
                             <p class="project-preview-name">Project 4</p>
+                            <p class="project-preview-name">Example</p>
+                            <p class="project-preview-name">name</p>
                         </article>
                     </div>
                 </section>
                 <section class="vscode-card-body-main">
                     <div class="vscode-card-body-main-projects-container">
-                        <article class="vscode-project-1" data-target=".vscode-card"></article>
-                        <article class="vscode-project-2" data-target=".vscode-card"></article>
-                        <article class="vscode-project-3" data-target=".vscode-card"></article>
-                        <article class="vscode-project-4" data-target=".vscode-card"></article>
+                        <section class="vscode-project-1" data-target=".vscode-card"></section>
+                        <section class="vscode-project-2" data-target=".vscode-card"></section>
+                        <section class="vscode-project-3" data-target=".vscode-card"></section>
+                        <section class="vscode-project-4" data-target=".vscode-card"></section>
                     </div>
                 </section>
             </section>
@@ -324,36 +340,80 @@
                         </article>
                         <article class="unity-project-2-preview unity-project-preview" data-target=".unity-project-2">
                             <p class="project-preview-name">Project 2</p>
+                            <p class="project-preview-name">Example</p>
+                            <p class="project-preview-name">name</p>
                         </article>
                         <article class="unity-project-3-preview unity-project-preview" data-target=".unity-project-3">
                             <p class="project-preview-name">Project 3</p>
+                            <p class="project-preview-name">Example</p>
+                            <p class="project-preview-name">name</p>
                         </article>
                         <article class="unity-project-4-preview unity-project-preview" data-target=".unity-project-4">
                             <p class="project-preview-name">Project 4</p>
+                            <p class="project-preview-name">Example</p>
+                            <p class="project-preview-name">name</p>
                         </article>
                     </div>
                 </section>
                 <section class="unity-card-body-main">
                     <div class="unity-card-body-main-projects-container">
-                        <article class="unity-project-1">
+                        <section class="unity-project-1">
                             <p class="project-name">Descent</p>
-                            <p><u>Info:</u></p>
-                            <p>Descent is my Unity 2d game. It’s a top-down arcade game. Where you need to "descent" through all 9 circles of hell all the way to the lowest circle to fight Satan.</p>
-                            <p><u>Gallery:</u></p>
-                            <section class="gallery">
-                                <img src="../photos/unity-project-1-photo-1.png" alt="photo1" class="photo-slides" width="450px" height="300px">
-                                <img src="../photos/unity-project-1-photo-2.png" alt="photo2" class="photo-slides" width="450px" height="300px">
-                                <img src="../photos/unity-project-1-photo-3.png" alt="photo3" class="photo-slides" width="450px" height="300px">
-                                <section class="indicators-container">
-                                    <div class="indicators" data-value="0">1</div>
-                                    <div class="indicators" data-value="1">2</div>
-                                    <div class="indicators" data-value="2">3</div>
+                            <article>
+                                <p><u>About:</u></p>
+                                <p>Descent is my Unity 2d game. It’s a top-down arcade game. The premise of the game goes like this: You are an angel sent from Heaven to Hell and you need to fight you way through and "descenet" the 9 circles of hell to defeat satan.</p>
+                            </article>
+                            <article> 
+                                <p><u>Gameplay:</u></p>
+                                <p>The gameplay is quite simple. You are thrown into infinite arena and need to kill a certain number of enemies that spwan around you to trigger a boss. Once the boss is defeated you go to the next level. Rinse and repeat 9 times and you just finished the game. Each time you defeat a boss you gain a new abillity. You can also gain new upgrades to your weapons. A large arsenal of toys that will be your main line of defence against the demonic enemies.</p>
+                            </article>
+                            <article>
+                                <p><u>Gallery:</u></p>
+                                <section class="gallery">
+                                    <img src="../photos/unity-project-1-photo-1.png" alt="photo1" class="photo-slides" width="450px" height="300px">
+                                    <img src="../photos/unity-project-1-photo-2.png" alt="photo2" class="photo-slides" width="450px" height="300px">
+                                    <img src="../photos/unity-project-1-photo-3.png" alt="photo3" class="photo-slides" width="450px" height="300px">
+                                    <section class="indicators-container">
+                                        <div class="indicators" data-value="0">1</div>
+                                        <div class="indicators" data-value="1">2</div>
+                                        <div class="indicators" data-value="2">3</div>
+                                    </section>
                                 </section>
-                            </section>
-                        </article>
-                        <article class="unity-project-2"></article>
-                        <article class="unity-project-3"></article>
-                        <article class="unity-project-4"></article>
+                            </article>
+                        </section>
+                        <section class="unity-project-2">
+                            <p class="project-name">Example name</p>
+                            <article>
+                                <p><u>About:</u></p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet aut unde nihil laudantium quo dolor, itaque beatae molestias consequatur, ducimus sapiente ipsum architecto. Unde dolor reprehenderit nesciunt aliquid? Nesciunt, dicta.</p>
+                            </article>
+                            <article> 
+                                <p><u>Gameplay:</u></p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero temporibus doloremque, dolore voluptas veritatis, accusantium voluptatum enim possimus corporis excepturi ipsum officia optio fuga repellat, cum non! Corporis, corrupti quo.</p>
+                            </article>
+                        </section>
+                        <section class="unity-project-3">
+                            <p class="project-name">Example name</p>
+                            <article>
+                                <p><u>About:</u></p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet aut unde nihil laudantium quo dolor, itaque beatae molestias consequatur, ducimus sapiente ipsum architecto. Unde dolor reprehenderit nesciunt aliquid? Nesciunt, dicta.</p>
+                            </article>
+                            <article> 
+                                <p><u>Gameplay:</u></p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero temporibus doloremque, dolore voluptas veritatis, accusantium voluptatum enim possimus corporis excepturi ipsum officia optio fuga repellat, cum non! Corporis, corrupti quo.</p>
+                            </article>
+                        </section>
+                        <section class="unity-project-4">
+                            <p class="project-name">Example name</p>
+                            <article>
+                                <p><u>About:</u></p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet aut unde nihil laudantium quo dolor, itaque beatae molestias consequatur, ducimus sapiente ipsum architecto. Unde dolor reprehenderit nesciunt aliquid? Nesciunt, dicta.</p>
+                            </article>
+                            <article> 
+                                <p><u>Gameplay:</u></p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero temporibus doloremque, dolore voluptas veritatis, accusantium voluptatum enim possimus corporis excepturi ipsum officia optio fuga repellat, cum non! Corporis, corrupti quo.</p>
+                            </article>
+                        </section>
                     </div>
                 </section>
             </section>
@@ -436,7 +496,7 @@
                 </section>
             </section>
             <section class="stickies-card-body">
-                <img src="../photos/sticky-note1.png" alt="sticky-note" width="200px" height="200px">
+                <img src="../photos/sticky-note-1.png" alt="sticky-note" width="200px" height="200px">
             </section>
         </div>
     
@@ -449,9 +509,9 @@
                 </section>
             </section>
             <section class="painting-card-body">
-                <img src="../icons/arrow2.png" alt="menu" width="30px" height="30px">
+                <img src="../icons/arrow-paint.png" alt="menu" width="30px" height="30px">
                 <section class="canvas-sidebar">
-                    <img src="../icons/arrow2.png" alt="menu" width="30px" height="30px">
+                    <img src="../icons/arrow-paint.png" alt="menu" width="30px" height="30px">
                     <input type="range" min="1" max="10" value="1" id="lineWidthSlider">
                     <div class="color-buttons">
                         <button value="#ffffff"></button>
@@ -467,7 +527,7 @@
                         <button value="#a0a0a0"></button>
                         <button value="#000000"></button>
                     </div>
-                    <img src="../icons/clear.png" alt="clear" width="30px" height="30px">
+                    <img src="../icons/trash-paint.png" alt="clear" width="30px" height="30px">
                 </section>
                 <canvas id="paintingCanvas" width="765" height="475"></canvas>
             </section>
@@ -503,10 +563,10 @@
             </section>
             <section class="taskbar-apps-container">
                 <img src="../photos/notepad.png" alt="notepad" class="app" width="45px" height="45px" data-target=".notepad">
-                <img src="../photos/blender2.png" alt="blender" class="app" width="45px" height="45px" data-target=".blender">
-                <img src="../photos/vscode2.png" alt="vscode" class="app" width="45px" height="45px" data-target=".vscode">
-                <img src="../photos/unity3.png" alt="unity" class="app" width="45px" height="45px" data-target=".unity">
-                <img src="../photos/email3.png" alt="email" class="app" width="45px" height="45px" data-target=".email">
+                <img src="../photos/blender.png" alt="blender" class="app" width="45px" height="45px" data-target=".blender">
+                <img src="../photos/vscode.png" alt="vscode" class="app" width="45px" height="45px" data-target=".vscode">
+                <img src="../photos/unity.png" alt="unity" class="app" width="45px" height="45px" data-target=".unity">
+                <img src="../photos/email.png" alt="email" class="app" width="45px" height="45px" data-target=".email">
                 <img src="../photos/calculator.png" alt="calculator" class="app" width="45px" height="45px" data-target=".calculator">
                 <img src="../photos/clock.png" alt="clock" class="app" width="45px" height="45px" data-target=".clock">
                 <img src="../photos/contacts.png" alt="contacts" class="app" width="45px" height="45px" data-target=".contacts">

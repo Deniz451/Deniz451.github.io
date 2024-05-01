@@ -5,7 +5,7 @@ body{
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-image: url("../photos/desktop_background_compressed.jpg");
+    background-image: url("../photos/desktop-background-compressed.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,6 +20,11 @@ html, body {
     width: 100%;
     height: 100%;
     display: block;
+}
+
+:root{
+    --card-body-color: white;
+    --card-navbar-color: rgb(203, 203, 203);
 }
 /*#endregion*/
 
@@ -341,7 +346,7 @@ html, body {
 .notepad-card-body{
     width: 100%;
     height: 95%;
-    background-color: white;
+    background-color: var(--card-body-color);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: solid #a2a2a2 1px;
@@ -391,7 +396,7 @@ html, body {
 .email-card-body{
     width: 100%;
     height: 95%;
-    background-color: white;
+    background-color: var(--card-body-color);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: solid #a2a2a2 1px;
@@ -508,7 +513,7 @@ hr{
 .blender-card-body-navbar{
     width: 20%;
     height: 100%;
-    background-color: rgb(93, 74, 74);
+    background-color: var(--card-navbar-color);
     border-bottom-left-radius: 10px;
     gap: 50px;
     overflow-y: scroll;
@@ -528,7 +533,7 @@ hr{
     width: 80%;
     height: 100%; 
     overflow-y: scroll;
-    background-color: black;
+    background-color: var(--card-body-color);
 }
 
 .blender-card-body-main-projects-container{
@@ -576,7 +581,7 @@ hr{
 .vscode-card-body-navbar{
     width: 20%;
     height: 100%;
-    background-color: rgb(93, 74, 74);
+    background-color: var(--card-navbar-color);
     border-bottom-left-radius: 10px;
     gap: 50px;
     overflow-y: scroll;
@@ -596,7 +601,7 @@ hr{
     width: 80%;
     height: 100%; 
     overflow-y: scroll;
-    background-color: black;
+    background-color: var(--card-body-color);
 }
 
 .vscode-card-body-main-projects-container{
@@ -644,7 +649,7 @@ hr{
 .unity-card-body-navbar{
     width: 20%;
     height: 100%;
-    background-color: rgb(93, 74, 74);
+    background-color: var(--card-navbar-color);
     border-bottom-left-radius: 10px;
     gap: 50px;
     overflow-y: scroll;
@@ -664,7 +669,7 @@ hr{
     width: 80%;
     height: 100%; 
     overflow-y: scroll;
-    background-color: black;
+    background-color: var(--card-body-color);
 }
 
 .unity-card-body-main-projects-container{
@@ -706,7 +711,7 @@ hr{
 .calculator-card-body{
     width: 100%;
     height: 95%;
-    background-color: white;
+    background-color: var(--card-body-color);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: solid #a2a2a2 1px;
@@ -747,7 +752,7 @@ hr{
 .clock-card-body{
     width: 100%;
     height: 95%;
-    background-color: white;
+    background-color: var(--card-body-color);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: solid #a2a2a2 1px;
@@ -788,7 +793,7 @@ hr{
 .contacts-card-body{
     width: 100%;
     height: 95%;
-    background-color: white;
+    background-color: var(--card-body-color);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: solid #a2a2a2 1px;
@@ -829,7 +834,7 @@ hr{
 .settings-card-body{
     width: 100%;
     height: 95%;
-    background-color: white;
+    background-color: var(--card-body-color);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: solid #a2a2a2 1px;
@@ -870,7 +875,7 @@ hr{
 .photos-card-body{
     width: 100%;
     height: 95%;
-    background-color: white;
+    background-color: var(--card-body-color);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: solid #a2a2a2 1px;
@@ -911,7 +916,7 @@ hr{
 .music-card-body{
     width: 100%;
     height: 95%;
-    background-color: white;
+    background-color: var(--card-body-color);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: solid #a2a2a2 1px;
@@ -952,7 +957,7 @@ hr{
 .stickies-card-body{
     width: 100%;
     height: 95%;
-    background-color: white;
+    background-color: var(--card-body-color);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: solid #a2a2a2 1px;
@@ -1040,7 +1045,7 @@ hr{
 .painting-card-body{
     width: 100%;
     height: 95%;
-    background-color: white;
+    background-color: var(--card-body-color);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: solid #a2a2a2 1px;
@@ -1185,7 +1190,7 @@ hr{
 .trash-card-body{
     width: 100%;
     height: 95%;
-    background-color: white;
+    background-color: var(--card-body-color);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: solid #a2a2a2 1px;
@@ -1202,237 +1207,271 @@ hr{
 
 /*#region VScode Projects*/
 .vscode-project-1-preview{
-    width: 100px;
-    height: 150px;
-    background-color: pink;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    background-image: url("../photos/example-photo-1-blured.jpg");
 }
 
 .vscode-project-2-preview{
-    width: 100px;
-    height: 150px;
-    background-color: green;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    background-image: url("../photos/example-photo-1-blured.jpg");
 }
 
 .vscode-project-3-preview{
-    width: 100px;
-    height: 150px;
-    background-color: brown;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    background-image: url("../photos/example-photo-1-blured.jpg");
 }
 
 .vscode-project-4-preview{
-    width: 100px;
-    height: 150px;
-    background-color: blue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    background-image: url("../photos/example-photo-1-blured.jpg");
 }
 
 .vscode-project-1{
     width: 100%;
-    height: 1000px;
-    background-color: pink;
+    height: 1500px;
     display: block;
 }
 
 .vscode-project-2{
     width: 100%;
     height: 500px;
-    background-color: green;
     display: none;
 }
 
 .vscode-project-3{
     width: 100%;
     height: 1500px;
-    background-color: brown;
     display: none;
 }
 
 .vscode-project-4{
     width: 100%;
     height: 1500px;
-    background-color: blue;
     display: none;
 }
 
 .vscode-project-preview{
     cursor: pointer;
+    width: 100px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.2s ease;
+    user-select: none;
+}
+
+.vscode-project-preview:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.275);
+}
+
+.vscode-card-body-main-projects-container  article{
+    padding-left: 25px;
+    padding-top: 50px;
+}
+
+.project-name{
+    font-size: 60px;
+    font-weight: 800;
+    padding-left: 25px;
+    padding-top: 25px;
+}
+
+.project-preview-name{
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.vscode-card-body-main-projects-container article > p:nth-of-type(1){
+    padding-bottom: 15px;
+}
+
+.vscode-project-preview > p:nth-of-type(1){
+    padding-bottom: 5px;
 }
 /*#endregion*/
 
 /*#region Blender projects*/
 .blender-project-1-preview{
-    width: 100px;
-    height: 150px;
-    background-color: purple;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    background-image: url("../photos/example-photo-1-blured.jpg");
 }
 
 .blender-project-2-preview{
-    width: 100px;
-    height: 150px;
-    background-color: yellow;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    background-image: url("../photos/example-photo-1-blured.jpg");
 }
 
 .blender-project-3-preview{
-    width: 100px;
-    height: 150px;
-    background-color: antiquewhite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    background-image: url("../photos/example-photo-1-blured.jpg");
 }
 
 .blender-project-4-preview{
-    width: 100px;
-    height: 150px;
-    background-color: lightcoral;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    background-image: url("../photos/example-photo-1-blured.jpg");
 }
 
 .blender-project-1{
     width: 100%;
-    height: 1000px;
-    background-color: purple;
+    height: 1500px;
     display: block;
 }
 
 .blender-project-2{
     width: 100%;
     height: 500px;
-    background-color: yellow;
     display: none;
 }
 
 .blender-project-3{
     width: 100%;
     height: 1500px;
-    background-color: antiquewhite;
     display: none;
 }
 
 .blender-project-4{
     width: 100%;
     height: 1500px;
-    background-color: lightcoral;
     display: none;
 }
 
 .blender-project-preview{
     cursor: pointer;
+    width: 100px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.2s ease;
+    user-select: none;
+}
+
+.blender-project-preview:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.275);
+}
+
+.blender-card-body-main-projects-container  article{
+    padding-left: 25px;
+    padding-top: 50px;
+}
+
+.project-name{
+    font-size: 60px;
+    font-weight: 800;
+    padding-left: 25px;
+    padding-top: 25px;
+}
+
+.project-preview-name{
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.blender-card-body-main-projects-container article > p:nth-of-type(1){
+    padding-bottom: 15px;
+}
+
+.blender-project-preview > p:nth-of-type(1){
+    padding-bottom: 5px;
 }
 /*#endregion*/
 
 /*#region Unity projects*/
 .unity-project-1-preview{
-    width: 100px;
-    height: 150px;
-    background-color: honeydew;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    background-image: url("../photos/unity-project-1-photo-1-blured.jpg");
 }
 
 .unity-project-2-preview{
-    width: 100px;
-    height: 150px;
-    background-color: azure;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    background-image: url("../photos/example-photo-1-blured.jpg");
 }
 
 .unity-project-3-preview{
-    width: 100px;
-    height: 150px;
-    background-color: teal;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    background-image: url("../photos/example-photo-1-blured.jpg");
 }
 
 .unity-project-4-preview{
-    width: 100px;
-    height: 150px;
-    background-color: lemonchiffon;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    background-image: url("../photos/example-photo-1-blured.jpg");
 }
 
 .unity-project-1{
     width: 100%;
     height: 1500px;
-    background-color: honeydew;
     display: block;
 }
 
 .unity-project-2{
     width: 100%;
     height: 500px;
-    background-color: azure;
     display: none;
 }
 
 .unity-project-3{
     width: 100%;
     height: 1500px;
-    background-color: teal;
     display: none;
 }
 
 .unity-project-4{
     width: 100%;
     height: 1500px;
-    background-color: lemonchiffon;
     display: none;
 }
 
 .unity-project-preview{
     cursor: pointer;
+    width: 100px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.2s ease;
+    user-select: none;
 }
 
-.unity-card-body-main-projects-container  p{
-    padding-left: 15px;
-    padding-top: 15px;
+.unity-project-preview:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.275);
+}
+
+.unity-card-body-main-projects-container  article{
+    padding-left: 25px;
+    padding-top: 50px;
 }
 
 .project-name{
-    font-size: 30px;
+    font-size: 60px;
     font-weight: 800;
+    padding-left: 25px;
+    padding-top: 25px;
 }
 
 .project-preview-name{
     font-weight: 800;
+    font-size: 15px;
+}
+
+.unity-card-body-main-projects-container article > p:nth-of-type(1){
+    padding-bottom: 15px;
+}
+
+.unity-project-preview > p:nth-of-type(1){
+    padding-bottom: 5px;
 }
 
 .indicators-container{
@@ -1443,28 +1482,40 @@ hr{
     justify-content: center;
     gap: 10px;
 }
+
 .indicators{
-    width: 20px;
-    height: 20px;
-    background-color: rgba(0, 0, 0, 0.384);
+    width: 35px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.09);
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.175);
 }
 
 .indicators:hover{
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.142);
+    border: 1px solid rgba(0, 0, 0, 0.216);
 }
 
 .gallery{
     width: 100%;
-    height: 500px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 20px;
+    user-select: none;
 }
+
+.gallery > img{
+    border-radius: 5px;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.351);
+}
+
 /*#endregion*/
 
 /*#region Blender mobile projects*/
@@ -1708,7 +1759,7 @@ hr{
     position: absolute;
     display: none;
     flex-direction: column;
-    background-image: url("../photos/desktop_background_compressed.jpg");
+    background-image: url("../photos/desktop-background-compressed.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -4,7 +4,7 @@ const attentionCard = document.querySelector(".attention-card");
 document.addEventListener('DOMContentLoaded', function() {
     const hasVisited = localStorage.getItem('hasVisited');
 
-    if (hasVisited === null || hasVisited === undefined) {
+    if (window.innerWidth > 900 && hasVisited === null || hasVisited === undefined) {
         attentionCard.style.display = "block";
     }
 });
@@ -221,8 +221,8 @@ document.querySelectorAll(".vscode-project-preview").forEach((element) => {
     element.addEventListener("click", () => {
     const target = document.querySelector(element.dataset.target)
 
-    document.querySelectorAll(".vscode-card-body-main article").forEach((article) => {
-        article.style.display = "none";
+    document.querySelectorAll(".unity-card-body-main-projects-container > section").forEach((section) => {
+        section.style.display = "none";
     });
 
     if (!target.style.display || target.style.display === "none") {
@@ -235,10 +235,9 @@ document.querySelectorAll(".blender-project-preview").forEach((element) => {
     element.addEventListener("click", () => {
     const target = document.querySelector(element.dataset.target)
 
-    document.querySelectorAll(".blender-card-body-main article").forEach((article) => {
-        article.style.display = "none";
+    document.querySelectorAll(".blender-card-body-main-projects-container > section").forEach((section) => {
+        section.style.display = "none";
     });
-    
     if (!target.style.display || target.style.display === "none") {
         target.style.display = "block";
     }
@@ -249,8 +248,8 @@ document.querySelectorAll(".unity-project-preview").forEach((element) => {
     element.addEventListener("click", () => {
     const target = document.querySelector(element.dataset.target)
 
-    document.querySelectorAll(".unity-card-body-main article").forEach((article) => {
-        article.style.display = "none";
+    document.querySelectorAll(".unity-card-body-main-projects-container > section").forEach((section) => {
+        section.style.display = "none";
     });
     
     if (!target.style.display || target.style.display === "none") {
@@ -326,7 +325,28 @@ document.querySelectorAll(".desktop-mobile-app-navbar-close-icon").forEach((elem
 //#endregion
 
 //#region Language
+const enBtn = document.getElementById("en");
+const csBtn = document.getElementById("cs");
+const ruBtn = document.getElementById("ru");
+enBtn.style.fontWeight = "bold";
 
+enBtn.addEventListener("click", () => {
+    csBtn.style.fontWeight = "normal";
+    ruBtn.style.fontWeight = "normal";
+    enBtn.style.fontWeight = "bold";
+})
+
+csBtn.addEventListener("click", () => {
+    ruBtn.style.fontWeight = "normal";
+    enBtn.style.fontWeight = "normal";
+    csBtn.style.fontWeight = "bold";
+})
+
+ruBtn.addEventListener("click", () => {
+    csBtn.style.fontWeight = "normal";
+    enBtn.style.fontWeight = "normal";
+    ruBtn.style.fontWeight = "bold";
+})
 //#endregion
 
 //#region Photo slides
@@ -387,7 +407,34 @@ window.addEventListener('touchmove', function(event) {
 //#endregion
 
 //#region Color theme
+const btnLight = document.getElementById("theme-btn-light");
+const btnDark = document.getElementById("theme-btn-dark");
+let colorTheme = localStorage.getItem('colorTheme');
+let root = document.documentElement;
+btnLight.style.fontWeight = "bold";
 
+if (colorTheme === "light") {
+    root.style.setProperty('--card-body-color', 'white');
+}
+else if (colorTheme === "dark") {
+    root.style.setProperty('--card-body-color', 'rgb(140, 140, 140)');
+}
+
+btnLight.addEventListener("click", () => {
+    localStorage.setItem('colorTheme', "light");
+    root.style.setProperty('--card-body-color', 'white');
+
+    btnDark.style.fontWeight = "normal";
+    btnLight.style.fontWeight = "bold";
+})
+
+btnDark.addEventListener("click", () => {
+    localStorage.setItem('colorTheme', "dark");
+    root.style.setProperty('--card-body-color', 'rgb(140, 140, 140)');
+
+    btnLight.style.fontWeight = "normal";
+    btnDark.style.fontWeight = "bold";
+})
 //#endregion
 
 //#region Pick mail subject
@@ -534,7 +581,7 @@ element.addEventListener("mousedown", (event) => {
     stickyHeader.classList.add('sticky-container-header');
 
     const stickyImg = document.createElement('img');
-    stickyImg.src = "../photos/sticky-note2.png";
+    stickyImg.src = "../photos/sticky-note-2.png";
     stickyImg.alt = 'sticky';
     stickyImg.width = 200;
     stickyImg.height = 200;
