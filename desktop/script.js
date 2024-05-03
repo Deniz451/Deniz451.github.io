@@ -329,12 +329,14 @@ const enBtn = document.getElementById("en");
 const csBtn = document.getElementById("cs");
 const ruBtn = document.getElementById("ru");
 enBtn.style.fontWeight = "bold";
+let currentLanguage = 'english';
 
 enBtn.addEventListener("click", () => {
     csBtn.style.fontWeight = "normal";
     ruBtn.style.fontWeight = "normal";
     enBtn.style.fontWeight = "bold";
     currentLanguage = 'english';
+    loadLanguage(currentLanguage);
 })
 
 csBtn.addEventListener("click", () => {
@@ -342,6 +344,7 @@ csBtn.addEventListener("click", () => {
     enBtn.style.fontWeight = "normal";
     csBtn.style.fontWeight = "bold";
     currentLanguage = 'czech';
+    loadLanguage(currentLanguage);
 })
 
 ruBtn.addEventListener("click", () => {
@@ -349,6 +352,7 @@ ruBtn.addEventListener("click", () => {
     enBtn.style.fontWeight = "normal";
     ruBtn.style.fontWeight = "bold";
     currentLanguage = 'russian';
+    loadLanguage(currentLanguage);
 })
 
 
@@ -364,12 +368,7 @@ function loadLanguage(currentLanguage) {
         .catch(error => console.error('Error loading language:', error)); // Log any errors
 }
 
-function switchLanguage(language) {
-    currentLanguage = language;
-    loadLanguage(language);
-}
 
-let currentLanguage = 'english';
 loadLanguage(currentLanguage);
 //#endregion
 
