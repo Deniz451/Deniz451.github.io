@@ -325,7 +325,6 @@ document.querySelectorAll(".desktop-mobile-app-navbar-close-icon").forEach((elem
 //#endregion
 
 //#region Language
-let currentLanguage = 'english';
 const enBtn = document.getElementById("en");
 const csBtn = document.getElementById("cs");
 const ruBtn = document.getElementById("ru");
@@ -358,10 +357,11 @@ function loadLanguage(currentLanguage) {
         .then(response => response.json())
         .then(data => {
             document.querySelectorAll('[data-translate]').forEach(element => {
-                const key = element.dataset.translate;
-                element.innerHTML = data[key];
+                const key = element.dataset.translate; // Ensure it matches the HTML attribute
+                element.innerHTML = data[key] || element.innerHTML; // Use fallback if translation is not found
             });
-        });
+        })
+        .catch(error => console.error('Error loading language:', error)); // Log any errors
 }
 
 function switchLanguage(language) {
@@ -369,6 +369,7 @@ function switchLanguage(language) {
     loadLanguage(language);
 }
 
+let currentLanguage = 'english';
 loadLanguage(currentLanguage);
 //#endregion
 
