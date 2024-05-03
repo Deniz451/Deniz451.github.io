@@ -6,5 +6,7 @@
     "desktop-navbar-preview": "Preview",
     "desktop-navbar-file": "File",
     "desktop-navbar-edit": "Edit",
-    "desktop-navbar-view": "View"
+    "desktop-navbar-view": "View",
+    "desktop-navbar-socials": "Socials",
+    "desktop-navbar-help": "Help"
 }

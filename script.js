@@ -199,3 +199,26 @@ document.querySelectorAll(".buttons-container button").forEach((element) => {
 });
 //#endregion
 
+//#region Language translation
+let currentLanguage = localStorage.getItem('currentLanguage') || 'english';
+loadLanguage(currentLanguage);
+
+function loadLanguage(currentLanguage) {
+    fetch(`${currentLanguage}.json`)
+        .then(response => response.json())
+        .then(data => {
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.dataset.translate;
+                const translation = data[key];
+                if (element.hasAttribute('placeholder')) {
+                    element.placeholder = translation || element.placeholder;
+                } else if (element.hasAttribute('value')) {
+                    element.value = translation || element.value;
+                } else {
+                    element.innerHTML = translation || element.innerHTML;
+                }
+            });
+        })
+        .catch(error => console.error('Error loading language:', error));
+}
+//#endregion

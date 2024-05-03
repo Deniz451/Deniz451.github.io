@@ -329,12 +329,13 @@ const enBtn = document.getElementById("en");
 const csBtn = document.getElementById("cs");
 const ruBtn = document.getElementById("ru");
 enBtn.style.fontWeight = "bold";
-let currentLanguage = 'english';
+let currentLanguage = localStorage.getItem('currentLanguage') || 'english';
 
 enBtn.addEventListener("click", () => {
     csBtn.style.fontWeight = "normal";
     ruBtn.style.fontWeight = "normal";
     enBtn.style.fontWeight = "bold";
+    localStorage.setItem('currentLanguage', 'english');
     currentLanguage = 'english';
     loadLanguage(currentLanguage);
 })
@@ -343,6 +344,7 @@ csBtn.addEventListener("click", () => {
     ruBtn.style.fontWeight = "normal";
     enBtn.style.fontWeight = "normal";
     csBtn.style.fontWeight = "bold";
+    localStorage.setItem('currentLanguage', 'czech');
     currentLanguage = 'czech';
     loadLanguage(currentLanguage);
 })
@@ -351,6 +353,7 @@ ruBtn.addEventListener("click", () => {
     csBtn.style.fontWeight = "normal";
     enBtn.style.fontWeight = "normal";
     ruBtn.style.fontWeight = "bold";
+    localStorage.setItem('currentLanguage', 'russian');
     currentLanguage = 'russian';
     loadLanguage(currentLanguage);
 })
