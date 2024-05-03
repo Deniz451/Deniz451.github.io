@@ -8,5 +8,7 @@
     "desktop-navbar-edit": "Edit",
     "desktop-navbar-view": "View",
     "desktop-navbar-socials": "Socials",
-    "desktop-navbar-help": "Help"
+    "desktop-navbar-help": "Help",
+
+    "months": ["Jan", "Feb", "March", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 }

@@ -8,5 +8,7 @@
     "desktop-navbar-edit": "Upravit",
     "desktop-navbar-view": "Zobrazit",
     "desktop-navbar-socials": "Sociální sítě",
-    "desktop-navbar-help": "Pomoc"
+    "desktop-navbar-help": "Pomoc",
+
+    "months": ["Led", "Úno", "Bře", "Dub", "Kvě", "Čer", "Čvc", "Srp", "Zář", "Říj", "Lis", "Pro"]
 }

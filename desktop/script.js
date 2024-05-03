@@ -330,6 +330,7 @@ const csBtn = document.getElementById("cs");
 const ruBtn = document.getElementById("ru");
 enBtn.style.fontWeight = "bold";
 let currentLanguage = localStorage.getItem('currentLanguage') || 'english';
+loadLanguage(currentLanguage);
 
 enBtn.addEventListener("click", () => {
     csBtn.style.fontWeight = "normal";
@@ -649,8 +650,26 @@ function startTime() {
     let h = today.getHours();
     let m = today.getMinutes();
     let day = today.getDate();
-    let monthNames = ["Jan", "Feb", "March", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    // Fetch month names based on selected language
+    let monthNames;
+    switch (currentLanguage) {
+        case 'english':
+            monthNames = englishData.months;
+            break;
+        case 'czech':
+            monthNames = czechData.months;
+            break;
+        case 'russian':
+            monthNames = russianData.months;
+            break;
+        // Add additional cases for other languages if needed
+        default:
+            monthNames = englishData.months; // Default to English
+    }
+    
     let month = monthNames[today.getMonth()];
+
     let ampm = h >= 12 ? 'PM' : 'AM';
     h = h % 12 || 12;
     m = checkTime(m);
