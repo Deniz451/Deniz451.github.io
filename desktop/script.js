@@ -328,8 +328,9 @@ document.querySelectorAll(".desktop-mobile-app-navbar-close-icon").forEach((elem
 const enBtn = document.getElementById("en");
 const csBtn = document.getElementById("cs");
 const ruBtn = document.getElementById("ru");
-enBtn.style.fontWeight = "bold";
+let pickedLanguageBtn = localStorage.getItem('pickedLanguageBtn') || 'en';
 let currentLanguage = localStorage.getItem('currentLanguage') || 'english';
+document.getElementById(pickedLanguageBtn).style.fontWeight = "bold";
 loadLanguage(currentLanguage);
 
 enBtn.addEventListener("click", () => {
@@ -337,6 +338,7 @@ enBtn.addEventListener("click", () => {
     ruBtn.style.fontWeight = "normal";
     enBtn.style.fontWeight = "bold";
     localStorage.setItem('currentLanguage', 'english');
+    localStorage.setItem('pickedLanguageBtn', 'en');
     currentLanguage = 'english';
     loadLanguage(currentLanguage);
 })
@@ -346,6 +348,7 @@ csBtn.addEventListener("click", () => {
     enBtn.style.fontWeight = "normal";
     csBtn.style.fontWeight = "bold";
     localStorage.setItem('currentLanguage', 'czech');
+    localStorage.setItem('pickedLanguageBtn', 'cs');
     currentLanguage = 'czech';
     loadLanguage(currentLanguage);
 })
@@ -355,6 +358,7 @@ ruBtn.addEventListener("click", () => {
     enBtn.style.fontWeight = "normal";
     ruBtn.style.fontWeight = "bold";
     localStorage.setItem('currentLanguage', 'russian');
+    localStorage.setItem('pickedLanguageBtn', 'ru');
     currentLanguage = 'russian';
     loadLanguage(currentLanguage);
 })
