@@ -1,3 +1,10 @@
 {
-    "desktop-navbar-language": "Language"
+    "desktop-navbar-language": "Language",
+    "desktop-navbar-theme": "Theme",
+    "desktop-navbar-theme-light": "Light",
+    "desktop-navbar-theme-dark": "Dark",
+    "desktop-navbar-preview": "Preview",
+    "desktop-navbar-file": "File",
+    "desktop-navbar-edit": "Edit",
+    "desktop-navbar-view": "View"
 }

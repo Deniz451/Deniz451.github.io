@@ -361,15 +361,12 @@ function loadLanguage(currentLanguage) {
         .then(response => response.json())
         .then(data => {
             document.querySelectorAll('[data-translate]').forEach(element => {
-                const key = element.dataset.translate; // Ensure it matches the HTML attribute
-                element.innerHTML = data[key] || element.innerHTML; // Use fallback if translation is not found
+                const key = element.dataset.translate;
+                element.innerHTML = data[key] || element.innerHTML;
             });
         })
-        .catch(error => console.error('Error loading language:', error)); // Log any errors
+        .catch(error => console.error('Error loading language:', error));
 }
-
-
-loadLanguage(currentLanguage);
 //#endregion
 
 //#region Photo slides

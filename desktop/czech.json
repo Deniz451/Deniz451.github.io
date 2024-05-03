@@ -1,3 +1,10 @@
 {
-    "desktop-navbar-language": "Jazyk"
+    "desktop-navbar-language": "Jazyk",
+    "desktop-navbar-theme": "Téma",
+    "desktop-navbar-theme-light": "Světlá",
+    "desktop-navbar-theme-dark": "Tmavá",
+    "desktop-navbar-preview": "Náhled",
+    "desktop-navbar-file": "Soubor",
+    "desktop-navbar-edit": "Upravit",
+    "desktop-navbar-view": "Zobrazit"
 }
