@@ -325,6 +325,7 @@ document.querySelectorAll(".desktop-mobile-app-navbar-close-icon").forEach((elem
 //#endregion
 
 //#region Language
+let currentLanguage = 'english';
 const enBtn = document.getElementById("en");
 const csBtn = document.getElementById("cs");
 const ruBtn = document.getElementById("ru");
@@ -334,40 +335,40 @@ enBtn.addEventListener("click", () => {
     csBtn.style.fontWeight = "normal";
     ruBtn.style.fontWeight = "normal";
     enBtn.style.fontWeight = "bold";
+    currentLanguage = 'english';
 })
 
 csBtn.addEventListener("click", () => {
     ruBtn.style.fontWeight = "normal";
     enBtn.style.fontWeight = "normal";
     csBtn.style.fontWeight = "bold";
+    currentLanguage = 'czech';
 })
 
 ruBtn.addEventListener("click", () => {
     csBtn.style.fontWeight = "normal";
     enBtn.style.fontWeight = "normal";
     ruBtn.style.fontWeight = "bold";
+    currentLanguage = 'russian';
 })
 
-let currentLanguage = 'english';
 
 function loadLanguage(currentLanguage) {
     fetch(`${currentLanguage}.json`)
         .then(response => response.json())
         .then(data => {
             document.querySelectorAll('[data-translate]').forEach(element => {
-                const key = element.dataset.translation;
+                const key = element.dataset.translate;
                 element.innerHTML = data[key];
             });
         });
 }
 
-// Function to switch language
 function switchLanguage(language) {
     currentLanguage = language;
     loadLanguage(language);
 }
 
-// Initial loading
 loadLanguage(currentLanguage);
 //#endregion
 
