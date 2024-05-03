@@ -347,6 +347,28 @@ ruBtn.addEventListener("click", () => {
     enBtn.style.fontWeight = "normal";
     ruBtn.style.fontWeight = "bold";
 })
+
+let currentLanguage = 'english';
+
+function loadLanguage(currentLanguage) {
+    fetch(`${currentLanguage}.json`)
+        .then(response => response.json())
+        .then(data => {
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.dataset.translation;
+                element.innerHTML = data[key];
+            });
+        });
+}
+
+// Function to switch language
+function switchLanguage(language) {
+    currentLanguage = language;
+    loadLanguage(language);
+}
+
+// Initial loading
+loadLanguage(currentLanguage);
 //#endregion
 
 //#region Photo slides
