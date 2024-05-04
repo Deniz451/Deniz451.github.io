@@ -360,20 +360,20 @@
             </section>
             <section class="notepad-card-body">
                 <br>
-                <p>Hello, I’m Denis!</p>
+                <p data-translate="desktop-notepad-intro">Hello, I’m Denis!</p>
                 <br>
-                <p>I’m a computer science student at Smíchovská průmyslová škola a gymnázium (<a href="https://www.ssps.cz/">SSPS</a>)</p>
-                <p>You can find out about me and my projects more in this portfolio i made just for you!</p>
-                <p>Have a look around my desktop and see if you can find anything interesting.</p>
-                <p>If any of the projects caught your attantion, you can find out more about them on my <a href="https://github.com/Deniz451">GitHub</a></p>
-                <p>If you’re having trouble finding anything that interests you, you can alwas look in the "Help" tab in the top left corner of the desktop.</p>
+                <p data-translate="desktop-notepad-text-1">I’m a computer science student at Smíchovská průmyslová škola a gymnázium (<a href="https://www.ssps.cz/">SSPS</a>)</p>
+                <p data-translate="desktop-notepad-text-2">You can find out about me and my projects more in this portfolio i made just for you!</p>
+                <p data-translate="desktop-notepad-text-3">Have a look around my desktop and see if you can find anything interesting.</p>
+                <p data-translate="desktop-notepad-text-4">If any of the projects caught your attantion, you can find out more about them on my <a href="https://github.com/Deniz451">GitHub</a></p>
+                <p data-translate="desktop-notepad-text-5">If you’re having trouble finding anything that interests you, you can alwas look in the "Help" tab in the top left corner of the desktop.</p>
                 <br>
-                <p>Have fun and enjoy!</p>
+                <p data-translate="desktop-notepad-text-6">Have fun and enjoy!</p>
                 <br> <br> <br>
-                <p>Don’t hesitate to <u class="app" data-target=".email">contact me!</u></p>
-                <p>I’m open to collaborations or job offers.</p>
+                <p data-translate="desktop-notepad-text-7">Don’t hesitate to <u class="app" data-target=".email" data-translate="desktop-notepad-text-8">contact me!</u></p>
+                <p data-translate="desktop-notepad-text-9">I’m open to collaborations or job offers.</p>
                 <br>
-                <p>Num.: +420 730 983 943</p>
+                <p data-translate="desktop-notepad-text-10">Num.: +420 730 983 943</p>
             </section>
         </div>
     
@@ -389,38 +389,38 @@
                 <form action="https://formspree.io/f/mzbnyqna" method="POST">
                     <section class="form-container">
                         <div class="input-group">
-                            <label for="first-name">Your Name</label>
-                            <input type="text" name="first-name" id="first-name"placeholder="First Name" autocomplete="on">
-                            <input type="text" name="last-name" id="last-name"placeholder="Last Name" autocomplete="on">
+                            <label for="first-name" data-translate="email-form-label-1">Your Name</label>
+                            <input type="text" name="first-name" id="first-name"placeholder="First Name" autocomplete="on" data-target="email-form-placeholder-1">
+                            <input type="text" name="last-name" id="last-name"placeholder="Last Name" autocomplete="on" data-target="email-form-placeholder-1">
                         </div>
                         <div class="input-group">
-                            <label for="email">Your Email*</label>
-                            <input type="email" name="email" id="email" placeholder="example@email.com" autocomplete="on">
+                            <label for="email" data-translate="email-form-label-2">Your Email*</label>
+                            <input type="email" name="email" id="email" placeholder="example@email.com" autocomplete="on" data-target="email-form-placeholder-1">
                         </div>
                         <div class="input-group">
-                            <label for="number1">Phone</label>
+                            <label for="number1" data-translate="email-form-label-3">Phone</label>
                             <input type="text" name="number1" id="number1" placeholder="###" autocomplete="off">
                             <input type="text" name="number2" id="number2" placeholder="###" autocomplete="off">
                             <input type="text" name="number3" id="number3" placeholder="###" autocomplete="off">
                         </div>
                         <div class="input-group">
-                            <label for="subject">Message Subject*</label>
-                            <input type="text" name="otherSubject" id="otherSubject" style="display: none;" placeholder="Subject" autocomplete="off">
+                            <label for="subject" data-translate="email-form-label-4">Message Subject*</label>
+                            <input type="text" name="otherSubject" id="otherSubject" style="display: none;" placeholder="Subject" autocomplete="off" data-target="email-form-placeholder-1">
                             <select name="subject" id="subject">
-                                <option value="" disabled selected>Subject</option>
-                                <option value="Colaboration">Colaboration</option>
-                                <option value="work-offer">Work offer</option>
-                                <option value="question">Question</option>
-                                <option value="other">Other</option>
+                                <option value="" disabled selected data-translate="email-form-subject-option-1">Subject</option>
+                                <option value="Colaboration" data-translate="email-form-subject-option-2">Colaboration</option>
+                                <option value="work-offer" data-translate="email-form-subject-option-3">Work offer</option>
+                                <option value="question" data-translate="email-form-subject-option-4">Question</option>
+                                <option value="other" data-translate="email-form-subject-option-5">Other</option>
                             </select>
                         </div>
                         <div class="input-group">
-                            <label for="content">Message*</label>
+                            <label for="content" data-translate="email-form-label-5">Message*</label>
                             <textarea id="content" name="content" maxlength="400" autocomplete="off"></textarea>
                             <span id="character-counter">0/400</span>
                         </div>
                         <hr>
-                        <input type="submit" name="submit" value="SEND MAIL">
+                        <input type="submit" name="submit" value="SEND MAIL" data-translate="email-form-value-1">
                     </section>
                 </form>
             </section>
@@ -438,24 +438,24 @@
                 <section class="blender-card-body-navbar">
                     <div class="blender-card-body-navbar-projects-container">
                         <article class="blender-project-1-preview blender-project-preview" data-target=".blender-project-1">
-                            <p class="project-preview-name">Project 1</p>
-                            <p class="project-preview-name">Example</p>
-                            <p class="project-preview-name">name</p>
+                            <p class="project-preview-name" data-translate="project-1">Project 1</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-1">Example</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-2">name</p>
                         </article>
                         <article class="blender-project-2-preview blender-project-preview" data-target=".blender-project-2">
-                            <p class="project-preview-name">Project 2</p>
-                            <p class="project-preview-name">Example</p>
-                            <p class="project-preview-name">name</p>
+                            <p class="project-preview-name" data-translate="project-2">Project 2</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-1">Example</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-2">name</p>
                         </article>
                         <article class="blender-project-3-preview blender-project-preview" data-target=".blender-project-3">
-                            <p class="project-preview-name">Project 3</p>
-                            <p class="project-preview-name">Example</p>
-                            <p class="project-preview-name">name</p>
+                            <p class="project-preview-name" data-translate="project-3">Project 3</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-1">Example</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-2">name</p>
                         </article>
                         <article class="blender-project-4-preview blender-project-preview" data-target=".blender-project-4">
-                            <p class="project-preview-name">Project 4</p>
-                            <p class="project-preview-name">Example</p>
-                            <p class="project-preview-name">name</p>
+                            <p class="project-preview-name" data-translate="project-4">Project 4</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-1">Example</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-2">name</p>
                         </article>
                     </div>
                 </section>
@@ -482,24 +482,24 @@
                 <section class="vscode-card-body-navbar">
                     <div class="vscode-card-body-navbar-projects-container">
                         <article class="vscode-project-1-preview vscode-project-preview" data-target=".vscode-project-1">
-                            <p class="project-preview-name">Project 1</p>
-                            <p class="project-preview-name">Example</p>
-                            <p class="project-preview-name">name</p>
+                            <p class="project-preview-name" data-translate="project-1">Project 1</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-1">Example</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-2">name</p>
                         </article>
                         <article class="vscode-project-2-preview vscode-project-preview" data-target=".vscode-project-2">
-                            <p class="project-preview-name">Project 2</p>
-                            <p class="project-preview-name">Example</p>
-                            <p class="project-preview-name">name</p>
+                            <p class="project-preview-name" data-translate="project-2">Project 2</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-1">Example</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-2">name</p>
                         </article>
                         <article class="vscode-project-3-preview vscode-project-preview" data-target=".vscode-project-3">
-                            <p class="project-preview-name">Project 3</p>
-                            <p class="project-preview-name">Example</p>
-                            <p class="project-preview-name">name</p>
+                            <p class="project-preview-name" data-translate="project-3">Project 3</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-1">Example</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-2">name</p>
                         </article>
                         <article class="vscode-project-4-preview vscode-project-preview" data-target=".vscode-project-4">
-                            <p class="project-preview-name">Project 4</p>
-                            <p class="project-preview-name">Example</p>
-                            <p class="project-preview-name">name</p>
+                            <p class="project-preview-name" data-translate="project-4">Project 4</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-1">Example</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-2">name</p>
                         </article>
                     </div>
                 </section>
@@ -526,23 +526,23 @@
                 <section class="unity-card-body-navbar">
                     <div class="unity-card-body-navbar-projects-container">
                         <article class="unity-project-1-preview unity-project-preview" data-target=".unity-project-1">
-                            <p class="project-preview-name">Project 1</p>
+                            <p class="project-preview-name" data-translate="project-4">Project 1</p>
                             <p class="project-preview-name">Descent</p>
                         </article>
                         <article class="unity-project-2-preview unity-project-preview" data-target=".unity-project-2">
-                            <p class="project-preview-name">Project 2</p>
-                            <p class="project-preview-name">Example</p>
-                            <p class="project-preview-name">name</p>
+                            <p class="project-preview-name" data-translate="project-2">Project 2</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-1">Example</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-2">name</p>
                         </article>
                         <article class="unity-project-3-preview unity-project-preview" data-target=".unity-project-3">
-                            <p class="project-preview-name">Project 3</p>
-                            <p class="project-preview-name">Example</p>
-                            <p class="project-preview-name">name</p>
+                            <p class="project-preview-name" data-translate="project-3">Project 3</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-1">Example</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-2">name</p>
                         </article>
                         <article class="unity-project-4-preview unity-project-preview" data-target=".unity-project-4">
-                            <p class="project-preview-name">Project 4</p>
-                            <p class="project-preview-name">Example</p>
-                            <p class="project-preview-name">name</p>
+                            <p class="project-preview-name" data-translate="project-4">Project 4</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-1">Example</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-2">name</p>
                         </article>
                     </div>
                 </section>
@@ -737,20 +737,20 @@
     
         <footer class="taskbar-container">
             <section class="app-pop-up-container">
-                <div class="app-pop-up notepad-pop-up">Notepad</div>
-                <div class="app-pop-up blender-pop-up">Blender</div>
-                <div class="app-pop-up vscode-pop-up">VS Code</div>
-                <div class="app-pop-up unity-pop-up">Unity</div>
-                <div class="app-pop-up email-pop-up">Mail</div>
-                <div class="app-pop-up calculator-pop-up">Calculator</div>
-                <div class="app-pop-up clock-pop-up">Clock</div>
-                <div class="app-pop-up contacts-pop-up">Contacts</div>
-                <div class="app-pop-up stickies-pop-up">Stickies</div>
-                <div class="app-pop-up photos-pop-up">Photos</div>
-                <div class="app-pop-up music-pop-up">Music</div>
-                <div class="app-pop-up painting-pop-up">Painting</div>
-                <div class="app-pop-up settings-pop-up">Settings</div>
-                <div class="app-pop-up trash-pop-up">Trash bin</div>
+                <div class="app-pop-up notepad-pop-up" data-translate="taskbar-app-pop-up-notepad">Notepad</div>
+                <div class="app-pop-up blender-pop-up" data-translate="taskbar-app-pop-up-blender">Blender</div>
+                <div class="app-pop-up vscode-pop-up" data-translate="taskbar-app-pop-up-vscode">VS Code</div>
+                <div class="app-pop-up unity-pop-up" data-translate="taskbar-app-pop-up-unity">Unity</div>
+                <div class="app-pop-up email-pop-up" data-translate="taskbar-app-pop-up-mail">Mail</div>
+                <div class="app-pop-up calculator-pop-up" data-translate="taskbar-app-pop-up-calculator">Calculator</div>
+                <div class="app-pop-up clock-pop-up" data-translate="taskbar-app-pop-up-clock">Clock</div>
+                <div class="app-pop-up contacts-pop-up" data-translate="taskbar-app-pop-up-contacts">Contacts</div>
+                <div class="app-pop-up stickies-pop-up" data-translate="taskbar-app-pop-up-stickies">Stickies</div>
+                <div class="app-pop-up photos-pop-up" data-translate="taskbar-app-pop-up-photos">Photos</div>
+                <div class="app-pop-up music-pop-up" data-translate="taskbar-app-pop-up-music">Music</div>
+                <div class="app-pop-up painting-pop-up" data-translate="taskbar-app-pop-up-painting">Painting</div>
+                <div class="app-pop-up settings-pop-up" data-translate="taskbar-app-pop-up-settings">Settings</div>
+                <div class="app-pop-up trash-pop-up" data-translate="taskbar-app-pop-up-trash">Trash bin</div>
             </section>
             <section class="taskbar-apps-container">
                 <img src="../photos/notepad.png" alt="notepad" class="app" width="45px" height="45px" data-target=".notepad">
@@ -794,8 +794,8 @@
                     <img src="../photos/caution.png" alt="attention" width="70px" height="70px">
                 </div>
                 <div class="attention-card-body-text">
-                    <b>Attention!</b>
-                    <p>For better experience i suggest to turn on the fullscreen with the icon in the top right corner</p>
+                    <b data-translate="attention-card-text-1">Attention!</b>
+                    <p data-translate="attention-card-text-2">For better experience i suggest to turn on the fullscreen with the icon in the top right corner</p>
                     <button id="attention-card-button-close">OK</button>
                 </div>
             </section>
@@ -805,11 +805,11 @@
             <section class="alert-card-header"></section>
             <section class="alert-card-body">
                 <div class="alert-card-body-text">
-                    <p>Are you sure you want to restore this item?</p>
+                    <p data-target="alert-card-text-1">Are you sure you want to restore this item?</p>
                 </div>
                 <div class="alert-card-body-buttons">
-                    <button id="alert-card-button-yes">YES</button>
-                    <button id="alert-card-button-no">NO</button>
+                    <button id="alert-card-button-yes" data-target="alert-card-text-2">YES</button>
+                    <button id="alert-card-button-no" data-target="alert-card-text-3">NO</button>
                 </div>
             </section>
         </div>

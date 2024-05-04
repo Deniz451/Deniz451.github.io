@@ -370,7 +370,14 @@ function loadLanguage(currentLanguage) {
         .then(data => {
             document.querySelectorAll('[data-translate]').forEach(element => {
                 const key = element.dataset.translate;
-                element.innerHTML = data[key] || element.innerHTML;
+                const translation = data[key];
+                if (element.hasAttribute('placeholder')) {
+                    element.placeholder = translation || element.placeholder;
+                } else if (element.hasAttribute('value')) {
+                    element.value = translation || element.value;
+                } else {
+                    element.innerHTML = translation || element.innerHTML;
+                }
             });
         })
         .catch(error => console.error('Error loading language:', error));
@@ -438,8 +445,9 @@ window.addEventListener('touchmove', function(event) {
 const btnLight = document.getElementById("theme-btn-light");
 const btnDark = document.getElementById("theme-btn-dark");
 let colorTheme = localStorage.getItem('colorTheme');
+let currentThemeBtn = localStorage.getItem('currentThemeBtn') || 'theme-btn-light';
+document.getElementById(currentThemeBtn).style.fontWeight = "bold";
 let root = document.documentElement;
-btnLight.style.fontWeight = "bold";
 
 if (colorTheme === "light") {
     root.style.setProperty('--card-body-color', 'white');
@@ -454,6 +462,8 @@ btnLight.addEventListener("click", () => {
 
     btnDark.style.fontWeight = "normal";
     btnLight.style.fontWeight = "bold";
+
+    localStorage.setItem('currentThemeBtn', 'theme-btn-light');
 })
 
 btnDark.addEventListener("click", () => {
@@ -462,6 +472,8 @@ btnDark.addEventListener("click", () => {
 
     btnLight.style.fontWeight = "normal";
     btnDark.style.fontWeight = "bold";
+
+    localStorage.setItem('currentThemeBtn', 'theme-btn-dark');
 })
 //#endregion
 
@@ -615,7 +627,21 @@ element.addEventListener("mousedown", (event) => {
     stickyImg.height = 200;
 
     const text = document.createElement('textarea');
-    text.setAttribute('placeholder', 'Enter text here');
+
+    switch (currentLanguage) {
+        case 'english':
+            text.setAttribute('placeholder', 'Enter text here');
+            break;
+        case 'czech':
+            text.setAttribute('placeholder', 'Zadejte text');
+            break;
+        case 'russian':
+            text.setAttribute('placeholder', 'введите текст');
+            break;
+        default:
+            text.setAttribute('placeholder', 'Enter text here');
+    }
+
     text.maxLength = 90;
     text.classList.add("sticky-text");
 
@@ -649,36 +675,32 @@ element.addEventListener("mousedown", (event) => {
 //#endregion
 
 //#region Navbar clock
+let monthNames = []
+
+window.addEventListener('DOMContentLoaded', () => {
+    fetch(`${currentLanguage}.json`)
+        .then(response => response.json())
+        .then(data => {
+            monthNames = data.months || [];
+            startTime();
+        })
+        .catch(error => console.error('Error loading language:', error));
+});
+
 function startTime() {
     const today = new Date();
     let h = today.getHours();
     let m = today.getMinutes();
     let day = today.getDate();
 
-    // Fetch month names based on selected language
-    let monthNames;
-    switch (currentLanguage) {
-        case 'english':
-            monthNames = englishData.months;
-            break;
-        case 'czech':
-            monthNames = czechData.months;
-            break;
-        case 'russian':
-            monthNames = russianData.months;
-            break;
-        // Add additional cases for other languages if needed
-        default:
-            monthNames = englishData.months; // Default to English
-    }
-    
-    let month = monthNames[today.getMonth()];
+    const month = monthNames[today.getMonth()] || '';
 
     let ampm = h >= 12 ? 'PM' : 'AM';
     h = h % 12 || 12;
     m = checkTime(m);
     document.querySelector('.navbar-time').innerHTML =  month + " " + day + " " + h + ":" + m + " " + ampm;
     document.querySelector('.mobile-header-time').innerHTML = h + ":" + m;
+
     setTimeout(startTime, 1000);
 }
 
@@ -776,7 +798,21 @@ const alertCard = document.querySelector(".alert-card");
 
 function updateTrashBin(){
     const deletedItemName = document.createElement('p');
-    deletedItemName.textContent = "Sticky note " + deletedItemsCount;
+
+    switch (currentLanguage) {
+        case 'english':
+            deletedItemName.textContent = "Sticky note " + deletedItemsCount;
+            break;
+        case 'czech':
+            deletedItemName.textContent = "Poznámkoví papírek " + deletedItemsCount;
+            break;
+        case 'russian':
+            deletedItemName.textContent = "заметка " + deletedItemsCount;
+            break;
+        default:
+            deletedItemName.textContent = "Sticky note " + deletedItemsCount;
+    }
+
     deletedItemsArr.push(deletedItemName.innerHTML);
     deletedItemName.addEventListener("click", displayAlert);
     trashBinBody.appendChild(deletedItemName);
@@ -806,3 +842,5 @@ function restoreDeletedItem(){
     }
 }
 //#endregion
+
+
