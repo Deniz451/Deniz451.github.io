@@ -369,6 +369,7 @@ function loadLanguage(currentLanguage) {
         .then(response => response.json())
         .then(data => {
             monthNames = data.months || [];
+            startTime();
             document.querySelectorAll('[data-translate]').forEach(element => {
                 const key = element.dataset.translate;
                 const translation = data[key];
@@ -712,7 +713,7 @@ function checkTime(i) {
     return i;
 }
 
-startTime();
+//startTime();
 //#endregion
 
 //#region Canvas clock
