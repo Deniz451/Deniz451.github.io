@@ -368,6 +368,7 @@ function loadLanguage(currentLanguage) {
     fetch(`${currentLanguage}.json`)
         .then(response => response.json())
         .then(data => {
+            monthNames = data.months || [];
             document.querySelectorAll('[data-translate]').forEach(element => {
                 const key = element.dataset.translate;
                 const translation = data[key];
@@ -677,7 +678,7 @@ element.addEventListener("mousedown", (event) => {
 //#region Navbar clock
 let monthNames = []
 
-window.addEventListener('DOMContentLoaded', () => {
+/*window.addEventListener('DOMContentLoaded', () => {
     fetch(`${currentLanguage}.json`)
         .then(response => response.json())
         .then(data => {
@@ -685,7 +686,7 @@ window.addEventListener('DOMContentLoaded', () => {
             startTime();
         })
         .catch(error => console.error('Error loading language:', error));
-});
+});*/
 
 function startTime() {
     const today = new Date();
