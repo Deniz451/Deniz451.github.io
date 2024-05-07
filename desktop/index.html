@@ -308,8 +308,34 @@
     <div class="computer">
         <header class="navbar">
             <section class="navbar-icons-left">
-                <p class="taskbar-icons"><b data-translate="desktop-navbar-preview">Preview</b></p>
-                <p class="taskbar-icons" data-translate="desktop-navbar-file">File</p>
+                <p class="taskbar-icons"><b data-translate="desktop-navbar-preview">Finder</b></p>
+
+                <div class="navbar-dropdown-container">
+                    <p class="navbar-section" data-translate="desktop-navbar-language">File</p>
+                    <div class="navbar-section-dropdown">
+                        <p>Notepad</p>
+                        <p class="submenu-trigger">Projects</p>
+                        <div class="submenu">
+                            <p>Unity</p>
+                            <p>Blender</p>
+                            <p>VS Code</p>
+                        </div>
+                        <p class="submenu-trigger">Extras</p>
+                        <div class="submenu">
+                            <p>Mail</p>
+                            <p>Painting</p>
+                            <p>Stickies</p>
+                            <p>Photos</p>
+                            <p>Calculator</p>
+                            <p>Clock</p>
+                            <p>Contacs</p>
+                            <p>Music</p>
+                            <p>Settings</p>
+                            <p>Trash bin</p>
+                        </div>
+                    </div>
+                </div>
+
                 <p class="taskbar-icons" data-translate="desktop-navbar-edit">Edit</p>
                 <p class="taskbar-icons" data-translate="desktop-navbar-view">View</p>
     
@@ -350,7 +376,7 @@
             </section>
         </header>
 
-        <div class="notepad-card app-window">
+        <div class="notepad-card app-window" data-name="Notepad">
             <section class="notepad-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".notepad-card"></button>
@@ -377,7 +403,7 @@
             </section>
         </div>
     
-        <div class="email-card app-window">
+        <div class="email-card app-window" data-name="Mail">
             <section class="email-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".email-card"></button>
@@ -426,7 +452,7 @@
             </section>
         </div>
     
-        <div class="blender-card app-window">
+        <div class="blender-card app-window" data-name="Blender">
             <section class="blender-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".blender-card"></button>
@@ -470,7 +496,7 @@
             </section>
         </div>
     
-        <div class="vscode-card app-window">
+        <div class="vscode-card app-window" data-name="VS Code">
             <section class="vscode-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".vscode-card"></button>
@@ -514,7 +540,7 @@
             </section>
         </div>
     
-        <div class="unity-card app-window">
+        <div class="unity-card app-window" data-name="Unity">
             <section class="unity-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".unity-card"></button>
@@ -621,7 +647,7 @@
             </section>
         </div>
     
-        <div class="calculator-card app-window">
+        <div class="calculator-card app-window" data-name="Calculator">
             <section class="calculator-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".calculator-card"></button>
@@ -632,7 +658,7 @@
             <section class="calculator-card-body"></section>
         </div>
     
-        <div class="clock-card app-window">
+        <div class="clock-card app-window" data-name="Clock">
             <section class="clock-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".clock-card"></button>
@@ -645,7 +671,7 @@
             </section>
         </div>
     
-        <div class="settings-card app-window">
+        <div class="settings-card app-window" data-name="Settings">
             <section class="settings-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".settings-card"></button>
@@ -656,7 +682,7 @@
             <section class="settings-card-body"></section>
         </div>
     
-        <div class="photos-card app-window">
+        <div class="photos-card app-window" data-name="Photos">
             <section class="photos-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".photos-card"></button>
@@ -665,13 +691,15 @@
                 </section>
             </section>
             <section class="photos-card-body">
-                <p>Here you can see all photos that I use on this portfolio</p>
-                <img src="../photos/example-photo-1.jpg" alt="" width="600px" height="300px">
-                <img src="../photos/example-photo-1.jpg" alt="" width="600px" height="300px">
+                <p>Here you can see all photos from my projects that I use in this portfolio</p>
+                <img src="../photos/unity-project-1-photo-1.png" alt="unity-project-1-photo-1.png" width="600px" height="300px">
+                <img src="../photos/unity-project-1-photo-2.png" alt="unity-project-1-photo-2.png" width="600px" height="300px">
+                <img src="../photos/unity-project-1-photo-3.png" alt="unity-project-1-photo-3.png" width="600px" height="300px">
+                <img src="../photos/unity-project-2-photo-1-blured.jpg" alt="unity-project-2-photo-1-blured.jpg" width="600px" height="300px">
             </section>
         </div>
     
-        <div class="contacts-card app-window">
+        <div class="contacts-card app-window" data-name="Contacts">
             <section class="contacts-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".contacts-card"></button>
@@ -682,7 +710,7 @@
             <section class="contacts-card-body"></section>
         </div>
     
-        <div class="music-card app-window">
+        <div class="music-card app-window" data-name="Music">
             <section class="music-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".music-card"></button>
@@ -693,7 +721,7 @@
             <section class="music-card-body"></section>
         </div>
     
-        <div class="stickies-card app-window">
+        <div class="stickies-card app-window" data-name="Stickies">
             <section class="stickies-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".stickies-card"></button>
@@ -706,7 +734,7 @@
             </section>
         </div>
     
-        <div class="painting-card app-window">
+        <div class="painting-card app-window" data-name="Painting">
             <section class="painting-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".painting-card"></button>
@@ -739,7 +767,7 @@
             </section>
         </div>
     
-        <div class="trash-card app-window">
+        <div class="trash-card app-window" data-name="Trash bin">
             <section class="trash-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".trash-card"></button>
@@ -801,7 +829,7 @@
                 <div class="trash-card-dot"></div>
             </section>
         </footer>
-    
+    ;
         <div class="attention-card">
             <section class="attention-card-header"></section>
             <section class="attention-card-body">

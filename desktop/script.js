@@ -28,6 +28,7 @@ document.getElementById("attention-card-button-close").addEventListener("click",
 //#region Display app with desktop icon
 const minOffset = 40;
 const maxOffset = 60;
+let openedAppName = document.querySelector(".navbar-icons-left .taskbar-icons:first-child b");
 
 document.querySelectorAll(".app").forEach((element) => {
     element.addEventListener("click", () => {
@@ -45,13 +46,15 @@ document.querySelectorAll(".app").forEach((element) => {
             target.style.top = cardsInitialPosition.top;
             target.style.left = cardsInitialPosition.left;
         }
-
+        
         document.querySelectorAll(".app-window").forEach((element) => {
             element.style.zIndex = "1"
         })
         target.style.zIndex = "2"
         target.style.display = "block";
         dot.style.opacity = 1
+        
+        openedAppName.innerHTML = target.dataset.name;
 
         makeDraggable(target);
     } else {
@@ -822,4 +825,25 @@ function restoreDeletedItem(){
 }
 //#endregion
 
+//#region Dropdown menu submenu
+var submenuTriggers = document.querySelectorAll('.submenu-trigger');
 
+// Loop through each submenu trigger
+submenuTriggers.forEach(function(trigger) {
+    // Add mouseenter event listener to show submenu
+    trigger.addEventListener('mouseenter', function() {
+        // Find the submenu associated with this trigger
+        var submenu = trigger.nextElementSibling;
+        // Display the submenu
+        submenu.style.display = 'block';
+    });
+
+    // Add mouseleave event listener to hide submenu
+    trigger.addEventListener('mouseleave', function() {
+        // Find the submenu associated with this trigger
+        var submenu = trigger.nextElementSibling;
+        // Hide the submenu
+        submenu.style.display = 'none';
+    });
+});
+//#endregion
