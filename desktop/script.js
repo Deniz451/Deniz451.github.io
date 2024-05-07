@@ -388,39 +388,16 @@ function loadLanguage(currentLanguage) {
 
 //#region Photo slides
 let slideIndex = 0;
-let timeout;
 
-photoCarousel();
-
-document.querySelectorAll(".indicators").forEach((element) => {
+document.querySelectorAll(".project-gallery-buttons").forEach((element) => {
     element.addEventListener("click", () => {
-        clearTimeout(timeout);
-        photoShow(element.dataset.value);
-        startCarousel();
+        let newIndex = parseInt(element.dataset.value);
+        photoShow(newIndex);
     });
 });
 
-function startCarousel() {
-    timeout = setTimeout(photoCarousel, 5000);
-}
-
-function photoCarousel() {
-    let photos = document.getElementsByClassName("photo-slides");
-    for (let i = 0; i < photos.length; i++) {
-        photos[i].style.display = "none";
-    }
-    slideIndex++;
-
-    if (slideIndex > photos.length) {
-        slideIndex = 1;
-    }
-
-    photos[slideIndex - 1].style.display = "block";
-    startCarousel();
-}
-
 function photoShow(index) {
-    let photos = document.getElementsByClassName("photo-slides");
+    let photos = document.getElementsByClassName("gallery-photos");
     for (let i = 0; i < photos.length; i++) {
         photos[i].style.display = "none";
     }

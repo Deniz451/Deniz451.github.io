@@ -319,6 +319,10 @@ footer p {
         display: none;
     }
 
+    body{
+        background-image: none;
+    }
+
     .mobile-home-screen{
         display: flex;
     }

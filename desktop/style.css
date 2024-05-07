@@ -678,6 +678,10 @@ hr{
     width: 100%;
     height: auto;
 }
+
+.unity-card-body-main-projects-container b {
+    font-weight: 800;
+}
 /*#endregion*/
 
 /*#region Calculator*/
@@ -882,6 +886,20 @@ hr{
     border-bottom-right-radius: 10px;
     border: solid #a2a2a2 1px;
     overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.photos-card-body p {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.photos-card-body img {
+    border-radius: 10px;
 }
 /*#endregion*/
 
@@ -1393,7 +1411,7 @@ hr{
 }
 
 .unity-project-2-preview{
-    background-image: url("../photos/example-photo-1-blured.jpg");
+    background-image: url("../photos/unity-project-2-photo-1-blured.jpg");
 }
 
 .unity-project-3-preview{
@@ -1406,13 +1424,13 @@ hr{
 
 .unity-project-1{
     width: 100%;
-    height: 1500px;
+    height: 900px;
     display: block;
 }
 
 .unity-project-2{
     width: 100%;
-    height: 500px;
+    height: 1000px;
     display: none;
 }
 
@@ -1476,7 +1494,7 @@ hr{
     padding-bottom: 5px;
 }
 
-.indicators-container{
+.project-gallery-buttons-container{
     width: 100px;
     height: 20px;
     display: flex;
@@ -1485,7 +1503,7 @@ hr{
     gap: 10px;
 }
 
-.indicators{
+.project-gallery-buttons{
     width: 35px;
     height: 30px;
     background-color: rgba(0, 0, 0, 0.09);
@@ -1496,13 +1514,13 @@ hr{
     border: 1px solid rgba(0, 0, 0, 0.175);
 }
 
-.indicators:hover{
+.project-gallery-buttons:hover{
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.142);
     border: 1px solid rgba(0, 0, 0, 0.216);
 }
 
-.gallery{
+.project-gallery{
     width: 100%;
     height: 400px;
     display: flex;
@@ -1513,11 +1531,18 @@ hr{
     user-select: none;
 }
 
-.gallery > img{
+.project-gallery > img{
     border-radius: 5px;
     box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.351);
 }
 
+.project-gallery .gallery-photos:first-child{
+    display: block;
+}
+
+.gallery-photos{
+    display: none;
+}
 /*#endregion*/
 
 /*#region Attention card*/
