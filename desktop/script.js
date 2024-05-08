@@ -29,6 +29,7 @@ document.getElementById("attention-card-button-close").addEventListener("click",
 const minOffset = 40;
 const maxOffset = 60;
 let openedAppName = document.querySelector(".navbar-icons-left .taskbar-icons:first-child b");
+let openedApps = [];
 
 document.querySelectorAll(".app").forEach((element) => {
     element.addEventListener("click", () => {
@@ -57,9 +58,12 @@ document.querySelectorAll(".app").forEach((element) => {
         openedAppName.innerHTML = target.dataset.name;
 
         makeDraggable(target);
+
+        openedApps.push(target);
     } else {
         target.style.display = "none";
         dot.style.opacity = 0;
+        openedApps.slice(target);
     }
     });
 });
@@ -86,6 +90,17 @@ document.querySelectorAll(".button-close").forEach((element) => {
         const dot = document.querySelector("." + target.classList[0] + "-dot");
         dot.style.opacity = 0;
         target.style.display = "none";
+        openedApps.slice(target);
+
+        openedApps.forEach(element => {
+            console.log(element);
+            if (element.style.display == "block"){
+                openedAppName.innerHTML = element.dataset.name;
+            }
+            else{
+                openedAppName.innerHTML = "Finder";
+            }
+        });
     });
 });
 
@@ -224,7 +239,7 @@ document.querySelectorAll(".vscode-project-preview").forEach((element) => {
     element.addEventListener("click", () => {
     const target = document.querySelector(element.dataset.target)
 
-    document.querySelectorAll(".unity-card-body-main-projects-container > section").forEach((section) => {
+    document.querySelectorAll(".vscode-card-body-main-projects-container > section").forEach((section) => {
         section.style.display = "none";
     });
 
@@ -389,24 +404,30 @@ function loadLanguage(currentLanguage) {
 }
 //#endregion
 
-//#region Photo slides
-let slideIndex = 0;
-
-document.querySelectorAll(".project-gallery-buttons").forEach((element) => {
-    element.addEventListener("click", () => {
-        let newIndex = parseInt(element.dataset.value);
-        photoShow(newIndex);
+//#region Project gallery
+function startGallery(galleryId){
+    const gallery = document.getElementById(galleryId);
+    const images = Array.from(gallery.getElementsByTagName('img'));
+    images.forEach(element => {
+        element.style.display = "none";
     });
-});
+    images[0].style.display = "block"
 
-function photoShow(index) {
-    let photos = document.getElementsByClassName("gallery-photos");
-    for (let i = 0; i < photos.length; i++) {
-        photos[i].style.display = "none";
-    }
-
-    photos[index].style.display = "block";
+    gallery.querySelectorAll('.project-gallery-buttons').forEach((element) => {
+            element.addEventListener("click", (event) => {
+                images.forEach(element => {
+                    element.style.display = "none";
+                });
+                const clickedButton = event.target;
+                console.log(clickedButton.dataset.value);
+                images[clickedButton.dataset.value].style.display = "block";
+        })
+    });
 }
+
+startGallery("gallery1");
+startGallery("gallery2");
+startGallery("gallery3");
 //#endregion
 
 //#region Prevent zooming*/
@@ -457,28 +478,6 @@ btnDark.addEventListener("click", () => {
 
     localStorage.setItem('currentThemeBtn', 'theme-btn-dark');
 })
-//#endregion
-
-//#region Pick mail subject
-document.getElementById("subject").addEventListener("change", function() {
-    var select = document.getElementById("subject");
-    var otherSubjectInput = document.getElementById("otherSubject");
-    if (select.value === "other") {
-        otherSubjectInput.style.display = "block";
-    } else {
-        otherSubjectInput.style.display = "none";
-    }
-});
-//#endregion
-
-//#region Mail character counter
-const textarea = document.getElementById('content');
-const counter = document.getElementById('character-counter');
-
-textarea.addEventListener('input', function() {
-    const length = textarea.value.length;
-    counter.textContent = length + '/400';
-});
 //#endregion
 
 //#region Display app name
@@ -575,27 +574,11 @@ document.querySelector(".canvas-sidebar > img:nth-of-type(2)").addEventListener(
 //#endregion
 
 //#region Sticky note
-const element = document.querySelector('.stickies-card-body img');
-let isDragging = false;
+const stickyNoteApp = document.querySelector(".app-stickies");
 
-element.addEventListener("mouseenter", () => {
-    element.style.cursor = 'grab';
-});
+stickyNoteApp.addEventListener("click", createStickyNote)
 
-element.addEventListener("mouseleave", () => {
-    if (!isDragging) {
-        element.style.cursor = 'default';
-    }
-});
-
-element.addEventListener("mousedown", (event) => {
-    event.preventDefault();
-    isDragging = true;
-    element.style.cursor = 'grabbing';
-
-    let cursorX = event.clientX;
-    let cursorY = event.clientY;
-
+function createStickyNote(){
     const sticky = document.createElement('div');
     sticky.classList.add('sticky-container');
 
@@ -631,29 +614,29 @@ element.addEventListener("mousedown", (event) => {
     sticky.appendChild(stickyImg);
     sticky.appendChild(text);
 
-    sticky.style.left = cursorX + 'px';
-    sticky.style.top = cursorY + 'px';
+    sticky.style.left = 0;
+    sticky.style.top = 0;
 
     document.body.appendChild(sticky);
     makeDraggable(sticky);
 
-    document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseup", onMouseUp);
+    sticky.addEventListener("mousemove", onMouseMove);
+    sticky.addEventListener("mouseup", onMouseUp);
+}
 
-    function onMouseMove(event) {
-        cursorX = event.clientX;
-        cursorY = event.clientY;
-        sticky.style.left = cursorX + 'px';
-        sticky.style.top = cursorY + 'px';
-    }
+function onMouseMove(event) {
+    cursorX = event.clientX;
+    cursorY = event.clientY;
+    sticky.style.left = cursorX + 'px';
+    sticky.style.top = cursorY + 'px';
+}
 
-    function onMouseUp() {
-        isDragging = false;
-        element.style.cursor = 'grab';
-        document.removeEventListener("mousemove", onMouseMove);
-        document.removeEventListener("mouseup", onMouseUp);
-    }
-});
+function onMouseUp() {
+    isDragging = false;
+    element.style.cursor = 'grab';
+    document.removeEventListener("mousemove", onMouseMove);
+    document.removeEventListener("mouseup", onMouseUp);
+}
 //#endregion
 
 //#region Navbar clock
@@ -714,14 +697,6 @@ function drawClock() {
 function drawFace(ctx, radius) {  
     ctx.beginPath();
     ctx.arc(0, 0, radius, 0, 2 * Math.PI);
-    ctx.fillStyle = 'white';
-    ctx.fill();
-
-    ctx.lineWidth = radius*0.1;
-    ctx.stroke();
-  
-    ctx.beginPath();
-    ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
     ctx.fillStyle = 'black';
     ctx.fill();
 }
@@ -735,6 +710,7 @@ function drawNumbers(ctx, radius) {
         ctx.rotate(ang);
         ctx.translate(0, -radius * 0.85);
         ctx.rotate(-ang);
+        ctx.fillStyle = 'white';
         ctx.fillText(num.toString(), 0, 0);
         ctx.rotate(ang);
         ctx.translate(0, radius * 0.85);
@@ -750,17 +726,18 @@ function drawTime(ctx, radius) {
 
     hour = hour%12;
     hour = (hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60));
-    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    drawHand(ctx, hour, radius*0.5, radius*0.05, "white");
 
     minute = (minute*Math.PI/30)+(second*Math.PI/(30*60));
-    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    drawHand(ctx, minute, radius*0.8, radius*0.04, "white");
 
     second = (second*Math.PI/30);
-    drawHand(ctx, second, radius*0.9, radius*0.02);
+    drawHand(ctx, second, radius*0.9, radius*0.02, "orange");
 }
   
-function drawHand(ctx, pos, length, width) {
+function drawHand(ctx, pos, length, width, color) {
     ctx.beginPath();
+    ctx.strokeStyle = color;
     ctx.lineWidth = width;
     ctx.lineCap = "round";
     ctx.moveTo(0,0);
@@ -847,3 +824,23 @@ submenuTriggers.forEach(function(trigger) {
     });
 });
 //#endregion
+
+//#region Photos app display img
+const imgDisplayContainer = document.querySelector(".photo-display");
+
+imgDisplayContainer.addEventListener("click", () => {
+    imgDisplayContainer.style.display = "none"
+})
+
+document.querySelectorAll(".grid-container img").forEach((element) => {
+    element.addEventListener("click", () => {
+        const imageUrl = element.getAttribute("src");
+        console.log(imageUrl);
+        imgDisplayContainer.style.display = "block";
+        imgDisplayContainer.style.backgroundImage = `url(${imageUrl})`;
+    })
+})
+//#endregion
+
+
+

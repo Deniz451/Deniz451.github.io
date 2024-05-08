@@ -415,38 +415,26 @@
                 <form action="https://formspree.io/f/mzbnyqna" method="POST">
                     <section class="form-container">
                         <div class="input-group">
-                            <label for="first-name" data-translate="email-form-label-1">Your Name</label>
-                            <input type="text" name="first-name" id="first-name"placeholder="First Name" autocomplete="on" data-target="email-form-placeholder-1">
-                            <input type="text" name="last-name" id="last-name"placeholder="Last Name" autocomplete="on" data-target="email-form-placeholder-1">
-                        </div>
-                        <div class="input-group">
-                            <label for="email" data-translate="email-form-label-2">Your Email*</label>
-                            <input type="email" name="email" id="email" placeholder="example@email.com" autocomplete="on" data-target="email-form-placeholder-1">
-                        </div>
-                        <div class="input-group">
-                            <label for="number1" data-translate="email-form-label-3">Phone</label>
-                            <input type="text" name="number1" id="number1" placeholder="###" autocomplete="off">
-                            <input type="text" name="number2" id="number2" placeholder="###" autocomplete="off">
-                            <input type="text" name="number3" id="number3" placeholder="###" autocomplete="off">
-                        </div>
-                        <div class="input-group">
-                            <label for="subject" data-translate="email-form-label-4">Message Subject*</label>
-                            <input type="text" name="otherSubject" id="otherSubject" style="display: none;" placeholder="Subject" autocomplete="off" data-target="email-form-placeholder-1">
-                            <select name="subject" id="subject">
-                                <option value="" disabled selected data-translate="email-form-subject-option-1">Subject</option>
-                                <option value="Colaboration" data-translate="email-form-subject-option-2">Colaboration</option>
-                                <option value="work-offer" data-translate="email-form-subject-option-3">Work offer</option>
-                                <option value="question" data-translate="email-form-subject-option-4">Question</option>
-                                <option value="other" data-translate="email-form-subject-option-5">Other</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label for="content" data-translate="email-form-label-5">Message*</label>
-                            <textarea id="content" name="content" maxlength="400" autocomplete="off"></textarea>
-                            <span id="character-counter">0/400</span>
+                            <label for="send-to" data-translate="email-form-label-1">To:</label>
+                            <input type="text" name="send-to" id="send-to" autocomplete="on" data-target="email-form-placeholder-1">
                         </div>
                         <hr>
-                        <input type="submit" name="submit" value="SEND MAIL" data-translate="email-form-value-1">
+                        <div class="input-group">
+                            <label for="subject" data-translate="email-form-label-4">Subject:</label>
+                            <input type="text" name="subject" id="subject" autocomplete="off" data-target="email-form-placeholder-1">
+                        </div>
+                        <hr>
+                        <div class="input-group">
+                            <label for="email" data-translate="email-form-label-2">From:</label>
+                            <input type="email" name="email" id="email" autocomplete="on" data-target="email-form-placeholder-1">
+                        </div>
+                        <hr>
+                        <div class="input-group">
+                            <textarea id="content" name="content" maxlength="1700" autocomplete="off"></textarea>
+                        </div>
+                        <button type="submit" name="submit">
+                            <img src="../icons/send.png" alt="send" width="24px" height="24px">
+                        </button>
                     </section>
                 </form>
             </section>
@@ -465,13 +453,11 @@
                     <div class="blender-card-body-navbar-projects-container">
                         <article class="blender-project-1-preview blender-project-preview" data-target=".blender-project-1">
                             <p class="project-preview-name" data-translate="project-1">Project 1</p>
-                            <p class="project-preview-name" data-translate="poject-example-name-1">Example</p>
-                            <p class="project-preview-name" data-translate="poject-example-name-2">name</p>
+                            <p class="project-preview-name">Character animation</p>
                         </article>
                         <article class="blender-project-2-preview blender-project-preview" data-target=".blender-project-2">
                             <p class="project-preview-name" data-translate="project-2">Project 2</p>
-                            <p class="project-preview-name" data-translate="poject-example-name-1">Example</p>
-                            <p class="project-preview-name" data-translate="poject-example-name-2">name</p>
+                            <p class="project-preview-name">Christmas room</p>
                         </article>
                         <article class="blender-project-3-preview blender-project-preview" data-target=".blender-project-3">
                             <p class="project-preview-name" data-translate="project-3">Project 3</p>
@@ -487,10 +473,61 @@
                 </section>
                 <section class="blender-card-body-main">
                     <div class="blender-card-body-main-projects-container">
-                        <section class="blender-project-1"></section>
-                        <section class="blender-project-2"></section>
-                        <section class="blender-project-3"></section>
-                        <section class="blender-project-4"></section>
+                        <section class="blender-project-1">
+                            <p class="project-name">Character animation</p>
+                            <article>
+                                <p><u>About:</u></p>
+                                <p>This project was my first take on animation in blender. My goal was to model a super simple lowpoly character and than try to animate it.</p>
+                            </article>
+                            <article>
+                                <p><u>Render:</u></p>
+                                <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/943943776?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width: 650px;height: 100%;" title="animation"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                            </article>
+                            <article>
+                                <p><u>Model:</u></p>
+                            </article>
+                        </section>
+                        <section class="blender-project-2">
+                            <p class="project-name">Christmas rooms</p>
+                            <article>
+                                <p><u>About:</u></p>
+                                <p>This is a simple blender model i made. It’s theme is Christmas room and it was my first try on realism with blender. So i tried to make more high poly meshes and had more work with the textures.</p>
+                            </article>
+                            <article>
+                                <p><u>Render:</u></p>
+                                <img src="../photos/blender-project-2-photo-2.png" alt="blender-project-2-photo-1.png" width="550" height="300">
+                            </article>
+                            <article>
+                                <p><u>Model:</u></p>
+                               
+                            </article>
+                        </section>
+                        <section class="blender-project-3">
+                            <p class="project-name">Example text</p>
+                            <article>
+                                <p><u>About</u></p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde consequuntur asperiores aspernatur iure facilis deserunt pariatur quia consequatur, facere id iste temporibus hic, esse omnis fuga tempore, dolor assumenda repudiandae.</p>
+                            </article>
+                            <article>
+                                <p><u>Render:</u></p>
+                            </article>
+                            <article>
+                                <p><u>Model:</u></p>
+                            </article>
+                        </section>
+                        <section class="blender-project-4">
+                            <p class="project-name">Example text</p>
+                            <article>
+                                <p><u>About</u></p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde consequuntur asperiores aspernatur iure facilis deserunt pariatur quia consequatur, facere id iste temporibus hic, esse omnis fuga tempore, dolor assumenda repudiandae.</p>
+                            </article>
+                            <article>
+                                <p><u>Render:</u></p>
+                            </article>
+                            <article>
+                                <p><u>Model:</u></p>
+                            </article>
+                        </section>
                     </div>
                 </section>
             </section>
@@ -509,8 +546,7 @@
                     <div class="vscode-card-body-navbar-projects-container">
                         <article class="vscode-project-1-preview vscode-project-preview" data-target=".vscode-project-1">
                             <p class="project-preview-name" data-translate="project-1">Project 1</p>
-                            <p class="project-preview-name" data-translate="poject-example-name-1">Example</p>
-                            <p class="project-preview-name" data-translate="poject-example-name-2">name</p>
+                            <p class="project-preview-name" data-translate="poject-example-name-1">TicTacToe</p>
                         </article>
                         <article class="vscode-project-2-preview vscode-project-preview" data-target=".vscode-project-2">
                             <p class="project-preview-name" data-translate="project-2">Project 2</p>
@@ -531,10 +567,56 @@
                 </section>
                 <section class="vscode-card-body-main">
                     <div class="vscode-card-body-main-projects-container">
-                        <section class="vscode-project-1" data-target=".vscode-card"></section>
-                        <section class="vscode-project-2" data-target=".vscode-card"></section>
-                        <section class="vscode-project-3" data-target=".vscode-card"></section>
-                        <section class="vscode-project-4" data-target=".vscode-card"></section>
+                        <section class="vscode-project-1" data-target=".vscode-card">
+                            <p class="project-name">Tic Tac Toe</p>
+                            <article>
+                                <p><u>About</u></p>
+                                <p>This is one of my first ever projects that i did when i was learning programing. This simple tictactoe game was made with C#. It’s super simple, you can either play localy with someelse, or against a pretty dumb bot. The game is displayed in cmd.</p>
+                            </article>
+                            <article>
+                                <p><u>Gallery:</u></p>
+                                <section class="project-gallery" id="gallery3">
+                                    <img src="../photos/vscode-project-1-photo-2.png" alt="photo1" class="gallery-photos" width="450px" height="300px">
+                                    <img src="../photos/vscode-project-1-photo-3.png" alt="photo2" class="gallery-photos" width="450px" height="300px">
+                                    <img src="../photos/vscode-project-1-photo-4.png" alt="photo3" class="gallery-photos" width="450px" height="300px">
+                                    <section class="project-gallery-buttons-container">
+                                        <div class="project-gallery-buttons" data-value="0">1</div>
+                                        <div class="project-gallery-buttons" data-value="1">2</div>
+                                        <div class="project-gallery-buttons" data-value="2">3</div>
+                                    </section>
+                                </section>
+                            </article>
+                        </section>
+                        <section class="vscode-project-2" data-target=".vscode-card">
+                            <p class="project-name">Example text 1</p>
+                            <article>
+                                <p><u>About</u></p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde consequuntur asperiores aspernatur iure facilis deserunt pariatur quia consequatur, facere id iste temporibus hic, esse omnis fuga tempore, dolor assumenda repudiandae.</p>
+                            </article>
+                            <article>
+                                <p><u>Gallery:</u></p>
+                            </article>
+                        </section>
+                        <section class="vscode-project-3" data-target=".vscode-card">
+                            <p class="project-name">Example text 2</p>
+                            <article>
+                                <p><u>About</u></p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde consequuntur asperiores aspernatur iure facilis deserunt pariatur quia consequatur, facere id iste temporibus hic, esse omnis fuga tempore, dolor assumenda repudiandae.</p>
+                            </article>
+                            <article>
+                                <p><u>Gallery:</u></p>
+                            </article>
+                        </section>
+                        <section class="vscode-project-4" data-target=".vscode-card">
+                            <p class="project-name">Example text 3</p>
+                            <article>
+                                <p><u>About</u></p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde consequuntur asperiores aspernatur iure facilis deserunt pariatur quia consequatur, facere id iste temporibus hic, esse omnis fuga tempore, dolor assumenda repudiandae.</p>
+                            </article>
+                            <article>
+                                <p><u>Gallery:</u></p>
+                            </article>
+                        </section>
                     </div>
                 </section>
             </section>
@@ -561,12 +643,11 @@
                         </article>
                         <article class="unity-project-3-preview unity-project-preview" data-target=".unity-project-3">
                             <p class="project-preview-name" data-translate="project-3">Project 3</p>
-                            <p class="project-preview-name">Jump King with guns</p>
+                            <p class="project-preview-name">Jump King with Guns</p>
                         </article>
                         <article class="unity-project-4-preview unity-project-preview" data-target=".unity-project-4">
                             <p class="project-preview-name" data-translate="project-4">Project 4</p>
-                            <p class="project-preview-name" data-translate="poject-example-name-1">Example</p>
-                            <p class="project-preview-name" data-translate="poject-example-name-2">name</p>
+                            <p class="project-preview-name">Tower Defence</p>
                         </article>
                     </div>
                 </section>
@@ -584,7 +665,7 @@
                             </article>
                             <article>
                                 <p><u>Gallery:</u></p>
-                                <section class="project-gallery">
+                                <section class="project-gallery" id="gallery1">
                                     <img src="../photos/unity-project-1-photo-1.png" alt="photo1" class="gallery-photos" width="450px" height="300px">
                                     <img src="../photos/unity-project-1-photo-2.png" alt="photo2" class="gallery-photos" width="450px" height="300px">
                                     <img src="../photos/unity-project-1-photo-3.png" alt="photo3" class="gallery-photos" width="450px" height="300px">
@@ -608,10 +689,10 @@
                             </article>
                             <article>
                                 <p><u>Gallery:</u></p>
-                                <section class="project-gallery">
-                                    <img src="../photos/unity-project-1-photo-1.png" alt="photo1" class="gallery-photos" width="450px" height="300px">
-                                    <img src="../photos/unity-project-1-photo-2.png" alt="photo2" class="gallery-photos" width="450px" height="300px">
-                                    <img src="../photos/unity-project-1-photo-3.png" alt="photo3" class="gallery-photos" width="450px" height="300px">
+                                <section class="project-gallery" id="gallery2">
+                                    <img src="../photos/unity-project-2-photo-2.png" alt="photo1" class="gallery-photos" width="450px" height="300px">
+                                    <img src="../photos/unity-project-2-photo-3.png" alt="photo2" class="gallery-photos" width="450px" height="300px">
+                                    <img src="../photos/unity-project-2-photo-4.png" alt="photo3" class="gallery-photos" width="450px" height="300px">
                                     <section class="project-gallery-buttons-container">
                                         <div class="project-gallery-buttons" data-value="0">1</div>
                                         <div class="project-gallery-buttons" data-value="1">2</div>
@@ -621,25 +702,25 @@
                             </article>
                         </section>
                         <section class="unity-project-3">
-                            <p class="project-name">Example name</p>
+                            <p class="project-name">Jump King with Guns</p>
                             <article>
                                 <p><u>About:</u></p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet aut unde nihil laudantium quo dolor, itaque beatae molestias consequatur, ducimus sapiente ipsum architecto. Unde dolor reprehenderit nesciunt aliquid? Nesciunt, dicta.</p>
+                                <p>This project is mine and my friends students project for school. We haven’t started working on it yet, but we already know some basics and are exited to start working on it in the next school year. The game itslef is, how you could have already guesst, yet again an <b>arcade game</b>, but now with a little bit more deapth. You play as one of 4 main heros that you can choose and you need to <b>scale a tower all the way to the top.</b></p>
                             </article>
                             <article> 
                                 <p><u>Gameplay:</u></p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero temporibus doloremque, dolore voluptas veritatis, accusantium voluptatum enim possimus corporis excepturi ipsum officia optio fuga repellat, cum non! Corporis, corrupti quo.</p>
+                               <p>As i already mentioned, the primary goal of the game is scale the big tower all the way to the top. You can <b>pick one of 4 playable characters</b>, each with their own weapons and specializations. You start at the ground level and need to go up the tower. This task will make a bit more difficult the <b>variety of enemies and bosses</b>. The game is arcade/rogue-like so when you die you need to start all the way from the bottom but you get to keep some loot.</p>
                             </article>
                         </section>
                         <section class="unity-project-4">
-                            <p class="project-name">Example name</p>
+                            <p class="project-name">Tower Defence</p>
                             <article>
                                 <p><u>About:</u></p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet aut unde nihil laudantium quo dolor, itaque beatae molestias consequatur, ducimus sapiente ipsum architecto. Unde dolor reprehenderit nesciunt aliquid? Nesciunt, dicta.</p>
+                                <p>This project is a game I’m going to work on with my friends. It’s a part of an internship that we are doing</p>
                             </article>
                             <article> 
                                 <p><u>Gameplay:</u></p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero temporibus doloremque, dolore voluptas veritatis, accusantium voluptatum enim possimus corporis excepturi ipsum officia optio fuga repellat, cum non! Corporis, corrupti quo.</p>
+                                <p>Simple tower defence</p>
                             </article>
                         </section>
                     </div>
@@ -663,7 +744,7 @@
                 <section class="buttons">
                     <button class="button-close" data-target=".clock-card"></button>
                     <button class="button-minimize" data-target=".clock-card"></button>
-                    <button class="button-maximize" data-target=".clock-card"></button>
+                    <button class="button-maximize"></button>
                 </section>
             </section>
             <section class="clock-card-body">
@@ -691,11 +772,19 @@
                 </section>
             </section>
             <section class="photos-card-body">
-                <p>Here you can see all photos from my projects that I use in this portfolio</p>
-                <img src="../photos/unity-project-1-photo-1.png" alt="unity-project-1-photo-1.png" width="600px" height="300px">
-                <img src="../photos/unity-project-1-photo-2.png" alt="unity-project-1-photo-2.png" width="600px" height="300px">
-                <img src="../photos/unity-project-1-photo-3.png" alt="unity-project-1-photo-3.png" width="600px" height="300px">
-                <img src="../photos/unity-project-2-photo-1-blured.jpg" alt="unity-project-2-photo-1-blured.jpg" width="600px" height="300px">
+                <section class="photo-display"></section>
+                <section class="grid-container">
+                    <img src="../photos/unity-project-1-photo-1.png" alt="unity-project-1-photo-1.png" width="600px" height="300px">
+                    <img src="../photos/unity-project-1-photo-2.png" alt="unity-project-1-photo-2.png" width="600px" height="300px">
+                    <img src="../photos/unity-project-1-photo-3.png" alt="unity-project-1-photo-3.png" width="600px" height="300px">
+                    <img src="../photos/unity-project-2-photo-2.png" alt="unity-project-2-photo-2.png" width="600px" height="300px">
+                    <img src="../photos/unity-project-2-photo-3.png" alt="unity-project-2-photo-3.png" width="600px" height="300px">
+                    <img src="../photos/unity-project-2-photo-4.png" alt="unity-project-2-photo-4.png" width="600px" height="300px">
+                    <img src="../photos/vscode-project-1-photo-2.png" alt="vscode-project-1-photo-2.png" width="600px" height="300px">
+                    <img src="../photos/vscode-project-1-photo-3.png" alt="vscode-project-1-photo-3.png" width="600px" height="300px">
+                    <img src="../photos/vscode-project-1-photo-4.png" alt="vscode-project-1-photo-4.png" width="600px" height="300px">
+                    <img src="../photos/blender-project-2-photo-2.png" alt="blender-project-2-photo-2.png" width="600px" height="300px">
+                </section>
             </section>
         </div>
     
@@ -719,19 +808,6 @@
                 </section>
             </section>
             <section class="music-card-body"></section>
-        </div>
-    
-        <div class="stickies-card app-window" data-name="Stickies">
-            <section class="stickies-card-header">
-                <section class="buttons">
-                    <button class="button-close" data-target=".stickies-card"></button>
-                    <button class="button-minimize" data-target=".stickies-card"></button>
-                    <button class="button-maximize" data-target=".stickies-card"></button>
-                </section>
-            </section>
-            <section class="stickies-card-body">
-                <img src="../photos/sticky-note-1.png" alt="sticky-note" width="200px" height="200px">
-            </section>
         </div>
     
         <div class="painting-card app-window" data-name="Painting">
@@ -804,7 +880,7 @@
                 <img src="../photos/calculator.png" alt="calculator" class="app" width="45px" height="45px" data-target=".calculator">
                 <img src="../photos/clock.png" alt="clock" class="app" width="45px" height="45px" data-target=".clock">
                 <img src="../photos/contacts.png" alt="contacts" class="app" width="45px" height="45px" data-target=".contacts">
-                <img src="../photos/stickies.png" alt="stickies" class="app" width="45px" height="45px" data-target=".stickies">
+                <img src="../photos/stickies.png" alt="stickies" class="app-stickies" width="45px" height="45px">
                 <img src="../photos/photos.png" alt="photos" class="app" width="45px" height="45px" data-target=".photos">
                 <img src="../photos/music.png" alt="music" class="app" width="45px" height="45px" data-target=".music">
                 <hr>
@@ -829,7 +905,7 @@
                 <div class="trash-card-dot"></div>
             </section>
         </footer>
-    ;
+    
         <div class="attention-card">
             <section class="attention-card-header"></section>
             <section class="attention-card-body">

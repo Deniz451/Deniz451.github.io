@@ -57,6 +57,15 @@ html, body {
 .app:hover{
     cursor: pointer;
 }
+
+.app-stickies{
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.app-stickies:hover{
+    cursor: pointer;
+}
 /*#endregion*/
 
 /*#region Navbar*/
@@ -439,76 +448,49 @@ p > b{
     border: solid #a2a2a2 1px;
     overflow: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
 }
 
-.form-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
+.form-container{
+    padding-top: 20px;
 }
 
-.input-group {
+.form-container hr{
+    width: 90%;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.208);
+}
+
+.form-container button{
+    width: 80px;
+    height: 35px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    position: relative;
+    justify-content: center;
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
 }
 
-.input-group label {
-    flex-basis: 150px;
+.input-group{
+    padding-left: 50px;
 }
 
-.input-group input,
-.form-container textarea {
-    flex-grow: 1;
-}
-
-.form-container input{
-    height: 25px;
-}
-
-#content{
-    height: 100px;
-}
-
-.form-container > input[type="submit"]{
-    width: 175px;
-    height: 30px;
-    border-radius: 5px;
-    background-color: white;
-    font-size: 15px;
-    border: 2px solid rgba(0, 0, 0, 0.686);
-}
-
-.form-container > input[type="submit"]:hover{
-    cursor: pointer;
-}
-
-.form-container input::placeholder{
-    user-select: none;
-}
-
-hr{
-    width: 700px;
-    border-top: 1px solid black;
-}
-
-.form-container select{
-    height: 30px;
+input[type="text"],
+input[type="email"]{
+    width: 80%;
+    margin-left: 15px;
+    border: 0;
+    outline: none;
 }
 
 #content {
-    height: 100px;
+    margin-top: 30px;
+    height: 250px;
+    width: 95%;
     resize: none;
-}
-#character-counter {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
+    border: 0;
+    outline: none;
 }
 /*#endregion*/
 
@@ -767,7 +749,6 @@ hr{
     display: none;
     position: absolute;
     z-index: 2;
-    resize: both;
     overflow: hidden;
     min-width: 300px;
     max-width: 1200px;
@@ -933,7 +914,41 @@ hr{
 }
 
 .photos-card-body img {
-    border-radius: 10px;
+    border-radius: 5px;
+}
+
+.grid-container {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-container img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.2s ease, box-shadow 0.1s ease;
+}
+
+.grid-container img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.275);
+}
+
+.photo-display{
+    width: 100%;
+    height: 95%;
+    background-image: url("");
+    display: none;
+    position: absolute;
+    top: 5%;
+    left: 0;
+    z-index: 2;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(10px);
 }
 /*#endregion*/
 
@@ -1261,7 +1276,7 @@ hr{
 
 /*#region VScode Projects*/
 .vscode-project-1-preview{
-    background-image: url("../photos/example-photo-1-blured.jpg");
+    background-image: url("../photos/vscode-project-1-photo-1-blured.jpg");
 }
 
 .vscode-project-2-preview{
@@ -1278,7 +1293,7 @@ hr{
 
 .vscode-project-1{
     width: 100%;
-    height: 1500px;
+    height: 500px;
     display: block;
 }
 
@@ -1290,13 +1305,13 @@ hr{
 
 .vscode-project-3{
     width: 100%;
-    height: 1500px;
+    height: 500px;
     display: none;
 }
 
 .vscode-project-4{
     width: 100%;
-    height: 1500px;
+    height: 500px;
     display: none;
 }
 
@@ -1336,8 +1351,12 @@ hr{
 }
 
 .project-preview-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: 800;
     font-size: 15px;
+    width: 80%;
 }
 
 .vscode-card-body-main-projects-container article > p:nth-of-type(1){
@@ -1351,11 +1370,11 @@ hr{
 
 /*#region Blender projects*/
 .blender-project-1-preview{
-    background-image: url("../photos/example-photo-1-blured.jpg");
+    background-image: url("../photos/blender-project-1-photo-1-blured.jpg");
 }
 
 .blender-project-2-preview{
-    background-image: url("../photos/example-photo-1-blured.jpg");
+    background-image: url("../photos/blender-project-2-photo-1-blured.jpg");
 }
 
 .blender-project-3-preview{
@@ -1368,25 +1387,25 @@ hr{
 
 .blender-project-1{
     width: 100%;
-    height: 1500px;
+    height: 1200px;
     display: block;
 }
 
 .blender-project-2{
     width: 100%;
-    height: 500px;
+    height: 1200px;
     display: none;
 }
 
 .blender-project-3{
     width: 100%;
-    height: 1500px;
+    height: 500px;
     display: none;
 }
 
 .blender-project-4{
     width: 100%;
-    height: 1500px;
+    height: 500px;
     display: none;
 }
 
@@ -1437,6 +1456,15 @@ hr{
 .blender-project-preview > p:nth-of-type(1){
     padding-bottom: 5px;
 }
+
+.blender-card-body-main-projects-container article{
+    display: flex;
+    flex-direction: column;
+}
+
+article > img{
+    align-self: center;
+}
 /*#endregion*/
 
 /*#region Unity projects*/
@@ -1464,19 +1492,19 @@ hr{
 
 .unity-project-2{
     width: 100%;
-    height: 1000px;
+    height: 900px;
     display: none;
 }
 
 .unity-project-3{
     width: 100%;
-    height: 1500px;
+    height: 600px;
     display: none;
 }
 
 .unity-project-4{
     width: 100%;
-    height: 1500px;
+    height: 400px;
     display: none;
 }
 
@@ -1527,6 +1555,24 @@ hr{
 .unity-project-preview > p:nth-of-type(1){
     padding-bottom: 5px;
 }
+/*#endregion*/
+
+/*#region Projects gallery*/
+.project-gallery{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    user-select: none;
+}
+
+.project-gallery > img{
+    border-radius: 5px;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.351);
+}
 
 .project-gallery-buttons-container{
     width: 100px;
@@ -1552,30 +1598,6 @@ hr{
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.142);
     border: 1px solid rgba(0, 0, 0, 0.216);
-}
-
-.project-gallery{
-    width: 100%;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-    user-select: none;
-}
-
-.project-gallery > img{
-    border-radius: 5px;
-    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.351);
-}
-
-.project-gallery .gallery-photos:first-child{
-    display: block;
-}
-
-.gallery-photos{
-    display: none;
 }
 /*#endregion*/
 
