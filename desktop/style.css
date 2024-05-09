@@ -210,6 +210,24 @@ p > b{
 .submenu-trigger2:hover {
     cursor: pointer;
 }
+
+.navbar-section-dropdown > img:nth-of-type(1){
+    position: absolute;
+    left: 67px;
+    top: 12px;
+}
+
+.navbar-section-dropdown > img:nth-of-type(2){
+    position: absolute;
+    left: 67px;
+    top: 45px;
+}
+
+.navbar-section-dropdown > img:nth-of-type(3){
+    position: absolute;
+    left: 52px;
+    top: 79px;
+}
 /*#endregion*/
 
 /*#region Taskbar*/
@@ -1853,6 +1871,7 @@ article > img{
     position: absolute;
     display: none;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .mobile-notepad-body p {
@@ -1881,6 +1900,7 @@ article > img{
     position: absolute;
     display: none;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 /*#endregion*/
 
@@ -1891,6 +1911,7 @@ article > img{
     position: absolute;
     display: none;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 /*#endregion*/
 
@@ -1901,6 +1922,7 @@ article > img{
     position: absolute;
     display: none;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 /*#endregion*/
 
