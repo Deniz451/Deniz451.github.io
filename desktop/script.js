@@ -430,7 +430,7 @@ startGallery("gallery2");
 startGallery("gallery3");
 //#endregion
 
-//#region Prevent zooming*/
+//#region Prevent zooming
 window.addEventListener('wheel', function(event) {
     if (event.ctrlKey === true) {
         event.preventDefault();

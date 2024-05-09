@@ -116,6 +116,10 @@ html, body {
     cursor: pointer;
 }
 
+.navbar-section:hover > .navbar-section-dropdown{
+    display: block;
+}
+
 .navbar-section-dropdown{
     display: none;
     position: absolute;
@@ -140,7 +144,9 @@ html, body {
     cursor: pointer;
 }
   
-.navbar-dropdown-container:hover .navbar-section-dropdown {display: block;}
+.navbar-dropdown-container:hover .navbar-section-dropdown {
+    display: block;
+}
 
 .navbar a{
     color: black;
@@ -169,7 +175,8 @@ p > b{
     font-weight: 800;
 }
 
-.submenu {
+.submenu1,
+.submenu2 {
     display: none;
     position: absolute;
     top: 0;
@@ -180,23 +187,27 @@ p > b{
     z-index: 1;
 }
 
-.submenu > p {
+.submenu1 > p,
+.submenu2 > p {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
-.submenu > p:hover {
+.submenu1 > p:hover,
+.submenu2 > p:hover {
     background-color: #ddd;
     cursor: pointer;
 }
 
-.navbar-section-dropdown:hover .submenu {
+.submenu-trigger1:hover .submenu1,
+.submenu-trigger2:hover .submenu2 {
     display: block;
 }
 
-.submenu-trigger:hover {
+.submenu-trigger1:hover,
+.submenu-trigger2:hover {
     cursor: pointer;
 }
 /*#endregion*/
@@ -283,7 +294,7 @@ p > b{
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 11px;
+    font-size: 9px;
     border-radius: 10px;
     user-select: none;
 }
@@ -2213,4 +2224,12 @@ article > img{
 
 .navbar-icons-right > img:nth-of-type(3){
     cursor: pointer;
+}
+
+.taskbar-apps-container >  img:nth-of-type(6),
+.taskbar-apps-container >  img:nth-of-type(8),
+.taskbar-apps-container >  img:nth-of-type(11),
+.taskbar-apps-container >  img:nth-of-type(13),
+.taskbar-apps-container >  img:nth-of-type(14){
+    cursor: not-allowed;
 }

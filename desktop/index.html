@@ -308,20 +308,19 @@
     <div class="computer">
         <header class="navbar">
             <section class="navbar-icons-left">
-                <p class="taskbar-icons"><b data-translate="desktop-navbar-preview">Finder</b></p>
+                <p><b data-translate="desktop-navbar-finder">Finder</b></p>
 
                 <div class="navbar-dropdown-container">
                     <p class="navbar-section" data-translate="desktop-navbar-language">File</p>
                     <div class="navbar-section-dropdown">
-                        <p>Notepad</p>
-                        <p class="submenu-trigger">Projects</p>
-                        <div class="submenu">
+                        <p class="submenu-trigger1">Projects</p>
+                        <div class="submenu1">
                             <p>Unity</p>
                             <p>Blender</p>
                             <p>VS Code</p>
                         </div>
-                        <p class="submenu-trigger">Extras</p>
-                        <div class="submenu">
+                        <p class="submenu-trigger2">Extras</p>
+                        <div class="submenu2">
                             <p>Mail</p>
                             <p>Painting</p>
                             <p>Stickies</p>
@@ -333,6 +332,7 @@
                             <p>Settings</p>
                             <p>Trash bin</p>
                         </div>
+                        <p>Notepad</p>
                     </div>
                 </div>
 
@@ -359,13 +359,19 @@
                 <div class="navbar-dropdown-container">
                     <p class="navbar-section" data-translate="desktop-navbar-socials">Socials</p>
                     <div class="navbar-section-dropdown">
-                        <a href="https://www.instagram.com/denis.resitko/">Instagram <img src="../icons/link.png" alt="link" width="9px" height="9px"></a>
-                        <a href="https://www.facebook.com/denis.resitko/">Facebook <img src="../icons/link.png" alt="link" width="9px" height="9px"></a>
-                        <a href="https://github.com/Deniz451">GitHub <img src="../icons/link.png" alt="link" width="9px" height="9px"></a>
+                        <a href="https://www.instagram.com/denis.resitko/" data-translate="desktop-navbar-socials-1">Instagram <img src="../icons/link.png" alt="link" width="9px" height="9px"></a>
+                        <a href="https://www.facebook.com/denis.resitko/" data-translate="desktop-navbar-socials-2">Facebook <img src="../icons/link.png" alt="link" width="9px" height="9px"></a>
+                        <a href="https://github.com/Deniz451" data-translate="desktop-navbar-socials-3">GitHub <img src="../icons/link.png" alt="link" width="9px" height="9px"></a>
                     </div>
                 </div>
                 
-                <p class="taskbar-icons" data-translate="desktop-navbar-help">Help</p>
+
+                <div class="navbar-dropdown-container">
+                    <p class="navbar-section" data-translate="desktop-navbar-help">Help</p>
+                    <div class="navbar-section-dropdown">
+                        <p data-translate="desktop-navbar-help">Help</p>
+                    </div>
+                </div>
     
             </section>
             <section class="navbar-icons-right">
@@ -420,12 +426,12 @@
                         </div>
                         <hr>
                         <div class="input-group">
-                            <label for="subject" data-translate="email-form-label-4">Subject:</label>
+                            <label for="subject" data-translate="email-form-label-2">Subject:</label>
                             <input type="text" name="subject" id="subject" autocomplete="off" data-target="email-form-placeholder-1">
                         </div>
                         <hr>
                         <div class="input-group">
-                            <label for="email" data-translate="email-form-label-2">From:</label>
+                            <label for="email" data-translate="email-form-label-3">From:</label>
                             <input type="email" name="email" id="email" autocomplete="on" data-target="email-form-placeholder-1">
                         </div>
                         <hr>
@@ -453,11 +459,11 @@
                     <div class="blender-card-body-navbar-projects-container">
                         <article class="blender-project-1-preview blender-project-preview" data-target=".blender-project-1">
                             <p class="project-preview-name" data-translate="project-1">Project 1</p>
-                            <p class="project-preview-name">Character animation</p>
+                            <p class="project-preview-name" data-translate="blender-project-1-name">Character animation</p>
                         </article>
                         <article class="blender-project-2-preview blender-project-preview" data-target=".blender-project-2">
                             <p class="project-preview-name" data-translate="project-2">Project 2</p>
-                            <p class="project-preview-name">Christmas room</p>
+                            <p class="project-preview-name" data-translate="blender-project-2-name">Christmas room</p>
                         </article>
                         <article class="blender-project-3-preview blender-project-preview" data-target=".blender-project-3">
                             <p class="project-preview-name" data-translate="project-3">Project 3</p>
@@ -474,58 +480,58 @@
                 <section class="blender-card-body-main">
                     <div class="blender-card-body-main-projects-container">
                         <section class="blender-project-1">
-                            <p class="project-name">Character animation</p>
+                            <p class="project-name" data-translate="blender-project-1-name">Character animation</p>
                             <article>
-                                <p><u>About:</u></p>
-                                <p>This project was my first take on animation in blender. My goal was to model a super simple lowpoly character and than try to animate it.</p>
+                                <p><u data-translate="project-about">About:</u></p>
+                                <p data-translate="blender-project-1-about">This project was my first take on animation in blender. My goal was to model a super simple lowpoly character and than try to animate it.</p>
                             </article>
                             <article>
-                                <p><u>Render:</u></p>
+                                <p><u data-translate="project-render">Render:</u></p>
                                 <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/943943776?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width: 650px;height: 100%;" title="animation"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
                             </article>
                             <article>
-                                <p><u>Model:</u></p>
+                                <p><u data-translate="project-model">Model:</u></p>
                             </article>
                         </section>
                         <section class="blender-project-2">
-                            <p class="project-name">Christmas rooms</p>
+                            <p class="project-name" data-translate="blender-project-2-name">Christmas rooms</p>
                             <article>
-                                <p><u>About:</u></p>
-                                <p>This is a simple blender model i made. It’s theme is Christmas room and it was my first try on realism with blender. So i tried to make more high poly meshes and had more work with the textures.</p>
+                                <p><u data-translate="project-about">About:</u></p>
+                                <p data-translate="blender-project-2-about">This is a simple blender model i made. It’s theme is Christmas room and it was my first try on realism with blender. So i tried to make more high poly meshes and had more work with the textures.</p>
                             </article>
                             <article>
-                                <p><u>Render:</u></p>
+                                <p><u data-translate="project-render">Render:</u></p>
                                 <img src="../photos/blender-project-2-photo-2.png" alt="blender-project-2-photo-1.png" width="550" height="300">
                             </article>
                             <article>
-                                <p><u>Model:</u></p>
+                                <p><u data-translate="project-model">Model:</u></p>
                                
                             </article>
                         </section>
                         <section class="blender-project-3">
                             <p class="project-name">Example text</p>
                             <article>
-                                <p><u>About</u></p>
+                                <p><u data-translate="project-about">About</u></p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde consequuntur asperiores aspernatur iure facilis deserunt pariatur quia consequatur, facere id iste temporibus hic, esse omnis fuga tempore, dolor assumenda repudiandae.</p>
                             </article>
                             <article>
-                                <p><u>Render:</u></p>
+                                <p><u data-translate="project-render">Render:</u></p>
                             </article>
                             <article>
-                                <p><u>Model:</u></p>
+                                <p><u data-translate="project-model">Model:</u></p>
                             </article>
                         </section>
                         <section class="blender-project-4">
                             <p class="project-name">Example text</p>
                             <article>
-                                <p><u>About</u></p>
+                                <p><u data-translate="project-about">About</u></p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde consequuntur asperiores aspernatur iure facilis deserunt pariatur quia consequatur, facere id iste temporibus hic, esse omnis fuga tempore, dolor assumenda repudiandae.</p>
                             </article>
                             <article>
-                                <p><u>Render:</u></p>
+                                <p><u data-translate="project-render">Render:</u></p>
                             </article>
                             <article>
-                                <p><u>Model:</u></p>
+                                <p><u data-translate="project-model">Model:</u></p>
                             </article>
                         </section>
                     </div>
@@ -546,7 +552,7 @@
                     <div class="vscode-card-body-navbar-projects-container">
                         <article class="vscode-project-1-preview vscode-project-preview" data-target=".vscode-project-1">
                             <p class="project-preview-name" data-translate="project-1">Project 1</p>
-                            <p class="project-preview-name" data-translate="poject-example-name-1">TicTacToe</p>
+                            <p class="project-preview-name" data-translate="vscode-project-1-name">TicTacToe</p>
                         </article>
                         <article class="vscode-project-2-preview vscode-project-preview" data-target=".vscode-project-2">
                             <p class="project-preview-name" data-translate="project-2">Project 2</p>
@@ -568,13 +574,13 @@
                 <section class="vscode-card-body-main">
                     <div class="vscode-card-body-main-projects-container">
                         <section class="vscode-project-1" data-target=".vscode-card">
-                            <p class="project-name">Tic Tac Toe</p>
+                            <p class="project-name" data-translate="vscode-project-1-name">Tic Tac Toe</p>
                             <article>
-                                <p><u>About</u></p>
-                                <p>This is one of my first ever projects that i did when i was learning programing. This simple tictactoe game was made with C#. It’s super simple, you can either play localy with someelse, or against a pretty dumb bot. The game is displayed in cmd.</p>
+                                <p><u data-translate="project-about">About</u></p>
+                                <p data-translate="vscode-project-1-about">This is one of my first ever projects that i did when i was learning programing. This simple tictactoe game was made with C#. It’s super simple, you can either play localy with someelse, or against a pretty dumb bot. The game is displayed in cmd.</p>
                             </article>
                             <article>
-                                <p><u>Gallery:</u></p>
+                                <p><u data-translate="project-gallery">Gallery:</u></p>
                                 <section class="project-gallery" id="gallery3">
                                     <img src="../photos/vscode-project-1-photo-2.png" alt="photo1" class="gallery-photos" width="450px" height="300px">
                                     <img src="../photos/vscode-project-1-photo-3.png" alt="photo2" class="gallery-photos" width="450px" height="300px">
@@ -590,31 +596,31 @@
                         <section class="vscode-project-2" data-target=".vscode-card">
                             <p class="project-name">Example text 1</p>
                             <article>
-                                <p><u>About</u></p>
+                                <p><u data-translate="project-about">About</u></p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde consequuntur asperiores aspernatur iure facilis deserunt pariatur quia consequatur, facere id iste temporibus hic, esse omnis fuga tempore, dolor assumenda repudiandae.</p>
                             </article>
                             <article>
-                                <p><u>Gallery:</u></p>
+                                <p><u data-translate="project-gallery">Gallery:</u></p>
                             </article>
                         </section>
                         <section class="vscode-project-3" data-target=".vscode-card">
                             <p class="project-name">Example text 2</p>
                             <article>
-                                <p><u>About</u></p>
+                                <p><u data-translate="project-about">About</u></p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde consequuntur asperiores aspernatur iure facilis deserunt pariatur quia consequatur, facere id iste temporibus hic, esse omnis fuga tempore, dolor assumenda repudiandae.</p>
                             </article>
                             <article>
-                                <p><u>Gallery:</u></p>
+                                <p><u data-translate="project-gallery">Gallery:</u></p>
                             </article>
                         </section>
                         <section class="vscode-project-4" data-target=".vscode-card">
                             <p class="project-name">Example text 3</p>
                             <article>
-                                <p><u>About</u></p>
+                                <p><u data-translate="project-about">About</u></p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde consequuntur asperiores aspernatur iure facilis deserunt pariatur quia consequatur, facere id iste temporibus hic, esse omnis fuga tempore, dolor assumenda repudiandae.</p>
                             </article>
                             <article>
-                                <p><u>Gallery:</u></p>
+                                <p><u data-translate="project-gallery">Gallery:</u></p>
                             </article>
                         </section>
                     </div>
@@ -635,36 +641,36 @@
                     <div class="unity-card-body-navbar-projects-container">
                         <article class="unity-project-1-preview unity-project-preview" data-target=".unity-project-1">
                             <p class="project-preview-name" data-translate="project-4">Project 1</p>
-                            <p class="project-preview-name">Descent</p>
+                            <p class="project-preview-name" data-translate="unity-project-1-name">Descent</p>
                         </article>
                         <article class="unity-project-2-preview unity-project-preview" data-target=".unity-project-2">
                             <p class="project-preview-name" data-translate="project-2">Project 2</p>
-                            <p class="project-preview-name">Asteroids</p>
+                            <p class="project-preview-name" data-translate="unity-project-2-name">Asteroids</p>
                         </article>
                         <article class="unity-project-3-preview unity-project-preview" data-target=".unity-project-3">
                             <p class="project-preview-name" data-translate="project-3">Project 3</p>
-                            <p class="project-preview-name">Jump King with Guns</p>
+                            <p class="project-preview-name" data-translate="unity-project-3-name">Jump King with Guns</p>
                         </article>
                         <article class="unity-project-4-preview unity-project-preview" data-target=".unity-project-4">
                             <p class="project-preview-name" data-translate="project-4">Project 4</p>
-                            <p class="project-preview-name">Tower Defence</p>
+                            <p class="project-preview-name" data-translate="unity-project-4-name">Tower Defence</p>
                         </article>
                     </div>
                 </section>
                 <section class="unity-card-body-main">
                     <div class="unity-card-body-main-projects-container">
                         <section class="unity-project-1">
-                            <p class="project-name">Descent</p>
+                            <p class="project-name" data-translate="unity-project-1-name">Descent</p>
                             <article>
-                                <p><u>About:</u></p>
+                                <p><u data-translate="project-about">About:</u></p>
                                 <p>Descent is my Unity 2d game. It’s a <b>top-down arcade game</b>. The premise of the game goes like this: You are an angel sent from Heaven to Hell and you need to fight you way through and "descenet" the 9 circles of hell to defeat satan.</p>
                             </article>
                             <article> 
-                                <p><u>Gameplay:</u></p>
+                                <p><u data-translate="project-gameplay">Gameplay:</u></p>
                                 <p>The gameplay is quite simple. You are thrown into infinite arena and need to kill a certain number of enemies that spwan around you to trigger a boss. Once the boss is defeated you go to the next level. Rinse and repeat 9 times and you just finished the game. Each time you defeat a boss you gain a new abillity. You can also gain new upgrades to your weapons. A large arsenal of toys that will be your main line of defence against the demonic enemies.</p>
                             </article>
                             <article>
-                                <p><u>Gallery:</u></p>
+                                <p><u data-translate="project-gallery">Gallery:</u></p>
                                 <section class="project-gallery" id="gallery1">
                                     <img src="../photos/unity-project-1-photo-1.png" alt="photo1" class="gallery-photos" width="450px" height="300px">
                                     <img src="../photos/unity-project-1-photo-2.png" alt="photo2" class="gallery-photos" width="450px" height="300px">
@@ -678,17 +684,17 @@
                             </article>
                         </section>
                         <section class="unity-project-2">
-                            <p class="project-name">Asteroids</p>
+                            <p class="project-name" data-translate="unity-project-2-name">Asteroids</p>
                             <article>
-                                <p><u>About:</u></p>
+                                <p><u data-translate="project-about">About:</u></p>
                                 <p>Asteroids, is my second Unity 2d project, that I am currently working on. Yet again it is an <b>arcade game</b>, set in space. You take controll of a small spaceship and need to navigate through big and dangerous asteroids fields. The game has <b>little to no story</b> and gameplay is completly infinite. In this project i really tried to recreate the  <b>nostalgic fell from the arcade games from the 80s.</b></p>
                             </article>
                             <article> 
-                                <p><u>Gameplay:</u></p>
+                                <p><u data-translate="project-gameplay">Gameplay:</u></p>
                                 <p>After you press play from the main menu the game starts right away. You are througn into the first level. After you manage to pass the asteroid field, you can either go to the next level or save your ptogress and quit. <b>Each level gets progressivly harder</b> (longer asteroid field), but you also get more poweups, like heal, dash, ammo and more.</p>
                             </article>
                             <article>
-                                <p><u>Gallery:</u></p>
+                                <p><u data-translate="project-gallery">Gallery:</u></p>
                                 <section class="project-gallery" id="gallery2">
                                     <img src="../photos/unity-project-2-photo-2.png" alt="photo1" class="gallery-photos" width="450px" height="300px">
                                     <img src="../photos/unity-project-2-photo-3.png" alt="photo2" class="gallery-photos" width="450px" height="300px">
@@ -702,24 +708,24 @@
                             </article>
                         </section>
                         <section class="unity-project-3">
-                            <p class="project-name">Jump King with Guns</p>
+                            <p class="project-name" data-translate="unity-project-3-name">Jump King with Guns</p>
                             <article>
-                                <p><u>About:</u></p>
+                                <p><u data-translate="project-about">About:</u></p>
                                 <p>This project is mine and my friends students project for school. We haven’t started working on it yet, but we already know some basics and are exited to start working on it in the next school year. The game itslef is, how you could have already guesst, yet again an <b>arcade game</b>, but now with a little bit more deapth. You play as one of 4 main heros that you can choose and you need to <b>scale a tower all the way to the top.</b></p>
                             </article>
                             <article> 
-                                <p><u>Gameplay:</u></p>
+                                <p><u data-translate="project-gameplay">Gameplay:</u></p>
                                <p>As i already mentioned, the primary goal of the game is scale the big tower all the way to the top. You can <b>pick one of 4 playable characters</b>, each with their own weapons and specializations. You start at the ground level and need to go up the tower. This task will make a bit more difficult the <b>variety of enemies and bosses</b>. The game is arcade/rogue-like so when you die you need to start all the way from the bottom but you get to keep some loot.</p>
                             </article>
                         </section>
                         <section class="unity-project-4">
-                            <p class="project-name">Tower Defence</p>
+                            <p class="project-name" data-translate="unity-project-3-name">Tower Defence</p>
                             <article>
-                                <p><u>About:</u></p>
+                                <p><u data-translate="project-about">About:</u></p>
                                 <p>This project is a game I’m going to work on with my friends. It’s a part of an internship that we are doing</p>
                             </article>
                             <article> 
-                                <p><u>Gameplay:</u></p>
+                                <p><u data-translate="project-gameplay">Gameplay:</u></p>
                                 <p>Simple tower defence</p>
                             </article>
                         </section>
@@ -728,7 +734,7 @@
             </section>
         </div>
     
-        <div class="calculator-card app-window" data-name="Calculator">
+       <!-- <div class="calculator-card app-window" data-name="Calculator">
             <section class="calculator-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".calculator-card"></button>
@@ -737,7 +743,7 @@
                 </section>
             </section>
             <section class="calculator-card-body"></section>
-        </div>
+        </div>-->
     
         <div class="clock-card app-window" data-name="Clock">
             <section class="clock-card-header">
@@ -752,7 +758,7 @@
             </section>
         </div>
     
-        <div class="settings-card app-window" data-name="Settings">
+       <!-- <div class="settings-card app-window" data-name="Settings">
             <section class="settings-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".settings-card"></button>
@@ -761,7 +767,7 @@
                 </section>
             </section>
             <section class="settings-card-body"></section>
-        </div>
+        </div>-->
     
         <div class="photos-card app-window" data-name="Photos">
             <section class="photos-card-header">
@@ -788,7 +794,7 @@
             </section>
         </div>
     
-        <div class="contacts-card app-window" data-name="Contacts">
+        <!--<div class="contacts-card app-window" data-name="Contacts">
             <section class="contacts-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".contacts-card"></button>
@@ -797,9 +803,9 @@
                 </section>
             </section>
             <section class="contacts-card-body"></section>
-        </div>
+        </div>-->
     
-        <div class="music-card app-window" data-name="Music">
+        <!--<div class="music-card app-window" data-name="Music">
             <section class="music-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".music-card"></button>
@@ -808,7 +814,7 @@
                 </section>
             </section>
             <section class="music-card-body"></section>
-        </div>
+        </div>-->
     
         <div class="painting-card app-window" data-name="Painting">
             <section class="painting-card-header">
@@ -843,7 +849,7 @@
             </section>
         </div>
     
-        <div class="trash-card app-window" data-name="Trash bin">
+        <!--<div class="trash-card app-window" data-name="Trash bin">
             <section class="trash-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".trash-card"></button>
@@ -852,7 +858,7 @@
                 </section>
             </section>
             <section class="trash-card-body"></section>
-        </div>
+        </div>-->
     
         <footer class="taskbar-container">
             <section class="app-pop-up-container">
