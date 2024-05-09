@@ -19,7 +19,7 @@
         <header class="mobile-header">
             <div class="mobile-header-time"></div>
             <section class="mobile-header-icons">
-                <img src="../icons/zoom.png" alt="zoom" width="16px" height="16px">
+                <img src="../icons/zoom.png" alt="zoom" width="16px" height="16px" class="full-screen-request-button">
                 <img src="../icons/wifi.png" alt="wifi" width="16px" height="16px">
                 <img src="../icons/signal.png" alt="signal" width="16px" height="16px">
             </section>
@@ -33,15 +33,15 @@
                 <img src="..\photos\unity.png" alt="unity" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-unity">
             </section>
             <section class="desktop-mobile-row">
-                <img src="../photos/email.png" alt="email" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-email">
-                <img src="../photos/calculator.png" alt="calculator" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-calculator">
-                <img src="../photos/clock.png" alt="clock" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-clock">
-                <img src="../photos/contacts.png" alt="contacts" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-contacts">
+                <img src="../photos/email.png" alt="email" class="mobile-app" width="50px" height="50px">
+                <img src="../photos/calculator.png" alt="calculator" class="mobile-app" width="50px" height="50px">
+                <img src="../photos/clock.png" alt="clock" class="mobile-app" width="50px" height="50px">
+                <img src="../photos/contacts.png" alt="contacts" class="mobile-app" width="50px" height="50px">
             </section>
             <section class="desktop-mobile-row">
-                <img src="../photos/photos.png" alt="photos" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-photos">
-                <img src="../photos/music.png" alt="music" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-music">
-                <img src="../photos/paint.png" alt="painting" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-painting">
+                <img src="../photos/photos.png" alt="photos" class="mobile-app" width="50px" height="50px">
+                <img src="../photos/music.png" alt="music" class="mobile-app" width="50px" height="50px">
+                <img src="../photos/paint.png" alt="painting" class="mobile-app" width="50px" height="50px">
                 <img src="../photos/settings.png" alt="settings" class="mobile-app" width="50px" height="50px" data-target=".desktop-mobile-app-settings">
             </section>
         </div>
@@ -76,26 +76,39 @@
         <div class="desktop-mobile-app-blender">
             <header class="desktop-mobile-app-navbar">
                 <img src="../icons/arrow-mobile-app.png" alt="arrow" class="desktop-mobile-app-navbar-close-icon" width="20px" height="20px" data-target=".desktop-mobile-app-blender">
-                <p>Blender</p>
+                <p class="desktop-mobile-app-navbar-close-text">Blender</p>
             </header>
             <section class="blender-mobile-project-1">
                 <article>
-                    <p class="mobile-project-name">Example name</p>
+                    <p class="mobile-project-name">Character animation</p>
                 </article>
                 <article>
-                    <p><u>About:</u></p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt provident veritatis enim omnis facere dolore magnam alias? Quo voluptatum voluptates possimus nihil. Mollitia sapiente, provident placeat nobis a fugit saepe.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt provident veritatis enim omnis facere dolore magnam alias? Quo voluptatum voluptates possimus nihil. Mollitia sapiente, provident placeat nobis a fugit saepe.</p>
+                    <p><u data-translate="project-about">About:</u></p>
+                    <p data-translate="blender-project-1-about">This project was my first take on animation in blender. My goal was to model a super simple lowpoly character and than try to animate it.</p>
+                </article>
+                <article>
+                    <p><u data-translate="project-render">Render:</u></p>
+                    <div style="padding:56.25% 0 0 0;position:relative;"><iframe class="mobile-blender-photo-shadow" src="https://player.vimeo.com/video/943943776?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width: 650px;height: 100%;" title="animation"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                </article>
+                <article>
+                    <p><u data-translate="project-model">Model:</u></p>
                 </article>
             </section>
             <section class="blender-mobile-project-2">
                 <article>
-                    <p class="mobile-project-name">Example name</p>
+                    <p class="mobile-project-name">Christmas room</p>
                 </article>
                 <article>
-                    <p><u>About:</u></p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt provident veritatis enim omnis facere dolore magnam alias? Quo voluptatum voluptates possimus nihil. Mollitia sapiente, provident placeat nobis a fugit saepe.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt provident veritatis enim omnis facere dolore magnam alias? Quo voluptatum voluptates possimus nihil. Mollitia sapiente, provident placeat nobis a fugit saepe.</p>
+                    <p><u data-translate="project-about">About:</u></p>
+                    <p data-translate="blender-project-2-about">This is a simple blender model i made. It’s theme is Christmas room and it was my first try on realism with blender. So i tried to make more high poly meshes and had more work with the textures.</p>
+                </article>
+                <article>
+                    <p><u data-translate="project-render">Render:</u></p>
+                    <img src="../photos/blender-project-2-photo-2.png" alt="blender-project-2-photo-1.png" width="550" height="300" class="mobile-blender-photo-shadow">
+                </article>
+                <article>
+                    <p><u data-translate="project-model">Model:</u></p>
+                   
                 </article>
             </section>
             <section class="blender-mobile-project-3">
@@ -127,12 +140,24 @@
             </header>
             <section class="vscode-mobile-project-1">
                 <article>
-                    <p class="mobile-project-name">Example name</p>
+                    <p class="mobile-project-name">TicTacToe</p>
                 </article>
                 <article>
-                    <p><u>About:</u></p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt provident veritatis enim omnis facere dolore magnam alias? Quo voluptatum voluptates possimus nihil. Mollitia sapiente, provident placeat nobis a fugit saepe.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt provident veritatis enim omnis facere dolore magnam alias? Quo voluptatum voluptates possimus nihil. Mollitia sapiente, provident placeat nobis a fugit saepe.</p>
+                    <p><u data-translate="project-about">About</u></p>
+                    <p data-translate="vscode-project-1-about">This is one of my first ever projects that i did when i was learning programing. This simple tictactoe game was made with C#. It’s super simple, you can either play localy with someelse, or against a pretty dumb bot. The game is displayed in cmd.</p>
+                </article>
+                <article>
+                    <p><u data-translate="project-gallery">Gallery:</u></p>
+                    <section class="project-gallery" id="gallery4">
+                        <img src="../photos/vscode-project-1-photo-2.png" alt="photo1" class="gallery-photos" width="450px" height="300px">
+                        <img src="../photos/vscode-project-1-photo-3.png" alt="photo2" class="gallery-photos" width="450px" height="300px">
+                        <img src="../photos/vscode-project-1-photo-4.png" alt="photo3" class="gallery-photos" width="450px" height="300px">
+                        <section class="project-gallery-buttons-container">
+                            <div class="project-gallery-buttons" data-value="0">1</div>
+                            <div class="project-gallery-buttons" data-value="1">2</div>
+                            <div class="project-gallery-buttons" data-value="2">3</div>
+                        </section>
+                    </section>
                 </article>
             </section>
             <section class="vscode-mobile-project-2">
@@ -177,42 +202,77 @@
                     <p class="mobile-project-name">Descent</p>
                 </article>
                 <article>
-                    <p><u>About:</u></p>
-                    <p>Descent is my Unity 2d game. It’s a top-down arcade game. The premise of the game goes like this: You are an angel sent from Heaven to Hell and you need to fight you way through and "descenet" the 9 circles of hell to defeat satan.</p>
+                    <p><u data-translate="project-about">About:</u></p>
+                    <p>Descent is my Unity 2d game. It’s a <b>top-down arcade game</b>. The premise of the game goes like this: You are an angel sent from Heaven to Hell and you need to fight you way through and "descenet" the 9 circles of hell to defeat satan.</p>
                 </article>
                 <article> 
-                    <p><u>Gameplay:</u></p>
+                    <p><u data-translate="project-gameplay">Gameplay:</u></p>
                     <p>The gameplay is quite simple. You are thrown into infinite arena and need to kill a certain number of enemies that spwan around you to trigger a boss. Once the boss is defeated you go to the next level. Rinse and repeat 9 times and you just finished the game. Each time you defeat a boss you gain a new abillity. You can also gain new upgrades to your weapons. A large arsenal of toys that will be your main line of defence against the demonic enemies.</p>
+                </article>
+                <article>
+                    <p><u data-translate="project-gallery">Gallery:</u></p>
+                    <section class="project-gallery" id="gallery5">
+                        <img src="../photos/unity-project-1-photo-1.png" alt="photo1" class="gallery-photos" width="450px" height="300px">
+                        <img src="../photos/unity-project-1-photo-2.png" alt="photo2" class="gallery-photos" width="450px" height="300px">
+                        <img src="../photos/unity-project-1-photo-3.png" alt="photo3" class="gallery-photos" width="450px" height="300px">
+                        <section class="project-gallery-buttons-container">
+                            <div class="project-gallery-buttons" data-value="0">1</div>
+                            <div class="project-gallery-buttons" data-value="1">2</div>
+                            <div class="project-gallery-buttons" data-value="2">3</div>
+                        </section>
+                    </section>
                 </article>
             </section>
             <section class="unity-mobile-project-2">
                 <article>
-                    <p class="mobile-project-name">Example name</p>
+                    <p class="mobile-project-name">Asteroids</p>
                 </article>
                 <article>
-                    <p><u>About:</u></p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt provident veritatis enim omnis facere dolore magnam alias? Quo voluptatum voluptates possimus nihil. Mollitia sapiente, provident placeat nobis a fugit saepe.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt provident veritatis enim omnis facere dolore magnam alias? Quo voluptatum voluptates possimus nihil. Mollitia sapiente, provident placeat nobis a fugit saepe.</p>
+                    <p><u data-translate="project-about">About:</u></p>
+                    <p>Asteroids, is my second Unity 2d project, that I am currently working on. Yet again it is an <b>arcade game</b>, set in space. You take controll of a small spaceship and need to navigate through big and dangerous asteroids fields. The game has <b>little to no story</b> and gameplay is completly infinite. In this project i really tried to recreate the  <b>nostalgic fell from the arcade games from the 80s.</b></p>
+                </article>
+                <article> 
+                    <p><u data-translate="project-gameplay">Gameplay:</u></p>
+                    <p>After you press play from the main menu the game starts right away. You are througn into the first level. After you manage to pass the asteroid field, you can either go to the next level or save your ptogress and quit. <b>Each level gets progressivly harder</b> (longer asteroid field), but you also get more poweups, like heal, dash, ammo and more.</p>
+                </article>
+                <article>
+                    <p><u data-translate="project-gallery">Gallery:</u></p>
+                    <section class="project-gallery" id="gallery6">
+                        <img src="../photos/unity-project-2-photo-2.png" alt="photo1" class="gallery-photos" width="450px" height="300px">
+                        <img src="../photos/unity-project-2-photo-3.png" alt="photo2" class="gallery-photos" width="450px" height="300px">
+                        <img src="../photos/unity-project-2-photo-4.png" alt="photo3" class="gallery-photos" width="450px" height="300px">
+                        <section class="project-gallery-buttons-container">
+                            <div class="project-gallery-buttons" data-value="0">1</div>
+                            <div class="project-gallery-buttons" data-value="1">2</div>
+                            <div class="project-gallery-buttons" data-value="2">3</div>
+                        </section>
+                    </section>
                 </article>
             </section>
             <section class="unity-mobile-project-3">
                 <article>
-                    <p class="mobile-project-name">Example name</p>
+                    <p class="mobile-project-name">Jump King with Guns</p>
                 </article>
                 <article>
-                    <p><u>About:</u></p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt provident veritatis enim omnis facere dolore magnam alias? Quo voluptatum voluptates possimus nihil. Mollitia sapiente, provident placeat nobis a fugit saepe.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt provident veritatis enim omnis facere dolore magnam alias? Quo voluptatum voluptates possimus nihil. Mollitia sapiente, provident placeat nobis a fugit saepe.</p>
+                    <p><u data-translate="project-about">About:</u></p>
+                    <p>This project is mine and my friends students project for school. We haven’t started working on it yet, but we already know some basics and are exited to start working on it in the next school year. The game itslef is, how you could have already guesst, yet again an <b>arcade game</b>, but now with a little bit more deapth. You play as one of 4 main heros that you can choose and you need to <b>scale a tower all the way to the top.</b></p>
+                </article>
+                <article> 
+                    <p><u data-translate="project-gameplay">Gameplay:</u></p>
+                   <p>As i already mentioned, the primary goal of the game is scale the big tower all the way to the top. You can <b>pick one of 4 playable characters</b>, each with their own weapons and specializations. You start at the ground level and need to go up the tower. This task will make a bit more difficult the <b>variety of enemies and bosses</b>. The game is arcade/rogue-like so when you die you need to start all the way from the bottom but you get to keep some loot.</p>
                 </article>
             </section>
             <section class="unity-mobile-project-4">
                 <article>
-                    <p class="mobile-project-name">Example name</p>
+                    <p class="mobile-project-name">Tower Defence</p>
                 </article>
                 <article>
-                    <p><u>About:</u></p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt provident veritatis enim omnis facere dolore magnam alias? Quo voluptatum voluptates possimus nihil. Mollitia sapiente, provident placeat nobis a fugit saepe.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt provident veritatis enim omnis facere dolore magnam alias? Quo voluptatum voluptates possimus nihil. Mollitia sapiente, provident placeat nobis a fugit saepe.</p>
+                    <p><u data-translate="project-about">About:</u></p>
+                    <p>This project is a game I’m going to work on with my friends. It’s a part of an internship that we are doing</p>
+                </article>
+                <article> 
+                    <p><u data-translate="project-gameplay">Gameplay:</u></p>
+                    <p>Simple tower defence</p>
                 </article>
             </section>
         </div>
@@ -308,7 +368,7 @@
     <div class="computer">
         <header class="navbar">
             <section class="navbar-icons-left">
-                <p><b data-translate="desktop-navbar-finder">Finder</b></p>
+                <p><b>Finder</b></p>
 
                 <div class="navbar-dropdown-container">
                     <p class="navbar-section" data-translate="desktop-navbar-language">File</p>
@@ -378,7 +438,7 @@
                 <div class="navbar-time"></div>
                 <img src="../icons/battery.png" alt="battery" class="taskbar-icons" width="16px" height="16px">
                 <img src="../icons/wifi.png" alt="wifi" class="taskbar-icons" width="16px" height="16px">
-                <img src="../icons/zoom.png" alt="zoom" class="taskbar-icons" id="full-screen-request-button" width="16px" height="16px">
+                <img src="../icons/zoom.png" alt="zoom" class="full-screen-request-button" width="16px" height="16px">
             </section>
         </header>
 
@@ -734,7 +794,7 @@
             </section>
         </div>
     
-       <!-- <div class="calculator-card app-window" data-name="Calculator">
+       <div class="calculator-card app-window" data-name="Calculator">
             <section class="calculator-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".calculator-card"></button>
@@ -743,7 +803,7 @@
                 </section>
             </section>
             <section class="calculator-card-body"></section>
-        </div>-->
+        </div>
     
         <div class="clock-card app-window" data-name="Clock">
             <section class="clock-card-header">
@@ -758,7 +818,7 @@
             </section>
         </div>
     
-       <!-- <div class="settings-card app-window" data-name="Settings">
+        <div class="settings-card app-window" data-name="Settings">
             <section class="settings-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".settings-card"></button>
@@ -767,7 +827,7 @@
                 </section>
             </section>
             <section class="settings-card-body"></section>
-        </div>-->
+        </div>
     
         <div class="photos-card app-window" data-name="Photos">
             <section class="photos-card-header">
@@ -794,7 +854,7 @@
             </section>
         </div>
     
-        <!--<div class="contacts-card app-window" data-name="Contacts">
+        <div class="contacts-card app-window" data-name="Contacts">
             <section class="contacts-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".contacts-card"></button>
@@ -803,9 +863,9 @@
                 </section>
             </section>
             <section class="contacts-card-body"></section>
-        </div>-->
+        </div>
     
-        <!--<div class="music-card app-window" data-name="Music">
+        <div class="music-card app-window" data-name="Music">
             <section class="music-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".music-card"></button>
@@ -814,7 +874,7 @@
                 </section>
             </section>
             <section class="music-card-body"></section>
-        </div>-->
+        </div>
     
         <div class="painting-card app-window" data-name="Painting">
             <section class="painting-card-header">
@@ -849,7 +909,7 @@
             </section>
         </div>
     
-        <!--<div class="trash-card app-window" data-name="Trash bin">
+        <div class="trash-card app-window" data-name="Trash bin">
             <section class="trash-card-header">
                 <section class="buttons">
                     <button class="button-close" data-target=".trash-card"></button>
@@ -858,7 +918,7 @@
                 </section>
             </section>
             <section class="trash-card-body"></section>
-        </div>-->
+        </div>
     
         <footer class="taskbar-container">
             <section class="app-pop-up-container">
@@ -889,7 +949,6 @@
                 <img src="../photos/stickies.png" alt="stickies" class="app-stickies" width="45px" height="45px">
                 <img src="../photos/photos.png" alt="photos" class="app" width="45px" height="45px" data-target=".photos">
                 <img src="../photos/music.png" alt="music" class="app" width="45px" height="45px" data-target=".music">
-                <hr>
                 <img src="../photos/paint.png" alt="painting" class="app" width="45px" height="45px" data-target=".painting">
                 <img src="../photos/settings.png" alt="settings" class="app" width="45px" height="45px" data-target=".settings">
                 <img src="../photos/trash-empty.png" alt="trash" id="trash-bin" class="app" width="45px" height="45px" data-target=".trash">

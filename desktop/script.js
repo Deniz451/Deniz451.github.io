@@ -1,3 +1,4 @@
+
 //#region Attention card
 const attentionCard = document.querySelector(".attention-card");
 
@@ -28,12 +29,12 @@ document.getElementById("attention-card-button-close").addEventListener("click",
 //#region Display app with desktop icon
 const minOffset = 40;
 const maxOffset = 60;
-let openedAppName = document.querySelector(".navbar-icons-left .taskbar-icons:first-child b");
+let openedAppName = document.querySelector(".navbar-icons-left:first-child b");
 let openedApps = [];
 
 document.querySelectorAll(".app").forEach((element) => {
     element.addEventListener("click", () => {
-    const target = document.querySelector(element.dataset.target + "-card")
+    const target = document.querySelector(element.dataset.target + "-card");
     const dot = document.querySelector("." + target.classList[0] + "-dot");
 
     if (!target.style.display || target.style.display === "none") {
@@ -278,19 +279,20 @@ document.querySelectorAll(".unity-project-preview").forEach((element) => {
 //#endregion
 
 //#region Enter/exit full screen
-const fullScreenBtn = document.getElementById('full-screen-request-button')
-fullScreenBtn.addEventListener('click', () => {
-    if (document.fullscreenElement || 
-        document.webkitFullscreenElement || 
-        document.mozFullScreenElement || 
-        document.msFullscreenElement) {
-        exitFullscreen();
-        fullScreenBtn.src = "../icons/zoom.png"
-    } else {
-        requestFullscreen();
-        fullScreenBtn.src = "../icons/unzoom.png"
-    }
-});
+document.querySelectorAll('.full-screen-request-button').forEach((element) => {
+    element.addEventListener('click', () => {
+        if (document.fullscreenElement || 
+            document.webkitFullscreenElement || 
+            document.mozFullScreenElement || 
+            document.msFullscreenElement) {
+            exitFullscreen();
+            element.src = "../icons/zoom.png"
+        } else {
+            requestFullscreen();
+            element.src = "../icons/unzoom.png"
+        }
+    });
+})
 
 function requestFullscreen() {
     if (document.documentElement.requestFullscreen) {
@@ -428,6 +430,9 @@ function startGallery(galleryId){
 startGallery("gallery1");
 startGallery("gallery2");
 startGallery("gallery3");
+startGallery("gallery4");
+startGallery("gallery5");
+startGallery("gallery6");
 //#endregion
 
 //#region Prevent zooming
@@ -438,7 +443,7 @@ window.addEventListener('wheel', function(event) {
 }, { passive: false });
 
 window.addEventListener('touchmove', function(event) {
-    if (event.scale !== 1) {
+    if (event.touches.length > 1) {
         event.preventDefault();
     }
 }, { passive: false });

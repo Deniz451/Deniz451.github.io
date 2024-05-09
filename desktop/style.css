@@ -316,15 +316,6 @@ p > b{
 {
     opacity: 0;
 }
-
-.taskbar-container hr{
-    position: absolute;
-    right: 315px;
-    height: 45px;
-    width: 0px;
-    border: 0;
-    border-right: 1px solid white;
-}
 /*#endregion*/
 
 /*#region Applications*/
@@ -1845,6 +1836,14 @@ article > img{
     flex-direction: column;
     gap: 60px;
 }
+
+.desktop-mobile-app-navbar-close-icon{
+    z-index: 2;
+}
+
+.desktop-mobile-app-navbar-close-text{
+    z-index: 2;
+}
 /*#endregion*/
 
 /*#region Notepad*/
@@ -2070,7 +2069,7 @@ article > img{
 /*#region Blender mobile projects*/
 .blender-mobile-project-1{
     width: 100%;
-    height: 100%;
+    height: 1400px;
     background-color: var(--card-body-color);
     display: flex;
     flex-direction: column;
@@ -2078,7 +2077,7 @@ article > img{
 
 .blender-mobile-project-2{
     width: 100%;
-    height: 100%;
+    height: 1200px;
     background-color: rgb(248, 248, 248);
     display: none;
     flex-direction: column;
@@ -2114,12 +2113,27 @@ article > img{
     font-weight: 800;
     padding-top: 30px;
 }
+
+.blender-mobile-photo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    margin-left: 100px;
+}
+
+.mobile-blender-photo-shadow{
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-left: 50%;
+    transform: translate(-50%);
+}
 /*#endregion*/
 
 /*#region VSCode mobile projects*/
 .vscode-mobile-project-1{
     width: 100%;
-    height: 100%;
+    height: 900px;
     background-color: var(--card-body-color);
     display: flex;
     flex-direction: column;
@@ -2162,7 +2176,7 @@ article > img{
 /*#region Unity mobile projects*/
 .unity-mobile-project-1{
     width: 100%;
-    height: 100%;
+    height: 1100px;
     background-color: var(--card-body-color);
     display: flex;
     flex-direction: column;
@@ -2170,7 +2184,7 @@ article > img{
 
 .unity-mobile-project-2{
     width: 100%;
-    height: 100%;
+    height: 1100px;
     background-color: rgb(248, 248, 248);
     display: none;
     flex-direction: column;
@@ -2205,6 +2219,20 @@ article > img{
 /*#endregion*/
 
 /*#region Responsivity*/
+@media(max-width: 1140px){
+    .taskbar-apps-container > img{
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media(max-width: 1040px){
+    .taskbar-apps-container > img{
+        width: 31px;
+        height: 31px;
+    }
+}
+
 @media(max-width: 900px){
     .computer{
         display: none;
