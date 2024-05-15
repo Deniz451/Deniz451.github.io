@@ -5,7 +5,7 @@ document.querySelector("form").addEventListener("submit", function(event) {
     const password = document.getElementById("password").value;
     const passwordInput = document.getElementById("password");
 
-    if (password === "admin") {
+    if (password === "supersilnyheslo321") {
         window.location.href = "../desktop/index.html";
     } else {
         document.getElementById("password").placeholder = "Wrong password";
@@ -168,7 +168,7 @@ lockScreenSwipeArea.addEventListener('touchend', function(e) {
 //#region Password entry
 let passCodeInput = [];
 let circlesIndex = 0;
-const correctPassCode = ['0', '0', '0', '0'];
+const correctPassCode = ['7', '8', '9', '0'];
 let circles = document.querySelectorAll(".circle");
 
 document.querySelectorAll(".buttons-container button").forEach((element) => {
