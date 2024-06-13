@@ -18,6 +18,7 @@ const loader = new THREE.GLTFLoader();
 loader.load('untitled.glb', function (gltf) {
     const model = gltf.scene;
     scene.add(model);
+    model.position.set(0, 0, 0);
 }, undefined, function (error) {
     console.error(error);
 });
