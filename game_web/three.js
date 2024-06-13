@@ -19,17 +19,11 @@ loader.load('untitled.glb', function (gltf) {
     const model = gltf.scene;
     scene.add(model);
     model.position.set(0, 0, 0);
-    model.scale.set(1, 1, 1); // Adjust scale if necessary
 }, undefined, function (error) {
     console.error(error);
 });
 
-camera.position.z = 5; // Adjust the camera position to ensure the model is in view
-
-// Add OrbitControls for debugging
-const controls = new THREE.OrbitControls(camera, renderer.domElement);
-controls.target.set(0, 0, 0); // Ensure controls are centered on the model
-controls.update();
+camera.position.z = 5;
 
 // Initialize CSS3DRenderer
 const cssRenderer = new THREE.CSS3DRenderer();
