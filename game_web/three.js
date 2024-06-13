@@ -15,7 +15,7 @@ scene.add(directionalLight);
 
 // Load 3D model
 const loader = new THREE.GLTFLoader();
-loader.load('untitled.glb', function (gltf) {
+loader.load('model.glb', function (gltf) {
     const model = gltf.scene;
     scene.add(model);
     model.position.set(0, 0, 0);
