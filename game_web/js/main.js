@@ -9,7 +9,9 @@ let nameIndex = 0;
 let backBtnIndex = 0;
 let playBtnIndex = 0;
 let gamePanelOpen = false;
+let gameOpen = false;
 let gameContainer = null;
+let game = null;
 
 
 names[nameIndex].classList.add('selected');
@@ -28,7 +30,7 @@ document.addEventListener('keydown', function(event) {
                 AddTextToSelected();
             }
         }
-        else{
+        else if (gamePanelOpen && !gameOpen){
             playBtns[playBtnIndex].classList.remove('selected');
             backBtns[backBtnIndex].classList.add('selected');
         }
@@ -45,7 +47,7 @@ document.addEventListener('keydown', function(event) {
                 AddTextToSelected();
             }
         }
-        else{
+        else if (gamePanelOpen && !gameOpen){
             backBtns[backBtnIndex].classList.remove('selected');
             playBtns[playBtnIndex].classList.add('selected');
         }
@@ -60,12 +62,19 @@ document.addEventListener('keydown', function(event) {
             backBtns[backBtnIndex].classList.add('selected');   
         }
         else{
-            
+            if (backBtns[backBtnIndex].classList.contains("selected")){
+                CloseGamePanel();
+                DeselectBtns();
+            }
+            else if (playBtns[playBtnIndex].classList.contains("selected")){
+                PlayGame();
+            }
         }
     }
     //esc
     else if (event.keyCode == 27 && gamePanelOpen){
-        CloseGame();
+        CloseGamePanel();
+        DeselectBtns();
     }
 });
 
@@ -87,15 +96,30 @@ function MoveSelctedBtn(){
 
 // Opens selected game container
 function SelectGame(){
-    gameContainer = document.getElementById(names[nameIndex].dataset.target);
+    gameContainer = document.getElementById(names[nameIndex].dataset.panel);
     gameContainer.style.display = "block";
     gamePanelOpen = true;
 }
 
+// Open the container with the game
+function PlayGame(){
+    game = document.getElementById(names[nameIndex].dataset.game);
+    game.style.display = "block";
+    gameOpen = true;
+}
+
 // Closes selected game container
-function CloseGame(){
+function CloseGamePanel(){
     gameContainer.style.display = "none";
     gamePanelOpen = false;
+    CloseGame();
+}
+
+// Close the container with the game
+function CloseGame(){
+    game = document.getElementById(names[nameIndex].dataset.game);
+    game.style.display = "none";
+    gameOpen = false;
 }
 
 // Adds text to slection stripe
@@ -112,3 +136,26 @@ function AddTextToSelected(){
     const currentDiv = document.getElementById("div1");
     names[nameIndex].appendChild(div);
 }
+
+// Remove .selected class from buttons back/play
+function DeselectBtns(){
+    if (backBtns[backBtnIndex].classList.contains("selected")){
+        backBtns[backBtnIndex].classList.remove("selected");
+    }
+    else if (playBtns[playBtnIndex].classList.contains("selected")){
+        playBtns[playBtnIndex].classList.remove("selected");
+    }
+}
+
+// Prevent zooming with mouse
+window.addEventListener('wheel', function(event) {
+    if (event.ctrlKey === true) {
+        event.preventDefault();
+    }
+}, { passive: false });
+
+window.addEventListener('touchmove', function(event) {
+    if (event.touches.length > 1) {
+        event.preventDefault();
+    }
+}, { passive: false });
