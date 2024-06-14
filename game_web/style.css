@@ -114,6 +114,47 @@ body{
   gap: 10px;
 }
 
+/* Container holding all of the games available for download*/
+.downloadable-games-container{
+  position: absolute;
+  left: 50px;
+  top: 300px;
+  width: 90%;
+  height: 200px;
+  display: flex;
+  gap: 15px;
+}
+
+/* Class for the individual game tabs available for download*/
+.downloadable-game{
+  position: relative;
+  width: 175px;
+  height: 60px;
+  border: 4px solid black;
+  border-radius: 5px;
+}
+
+.downloadable-game p{
+  width: 110px;
+  height: 35px;
+  font-size: 40px;
+  margin-left: 8px;
+}
+
+.downloadable-game a{
+  font-size: 15px;
+  margin-left: 8px;
+}
+
+.downloadable-game img{
+  width: 35px;
+  height: 35px;
+  filter: blur(1px); 
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
 /* CRT screen effect classes and animations*/
 .crt {
   animation: textShadow 1.6s infinite;
