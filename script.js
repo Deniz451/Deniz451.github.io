@@ -1,7 +1,6 @@
 //#region Coputer password form
 document.querySelector("form").addEventListener("submit", async function(event) {
     event.preventDefault();
-    console.log("submit");
     const password = document.getElementById("password").value;
     const passwordInput = document.getElementById("password");
 
@@ -218,7 +217,7 @@ let currentLanguage = localStorage.getItem('currentLanguage') || 'english';
 loadLanguage(currentLanguage);
 
 function loadLanguage(currentLanguage) {
-    fetch(`${currentLanguage}.json`)
+    fetch(`json/${currentLanguage}.json`)
         .then(response => response.json())
         .then(data => {
             document.querySelectorAll('[data-translate]').forEach(element => {
