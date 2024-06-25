@@ -23,7 +23,6 @@
         <div id="unity-build-title">Jumper</div>
       </div>
     </div>
-    <script src="focusHandler.js"></script>
     <script>
 
       var container = document.querySelector("#unity-container");
@@ -60,9 +59,9 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/JumperBuild.loader.js";
       var config = {
-        dataUrl: buildUrl + "/JumperBuild.data.br",
-        frameworkUrl: buildUrl + "/JumperBuild.framework.js.br",
-        codeUrl: buildUrl + "/JumperBuild.wasm.br",
+        dataUrl: buildUrl + "/JumperBuild.data.unityweb",
+        frameworkUrl: buildUrl + "/JumperBuild.framework.js.unityweb",
+        codeUrl: buildUrl + "/JumperBuild.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Jumper",
