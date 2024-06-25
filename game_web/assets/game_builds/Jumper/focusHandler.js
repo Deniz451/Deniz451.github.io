@@ -1,4 +1,4 @@
-document.addEventListener('visibilitychange', function() {
+/*document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
         // Call the Unity function to pause the game
         SendMessage('PauseMenuManager', 'PauseGame');
@@ -8,4 +8,5 @@ document.addEventListener('visibilitychange', function() {
         SendMessage('PauseMenuManager', 'ResumeGame');
         console.log("focused")
     }
-});
+});*/
+console.log("focused")
