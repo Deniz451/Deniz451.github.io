@@ -24,7 +24,7 @@ document.addEventListener('keydown', function(event) {
             nameIndex--;
             if (nameIndex < 0){
                 //nameIndex++;
-                nameIndex = names.length;
+                nameIndex = names.length - 1;
             }
             else{
                 MoveSelctedGame();
