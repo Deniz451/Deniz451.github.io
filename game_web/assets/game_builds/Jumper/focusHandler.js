@@ -1,10 +1,10 @@
 document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
         // Call the Unity function to pause the game
-        SendMessage('GameManager', 'PauseGame');
+        SendMessage('PauseMenuManager', 'PauseGame');
     } else {
         // Call the Unity function to resume the game
-        SendMessage('GameManager', 'ResumeGame');
+        SendMessage('PauseMenuManager', 'ResumeGame');
     }
 });
 
