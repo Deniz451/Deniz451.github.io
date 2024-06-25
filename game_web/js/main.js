@@ -23,7 +23,8 @@ document.addEventListener('keydown', function(event) {
         if (!gamePanelOpen){
             nameIndex--;
             if (nameIndex < 0){
-                nameIndex++;
+                //nameIndex++;
+                nameIndex = names.length;
             }
             else{
                 MoveSelctedGame();
@@ -40,7 +41,8 @@ document.addEventListener('keydown', function(event) {
         if (!gamePanelOpen){
             nameIndex++;
             if (nameIndex > names.length - 1){
-                nameIndex = names.length - 1;
+                //nameIndex = names.length - 1;
+                nameIndex = 0;
             }
             else{
                 MoveSelctedGame();
