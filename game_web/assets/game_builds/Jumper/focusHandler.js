@@ -9,3 +9,4 @@ document.addEventListener('visibilitychange', function() {
         console.log("focused")
     }
 });
+console.log("Check");
