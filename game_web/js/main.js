@@ -25,6 +25,8 @@ document.addEventListener('keydown', function(event) {
             if (nameIndex < 0){
                 //nameIndex++;
                 nameIndex = names.length - 1;
+                MoveSelctedGame();
+                AddTextToSelected();
             }
             else{
                 MoveSelctedGame();
@@ -43,6 +45,8 @@ document.addEventListener('keydown', function(event) {
             if (nameIndex > names.length - 1){
                 //nameIndex = names.length - 1;
                 nameIndex = 0;
+                MoveSelctedGame();
+                AddTextToSelected();
             }
             else{
                 MoveSelctedGame();
