@@ -9,7 +9,10 @@ document.addEventListener('visibilitychange', function() {
 });
 
 function SendMessage(objectName, functionName) {
+    console.log(`SendMessage called with ${objectName}, ${functionName}`);
     if (typeof unityInstance !== 'undefined' && unityInstance != null) {
         unityInstance.SendMessage(objectName, functionName);
+    } else {
+        console.error('unityInstance is not defined.');
     }
 }
