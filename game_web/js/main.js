@@ -17,6 +17,8 @@ let game = null;
 names[nameIndex].classList.add('selected');
 AddTextToSelected();
 
+console.log(names.length);
+
 document.addEventListener('keydown', function(event) {
     //up
     if(event.keyCode == 38) {
@@ -37,6 +39,7 @@ document.addEventListener('keydown', function(event) {
             playBtns[playBtnIndex].classList.remove('selected');
             backBtns[backBtnIndex].classList.add('selected');
         }
+        console.log(nameIndex);
     }
     //down
     else if(event.keyCode == 40) {
@@ -57,6 +60,7 @@ document.addEventListener('keydown', function(event) {
             backBtns[backBtnIndex].classList.remove('selected');
             playBtns[playBtnIndex].classList.add('selected');
         }
+        console.log(nameIndex);
     }
     //enter
     else if (event.keyCode == 13){
