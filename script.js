@@ -2,29 +2,10 @@
 document.querySelector("form").addEventListener("submit", async function(event) {
     event.preventDefault();
     const password = document.getElementById("password").value;
-    const passwordInput = document.getElementById("password");
 
-    try {
-        const response = await fetch('/.netlify/functions/verify-password', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ password })
-        });
-        
-        const result = await response.json();
-
-        if (result.success) {
-            window.location.href = "../desktop/index.html";
-        } else {
-            document.getElementById("password").placeholder = "Wrong password";
-        }
-    } catch (error) {
-        console.error("Error during password verification:", error);
+    if (password.length > 0){
+        window.location.href = "../desktop/index.html";
     }
-
-    passwordInput.value = "";
 });
 
 const viewIcon = document.getElementById("view");
