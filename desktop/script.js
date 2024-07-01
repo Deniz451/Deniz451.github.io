@@ -385,7 +385,7 @@ ruBtn.addEventListener("click", () => {
 
 
 function loadLanguage(currentLanguage) {
-    fetch(`../json/${currentLanguage}.json`)
+    fetch(`../json/${currentLanguage}.json-desktop`)
         .then(response => response.json())
         .then(data => {
             monthNames = data.months || [];
