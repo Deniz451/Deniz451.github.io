@@ -224,7 +224,7 @@ function makeDraggable(element) {
             deletedItemsCount++;
             deletedItemsContent.push(element.querySelector('textarea').value);
             element.remove();
-            deleteIcon.src = "../photos/trash-full.png";
+            deleteIcon.src = "../images/photos/trash-full.png";
             updateTrashBin();
         }
 
@@ -286,10 +286,10 @@ document.querySelectorAll('.full-screen-request-button').forEach((element) => {
             document.mozFullScreenElement || 
             document.msFullscreenElement) {
             exitFullscreen();
-            element.src = "../icons/zoom.png"
+            element.src = "../images/icons/zoom.png"
         } else {
             requestFullscreen();
-            element.src = "../icons/unzoom.png"
+            element.src = "../images/icons/unzoom.png"
         }
     });
 })
@@ -385,7 +385,7 @@ ruBtn.addEventListener("click", () => {
 
 
 function loadLanguage(currentLanguage) {
-    fetch(`${currentLanguage}.json`)
+    fetch(`../json/${currentLanguage}.json`)
         .then(response => response.json())
         .then(data => {
             monthNames = data.months || [];
@@ -591,7 +591,7 @@ function createStickyNote(){
     stickyHeader.classList.add('sticky-container-header');
 
     const stickyImg = document.createElement('img');
-    stickyImg.src = "../photos/sticky-note-2.png";
+    stickyImg.src = "../images/photos/sticky-note-2.png";
     stickyImg.alt = 'sticky';
     stickyImg.width = 200;
     stickyImg.height = 200;

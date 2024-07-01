@@ -1,4 +1,4 @@
-//#region Coputer password form
+//#region Computer password form
 document.querySelector("form").addEventListener("submit", async function(event) {
     event.preventDefault();
     const password = document.getElementById("password").value;
@@ -7,20 +7,22 @@ document.querySelector("form").addEventListener("submit", async function(event) 
         window.location.href = "../desktop/index.html";
     }
 });
+//#endregion
 
+//#region Password visibility
+const passwordInput = document.getElementById("password");
 const viewIcon = document.getElementById("view");
 const hideIcon = document.getElementById("hide");
-const passwordInput = document.getElementById("password");
 
 function togglePasswordVisibility() {
     if (passwordInput.type === "password") {
         passwordInput.type = "text";
-        viewIcon.style.display = "none";
-        hideIcon.style.display = "block";
+        viewIcon.style.display = "block";
+        hideIcon.style.display = "none";
     } else {
         passwordInput.type = "password";
-        hideIcon.style.display = "none";
-        viewIcon.style.display = "block";
+        hideIcon.style.display = "block";
+        viewIcon.style.display = "none";
     }
 }
 
@@ -159,10 +161,9 @@ lockScreenSwipeArea.addEventListener('touchend', function(e) {
 });
 //#endregion
 
-//#region Password entry
+//#region Mobile password entry
 let passCodeInput = [];
 let circlesIndex = 0;
-const correctPassCode = ['7', '8', '9', '0'];
 let circles = document.querySelectorAll(".circle");
 
 document.querySelectorAll(".buttons-container button").forEach((element) => {
@@ -176,7 +177,7 @@ document.querySelectorAll(".buttons-container button").forEach((element) => {
         circles[circlesIndex].style.backgroundColor = "white";
         circlesIndex++;
         
-        if (passCodeInput.length === 4 && passCodeInput.every((value, index) => value === correctPassCode[index])){
+        if (passCodeInput.length === 4){
             window.location.href = "../desktop/index.html";
         }
         else if (passCodeInput.length === 4){

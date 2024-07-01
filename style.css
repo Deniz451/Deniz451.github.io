@@ -5,7 +5,7 @@ body {
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-image: url("../photos/login-backround-compressed.jpg");
+    background-image: url("images/photos/login-backround-compressed.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -45,7 +45,7 @@ form{
 .pfp{
     width: 100px;
     height: 100px;
-    background-image: url("../photos/pfp.png");
+    background-image: url("images/photos/pfp.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -68,10 +68,12 @@ form{
 
 input[type="password"] {
     color: white;
+    padding-left: 10px;
 }
 
 input[type="text"] {
     color: white;
+    padding-left: 10px;
 }
 
 
@@ -92,7 +94,7 @@ input[type="submit"]{
 
 .computer img{
     position: absolute;
-    left: 140px;
+    left: 155px;
     top: 4px;
 }
 
@@ -117,7 +119,7 @@ img:hover{
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background-image: url("../photos/login-mobile-background-compressed.jpg");
+    background-image: url("images/photos/login-mobile-background-compressed.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -192,7 +194,7 @@ footer p {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background-image: url("../photos/login-mobile-background-compressed-blured.jpg");
+    background-image: url("images/photos/login-mobile-background-compressed-blured.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

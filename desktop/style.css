@@ -5,7 +5,7 @@ body{
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-image: url("../photos/desktop-background-compressed.jpg");
+    background-image: url("../images/photos/desktop-background-compressed.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1296,19 +1296,19 @@ input[type="email"]{
 
 /*#region VScode Projects*/
 .vscode-project-1-preview{
-    background-image: url("../photos/vscode-project-1-photo-1-blured.jpg");
+    background-image: url("../images/photos/vscode-project-1-photo-1-blured.jpg");
 }
 
 .vscode-project-2-preview{
-    background-image: url("../photos/example-photo-1-blured.jpg");
+    background-image: url("../images/photos/example-photo-1-blured.jpg");
 }
 
 .vscode-project-3-preview{
-    background-image: url("../photos/example-photo-1-blured.jpg");
+    background-image: url("../images/photos/example-photo-1-blured.jpg");
 }
 
 .vscode-project-4-preview{
-    background-image: url("../photos/example-photo-1-blured.jpg");
+    background-image: url("../images/photos/example-photo-1-blured.jpg");
 }
 
 .vscode-project-1{
@@ -1390,19 +1390,19 @@ input[type="email"]{
 
 /*#region Blender projects*/
 .blender-project-1-preview{
-    background-image: url("../photos/blender-project-1-photo-1-blured.jpg");
+    background-image: url("../images/photos/blender-project-1-photo-1-blured.jpg");
 }
 
 .blender-project-2-preview{
-    background-image: url("../photos/blender-project-2-photo-1-blured.jpg");
+    background-image: url("../images/photos/blender-project-2-photo-1-blured.jpg");
 }
 
 .blender-project-3-preview{
-    background-image: url("../photos/example-photo-1-blured.jpg");
+    background-image: url("../images/photos/example-photo-1-blured.jpg");
 }
 
 .blender-project-4-preview{
-    background-image: url("../photos/example-photo-1-blured.jpg");
+    background-image: url("../images/photos/example-photo-1-blured.jpg");
 }
 
 .blender-project-1{
@@ -1489,19 +1489,19 @@ article > img{
 
 /*#region Unity projects*/
 .unity-project-1-preview{
-    background-image: url("../photos/unity-project-1-photo-1-blured.jpg");
+    background-image: url("../images/photos/unity-project-1-photo-1-blured.jpg");
 }
 
 .unity-project-2-preview{
-    background-image: url("../photos/unity-project-2-photo-1-blured.jpg");
+    background-image: url("../images/photos/unity-project-2-photo-1-blured.jpg");
 }
 
 .unity-project-3-preview{
-    background-image: url("../photos/example-photo-1-blured.jpg");
+    background-image: url("../images/photos/example-photo-1-blured.jpg");
 }
 
 .unity-project-4-preview{
-    background-image: url("../photos/example-photo-1-blured.jpg");
+    background-image: url("../images/photos/example-photo-1-blured.jpg");
 }
 
 .unity-project-1{
@@ -1774,7 +1774,7 @@ article > img{
     position: absolute;
     display: none;
     flex-direction: column;
-    background-image: url("../photos/desktop-background-compressed.jpg");
+    background-image: url("../images/photos/desktop-background-compressed.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
