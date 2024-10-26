@@ -1,0 +1,322 @@
+body {
+    margin: 0;
+    background-color: black;
+    font-family: monospace;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.load-screen{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    transition: opacity 0.5s ease;
+}
+
+.load-screen.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.load-screen > p{
+    font-weight: 800;
+    display: inline-block;
+    background: #111 -webkit-linear-gradient(left, #111, #fff) no-repeat 0 0 / 50px;
+    background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, .3);
+    padding-bottom: 100px;
+}
+
+.load-screen span:nth-child(3){
+    font-weight: 100;
+}
+
+@keyframes sweep {
+    0% {
+        background-position: 0 0;
+    }
+  
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+  
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.matrix-container {
+    width: 96%;
+    height: 93%;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 96%;
+    height: 93%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    border: white 1px solid;
+    color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.overlay::-webkit-scrollbar {
+    display: none;
+}
+
+.language-selection-container{
+    width: 225px;
+    height: 35px;
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 141px;
+    left: -3%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 17px;
+}
+
+.language-selection-container > section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.language-selection-container button{
+    width: 8px;
+    height: 11px;
+    border: 1px solid rgba(255, 255, 255, 0.432);
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.language-selection-container button:hover{
+    cursor: pointer;
+}
+
+.menu-container > p{
+    font-size: 12px;
+    color: rgb(148, 148, 148);
+    position: absolute;
+    top: 95px;
+    left: 20px;
+}
+
+
+.menu-container a{
+    font-size: 20px;
+    transition: color 0.3s;
+    color: white;
+    text-decoration: none;
+}
+
+.menu-container a > p:hover{
+    color: rgb(148, 148, 148);
+    cursor: pointer;
+}
+
+.menu-container > section{
+    margin-left: 20px;
+}
+
+.menu-container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 30px;
+}
+
+.about-container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    right: 30px;
+    top: 1200px;
+}
+
+.about-container > div{
+    width: 800px;
+    height: 500px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.about-container p{
+    margin-left: 30px;
+    font-size: 16px;
+}
+
+.about-container a{
+    text-decoration: none;
+    color: rgb(148, 148, 148);
+    transition: border 0.3s ease;
+}
+
+.about-container a:hover{
+    border-bottom: 1px solid;
+}
+
+.projects-container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 30px;
+    top: 2400px;
+}
+
+.projects-container > section{
+    width: 350px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 30px;
+}
+
+.projects-container > section > p{
+    transition: color 0.3s;
+}
+
+.projects-container > section > p:hover{
+    color: rgb(148, 148, 148);
+    cursor: pointer;
+}
+
+.projects-container > hr{
+    width: 350px;
+    position: absolute;
+    top: 200ps;
+    left: 30px;
+    border: none;
+    height: 1px;
+    background-color: rgb(148, 148, 148)
+}
+
+.projects-container > div{
+    position: relative;
+}
+
+.projects-container > div > article{
+    width: 1000px;
+    height: 500px;
+    position: absolute;
+    left: 20px;
+    top: 30px;
+}
+
+#project1{
+    opacity: 0; /* Default to hidden */
+    transition: opacity 0.5s ease; /* Transition effect */
+    display: block; /* Start hidden */
+}
+
+#project2{
+    opacity: 0; /* Default to hidden */
+    transition: opacity 0.5s ease; /* Transition effect */
+    display: block; /* Start hidden */
+}
+
+#project3{
+    opacity: 0; /* Default to hidden */
+    transition: opacity 0.5s ease; /* Transition effect */
+    display: block; /* Start hidden */
+}
+
+article.show {
+    display: block; /* This will override the initial display:none when shown */
+}
+
+.contacts-container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    right: 30px;
+    top: 3800px;
+    color: white;
+}
+
+.contacts-container > div{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+
+.contacts-container section{
+    width: 100px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-size: 20px;
+    margin-left: 30px;
+    margin-bottom: 25px;
+}
+
+.contacts-container a, p{
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contacts-container a:hover, .contacts-container p:hover{
+    color: rgb(148, 148, 148);
+    cursor: pointer;
+}
+
+
+h1, h2{
+    font-size: 50px;
+    margin-left: 35px;
+    padding-bottom: 35px;
+}
+
+.matrix-drop {
+    position: absolute;
+    top: -300px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    color: lime;
+    animation: matrix-drop-fall linear infinite;
+}
+
+@keyframes matrix-drop-fall {
+    from {
+        top: -500px;
+    }
+    to {
+        top: 100vh;
+    }
+}
