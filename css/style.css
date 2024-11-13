@@ -8,6 +8,7 @@ body {
     align-items: center;
     justify-content: center;
     user-select: none;
+    overflow: hidden;
 }
 
 .load-screen{
@@ -67,7 +68,7 @@ body {
 
 .matrix-container {
     width: 96%;
-    height: 93%;
+    height: 92%;
     z-index: 1;
     position: relative;
     overflow: hidden;
@@ -79,8 +80,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 96%;
-    height: 93%;
-    background-color: rgba(0, 0, 0, 0.8);
+    height: 92%;
     z-index: 2;
     border: white 1px solid;
     color: white;
@@ -96,14 +96,15 @@ body {
     width: 225px;
     height: 35px;
     transform: rotate(-90deg);
+    transform-origin: bottom left;
     position: absolute;
-    bottom: 141px;
-    left: -3%;
+    bottom: 4%;
+    left: 2%;
     color: white;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    font-size: 17px;
+    gap: 10px;
+    font-size: 15px;
 }
 
 .language-selection-container > section{
@@ -318,5 +319,22 @@ h1, h2{
     }
     to {
         top: 100vh;
+    }
+}
+
+@media (max-width: 800px){
+    .overlay{
+        width: 92%;
+        height: 88%;
+    }
+
+    .matrix-container{
+        width: 92%;
+        height: 88%;
+    }
+
+    .language-selection-container{
+        left: 4%;
+        bottom: 6%;
     }
 }

@@ -18,8 +18,8 @@ document.addEventListener("mousemove", (event) => {
 
     const radius = 250;
     const smoothTransition = 80;
-    const overlayOpacity = 0.65;
-    const overlayBackground = `radial-gradient(circle at ${mouseX}px ${mouseY}px, rgba(0, 0, 0, ${overlayOpacity}) 0%, rgba(0, 0, 0, ${overlayOpacity}) ${radius - smoothTransition}px, rgba(0, 0, 0, 0.8) ${radius}px)`;
+    const overlayOpacity = 0.55;
+    const overlayBackground = `radial-gradient(circle at ${mouseX}px ${mouseY}px, rgba(0, 0, 0, ${overlayOpacity}) 0%, rgba(0, 0, 0, ${overlayOpacity}) ${radius - smoothTransition}px, rgba(0, 0, 0, 0.7) ${radius}px)`;
 
     overlay.style.background = overlayBackground;
 });
@@ -73,7 +73,7 @@ projects.forEach(element => {
 });
 
 languageButtons.forEach(button => {
-    button.addEventListener("click", () => switchLanguage(button))
+    button.addEventListener("click", () => switchLanguage(button, true))
 });
 
 document.getElementById("email").addEventListener("click", () => copyToClipboard('denis.resitko@gmail.com'));
@@ -130,26 +130,73 @@ function switchProjectDescription(element){
     document.getElementById(projectArticleId).style.opacity = 1;
 }
 
-function switchLanguage(button){
+lastLang = '';
+function switchLanguage(button, animate){
     languageButtons.forEach(button => {
         button.style.backgroundColor = "transparent";
     });
     button.style.backgroundColor = "white";
+
     lang = button.dataset.language;
-    loadTextContent(lang);
+
+    if (lang != lastLang){
+        loadTextContent(lang, animate);
+        lastLang = lang;
+    }
 }
 
-async function loadTextContent(lang) {
+async function loadTextContent(lang, animate) {
     try {
         const response = await fetch('../json/text.json');
         const translations = await response.json();
-
         const langTexts = translations[lang];
+        const characters = 'abcdefghijklmnopqrstuvwxyz';
 
         for (const id in langTexts) {
             const element = document.getElementById(id);
             if (element) {
-                element.innerHTML = langTexts[id];
+                if (animate) {
+                    const finalText = langTexts[id];
+                    let charArr = finalText.split('');
+                    const isLongText = (finalText.match(/\s/g) || []).length > 1; // Checks if there's more than 1 whitespace
+                    let progress = 0;
+
+                    const interval = setInterval(() => {
+                        if (isLongText) {
+                            // Randomize all characters at once for long text
+                            for (let i = 0; i < charArr.length; i++) {
+                                if (charArr[i] !== ' ') {
+                                    charArr[i] = characters.charAt(Math.floor(Math.random() * characters.length));
+                                }
+                            }
+                            element.innerHTML = charArr.join('');
+                            
+                            // Stop randomizing and set to final text after a short delay
+                            setTimeout(() => {
+                                clearInterval(interval);
+                                element.innerHTML = finalText;
+                            }, 500);
+                        } else {
+                            // Wave effect for shorter text
+                            for (let i = progress; i < charArr.length; i++) {
+                                if (charArr[i] !== ' ') {
+                                    charArr[i] = characters.charAt(Math.floor(Math.random() * characters.length));
+                                }
+                            }
+                            element.innerHTML = charArr.join('');
+                            
+                            // Gradually lock characters in place
+                            if (progress < charArr.length) {
+                                charArr[progress] = finalText[progress];
+                                progress++;
+                            } else {
+                                clearInterval(interval);
+                            }
+                        }
+                    }, 50);
+                } else {
+                    element.innerHTML = langTexts[id];
+                }
             }
         }
     } catch (error) {
@@ -159,8 +206,7 @@ async function loadTextContent(lang) {
 
 // Load default language on page load
 document.addEventListener("DOMContentLoaded", () => {
-    loadTextContent("en");
+    switchLanguage(languageButtons[0], false);
 });
 
-switchLanguage(languageButtons[0]);
 switchProjectDescription(projects[0]);
