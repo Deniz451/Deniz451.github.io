@@ -1,0 +1,109 @@
+/* General class for the container that takes up the whole screen view */
+.projects-container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+}
+
+/* General class for the div that holds the header, project names and articles */
+.projects-container > div {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 35%;
+}
+
+/* Specifficly positioning gamedev div */
+.projects-gamedev > div{
+    margin-left: 30px;
+}
+
+/* Specifficly positioning other div */
+.projects-other > div{
+    margin-right: 160px;
+}
+
+/* General class dor the container that holds the names of the project (the bar where you select which article to read) */
+.projects-container > div > section{
+    width: 500px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-left: 20px;
+    gap: 30px;
+}
+
+.projects-container > div > section > p{
+    transition: color 0.3s;
+}
+
+.projects-container > div > section > p:hover{
+    color: rgb(148, 148, 148);
+    cursor: pointer;
+}
+
+/* The first project container holding the gamedev projects */
+.projects-gamedev{
+    top: 2400px;
+    align-items: start;
+    justify-content: start;
+}
+
+/* The second project container holding the other projects */
+.projects-other{
+    top: 3800px;
+    align-items: start;
+    justify-content: end;
+}
+
+/* General settings for the hr line under project selection */
+.projects-container > div > hr{
+    position: absolute;
+    border: none;
+    height: 1px;
+    background-color: rgb(148, 148, 148)
+}
+
+/* Specifficly positioning gamedev line */
+.projects-gamedev > div > hr{
+    top: 200px;
+    left: 65px;
+    width: 300px;
+}
+
+/* Specifficly positioning other line */
+.projects-other > div > hr{
+    top: 25px;
+    right: 700px;
+    width: 450px;
+}
+
+/* Div holding the project articles */
+.projects-container > div > div{
+    position: relative;
+}
+
+.projects-container > div > div > article{
+    width: 1000px;
+    height: 500px;
+    position: absolute;
+    left: 20px;
+    top: 30px;
+}
+
+#project1,
+#project2,
+#project3,
+#project4,
+#project5,
+#project6{
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: block;
+}
+
+article.show {
+    display: block;
+}

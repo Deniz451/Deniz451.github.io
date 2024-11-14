@@ -1,0 +1,28 @@
+@keyframes sweep {
+    0% {
+        background-position: 0 0;
+    }
+  
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+  
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes matrix-drop-fall {
+    from {
+        top: -500px;
+    }
+    to {
+        top: 100vh;
+    }
+}

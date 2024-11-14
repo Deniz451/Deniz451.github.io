@@ -1,0 +1,16 @@
+@media (max-width: 800px){
+    .overlay{
+        width: 92%;
+        height: 88%;
+    }
+
+    .matrix-container{
+        width: 92%;
+        height: 88%;
+    }
+
+    .language-selection-container{
+        left: 4%;
+        bottom: 6%;
+    }
+}

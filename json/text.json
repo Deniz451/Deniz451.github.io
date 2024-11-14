@@ -7,14 +7,21 @@
         "text-menu-projects": "Projects",
         "text-menu-contacts": "Contacts",
         "text-header-about": "About",
-        "text-about-description1": "My name is Denis Resitko, and I am a 17-year-old high school student currently <a href=\"https://www.ssps.cz/\" target=\"_blank\">studying computer science</a>.",
-        "text-about-description2": "My primary interest lies in game development, where I love bringing my ideas to life, from programming the individual mechanics to writing a captivating story. I have a passion for learning and am dedicated to expanding my knowledge across various areas within IT like programming, software development and cybersecurity. As I continue my education, I aim to deepen my understanding of game design and development, with the goal of creating immersive and engaging experiences for players.",
+        "text-about-description1": "My name is Denis Resitko, and I am a 17-year-old CS student currently studding at <a href=\"https://www.ssps.cz/\" target=\"_blank\">high school</a>.",
+        "text-about-description2": "My primary interest lies in game development, where I love bringing my ideas to life, from programming the individual mechanics to writing a captivating story. As I continue my education, I want to learn and expand my knowledge across all areas of CS, whether it would be game dev, software and web development or cybersecurity.",
         "text-about-description3": "I look forward to connecting with others who share my enthusiasm for technology and gaming.",
         "text-header-projects": "Projects",
-        "text-project1": "Password manager",
-        "text-project2": "Game engine",
-        "text-project3": "Video game",
-        "text-header-contacts": "Contacts"
+        "text-project1": "Bullethell",
+        "text-project2": "Urbex",
+        "text-project3": "Monastary",
+        "text-project4": "Game Engine",
+        "text-project5": "Sorting Algorithms",
+        "text-project6": "ASCII Visualizer",
+        "text-header-contacts": "Contacts",
+        "text-contacts-instagram": "Instagram",
+        "text-contacts-facebook": "Facebook",
+        "text-contacts-github": "GitHub",
+        "text-contacts-email": "E-mail"
     },
     "cz": {
         "text-header-name": "Denis Rešitko",
@@ -28,9 +35,16 @@
         "text-about-description2": "Mým hlavním zájmem je vývoj her, kde rád oživuji své nápady, od programování jednotlivých mechanik až po psaní poutavého příběhu. Mám vášeň pro učení a jsem odhodlaný rozšiřovat své znalosti v různých oblastech IT, jako je programování, vývoj softwaru a kybernetická bezpečnost. V rámci svého dalšího vzdělávání se snažím prohloubit své porozumění designu a vývoji her s cílem vytvářet pohlcující a podmanivé zážitky pro hráče.",
         "text-about-description3": "Těším se na setkání s lidmi, kteří sdílejí mé nadšení pro technologie a hry.",
         "text-header-projects": "Projekty",
-        "text-project1": "Správce hesel",
-        "text-project2": "Herní engine",
-        "text-project3": "Videohra",
-        "text-header-contacts": "Kontakty"
+        "text-project1": "Bullethell",
+        "text-project2": "Urbex",
+        "text-project3": "Monastary",
+        "text-project4": "Herní Engine",
+        "text-project5": "Řadicí Algoritmy",
+        "text-project6": "ASCII Vizualizér",
+        "text-header-contacts": "Kontakty",
+        "text-contacts-instagram": "Instagram",
+        "text-contacts-facebook": "Facebook",
+        "text-contacts-github": "GitHub",
+        "text-contacts-email": "E-mail"
     }
 }

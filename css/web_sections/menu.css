@@ -1,0 +1,33 @@
+.menu-container > p{
+    font-size: 12px;
+    color: rgb(148, 148, 148);
+    position: absolute;
+    top: 95px;
+    left: 20px;
+}
+
+
+.menu-container a{
+    font-size: 20px;
+    transition: color 0.3s;
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 110px;
+}
+
+.menu-container a > p:hover{
+    color: rgb(148, 148, 148);
+    cursor: pointer;
+}
+
+.menu-container > section{
+    margin-left: 20px;
+}
+
+.menu-container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 30px;
+}
