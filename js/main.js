@@ -1,20 +1,19 @@
-import { languageButtons, emailBtn, projectsGamedev, projectsOther} from './domElements.js';
+import { languageButtons, emailBtn, projectsGamedev, projectsOther, brightnessSlider} from './domElements.js';
 import { switchGamedevProjectDescription, switchOtherProjectDescription } from './projectDescription.js';
-import { handleMouseMove } from './animation.js';
+import { handleMouseMove, changeBackgroundOpacity } from './animation.js';
 import { switchLanguage } from './language.js';
 import { copyToClipboard } from './clipboard.js';
 import { enableSmoothScrolling } from './smoothScroll.js';
 import { initializeLoader } from './loader.js';
 
-// Event listeners
-document.addEventListener("mousemove", handleMouseMove);
 emailBtn.addEventListener("click", () => copyToClipboard('denis.resitko@gmail.com'));
+brightnessSlider.addEventListener('input', () => changeBackgroundOpacity(brightnessSlider.value));
 languageButtons.forEach(button => { button.addEventListener("click", () => switchLanguage(button, true)) });
 languageButtons.forEach(button => { button.addEventListener("click", () => switchLanguage(button, true)); });
 projectsOther.forEach(project => { project.addEventListener("click", () => switchOtherProjectDescription(project)) });
 projectsGamedev.forEach(project => { project.addEventListener("click", () => switchGamedevProjectDescription(project)) });
 
-// Perform actions on content load
+document.addEventListener("mousemove", handleMouseMove);
 document.addEventListener("DOMContentLoaded", () => {
     enableSmoothScrolling();
     switchLanguage(languageButtons[0], false);
@@ -22,5 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     switchGamedevProjectDescription(projectsGamedev[0]);
 });
 
-// Perform actions on page load
 window.addEventListener('load', initializeLoader);
+window.addEventListener('wheel', function(event) { if (event.ctrlKey === true) { event.preventDefault(); }}, { passive: false });
+window.addEventListener('touchmove', function(event) { if (event.touches.length > 1) { event.preventDefault(); } }, { passive: false });

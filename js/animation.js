@@ -2,12 +2,13 @@ import { matrixContainer, overlay } from './domElements.js';
 import { matrixDropsCharacters, maxDrops } from './constants.js';
 
 let activeDrops = [];
+let overlayAlpha = 0.7;
+let flashBrigtness = 0.55;
 
 export function handleMouseMove(event) {
     const mouseX = event.clientX;
     const mouseY = event.clientY;
-    const overlayOpacity = 0.55;
-    const overlayBackground = `radial-gradient(circle at ${mouseX}px ${mouseY}px, rgba(0, 0, 0, ${overlayOpacity}) 0%, rgba(0, 0, 0, ${overlayOpacity}) 170px, rgba(0, 0, 0, 0.7) 250px)`;
+    const overlayBackground = `radial-gradient(circle at ${mouseX}px ${mouseY}px, rgba(0, 0, 0, ${flashBrigtness}) 0%, rgba(0, 0, 0, ${flashBrigtness}) 170px, rgba(0, 0, 0, ${overlayAlpha}) 250px)`;
     overlay.style.background = overlayBackground;
 }
 
@@ -41,4 +42,7 @@ export function createFallingDrop() {
     });
 }
 
-document.addEventListener("mousemove", handleMouseMove);
+export function changeBackgroundOpacity(val){
+    overlayAlpha = val / 100;
+    flashBrigtness = overlayAlpha / 100 * 80
+}

@@ -3,9 +3,12 @@
     color: rgb(148, 148, 148);
     position: absolute;
     top: 95px;
-    left: 20px;
+    left: 50px;
 }
 
+.menu-container > h1{
+    margin-left: 65px;
+}
 
 .menu-container a{
     font-size: 20px;
@@ -22,12 +25,10 @@
 }
 
 .menu-container > section{
-    margin-left: 20px;
+    margin-left: 50px;
 }
 
 .menu-container{
     width: 100vw;
     height: 100vh;
-    position: absolute;
-    left: 30px;
 }

@@ -7,7 +7,7 @@
 @import './web_sections/contacts.css';
 @import './web_sections/projects.css';
 @import './gadgets/language.css';
-@import './gadgets/rangeSlider.css';
+@import './gadgets/brightnessSlider.css';
 
 body {
     margin: 0;
