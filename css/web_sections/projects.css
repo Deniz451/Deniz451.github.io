@@ -10,6 +10,8 @@
 .projects-container > div {
     display: flex;
     flex-direction: column;
+    align-items: start;
+    justify-content: start;
     width: 40%;
     height: 35%;
 }
@@ -21,7 +23,9 @@
 
 /* Specifficly positioning other div */
 .projects-other > div{
-    margin-right: 160px;
+    position: absolute;
+    top: 0;
+    right: 6%;
 }
 
 /* General class dor the container that holds the names of the project (the bar where you select which article to read) */
@@ -31,8 +35,8 @@
     display: flex;
     align-items: center;
     justify-content: start;
-    margin-left: 20px;
     gap: 30px;
+    margin-left: 20px;
 }
 
 .projects-container > div > section > p{
@@ -60,7 +64,7 @@
 
 /* General settings for the hr line under project selection */
 .projects-container > div > hr{
-    position: absolute;
+    display: block;
     border: none;
     height: 1px;
     background-color: rgb(148, 148, 148)
@@ -68,16 +72,14 @@
 
 /* Specifficly positioning gamedev line */
 .projects-gamedev > div > hr{
-    top: 200px;
-    left: 65px;
     width: 300px;
+    margin-left: 30px;
 }
 
 /* Specifficly positioning other line */
 .projects-other > div > hr{
-    top: 25px;
-    right: 700px;
     width: 450px;
+    margin-left: 30px;
 }
 
 /* Div holding the project articles */
@@ -89,8 +91,7 @@
     width: 1000px;
     height: 500px;
     position: absolute;
-    left: 20px;
-    top: 30px;
+    left: 15px;
 }
 
 #project1,

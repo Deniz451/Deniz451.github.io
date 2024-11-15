@@ -29,7 +29,7 @@ export async function loadTextContent(lang, animate) {
                 if (animate) {
                     const finalText = langTexts[id];
                     let charArr = finalText.split('');
-                    const isLongText = (finalText.match(/\s/g) || []).length > 1;
+                    const isLongText = (finalText.match(/\s/g) || []).length > 2;
                     let progress = 0;
 
                     const interval = setInterval(() => {

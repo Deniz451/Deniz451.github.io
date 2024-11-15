@@ -1,6 +1,6 @@
 export const matrixContainer = document.querySelector(".matrix-container");
 export const overlay = document.querySelector(".overlay");
-export const loaderText = document.querySelector('.load-screen > p');
+export const loaderText = document.querySelector('.load-screen > div > p');
 export const loadScreen = document.querySelector('.load-screen');
 export const brightnessSlider = document.querySelector('.brightness-slider-container > input');
 export const spans = document.querySelectorAll('.load-screen span');

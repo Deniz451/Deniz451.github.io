@@ -1,13 +1,13 @@
 @import 'overlay.css';
 @import 'loadScreen.css';
 @import 'matrixEffect.css';
-@import 'responsivity.css';
 @import './web_sections/menu.css';
 @import './web_sections/about.css';
 @import './web_sections/contacts.css';
 @import './web_sections/projects.css';
 @import './gadgets/language.css';
 @import './gadgets/brightnessSlider.css';
+@import 'responsivity.css';
 
 body {
     margin: 0;

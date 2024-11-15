@@ -4,8 +4,8 @@
     transform: rotate(90deg);
     transform-origin: bottom left;
     position: absolute;
-    bottom: 21.5%;
-    right: -7%;
+    bottom: 21%;
+    left: 98%;
     color: white;
     display: flex;
     align-items: center;

@@ -2,6 +2,7 @@
     Add speed slider
     Brightness bug
     Home button
+    Responsivity
 -->
 
 <!DOCTYPE html>
@@ -18,7 +19,7 @@
 </head>
 <body>
     <div class="load-screen">
-        <p><span>Denis </span> <span>Rešitko </span> <span>portfolio</span></p>
+        <div><p><span>Denis </span> <span>Rešitko </span> <span>portfolio</span></p></div>
     </div>
 
     <div class="overlay">
@@ -133,6 +134,10 @@
             </div>
         </section>
     </div>
+
+    <div class="brightness-slider-container">
+        <input type="range" min="10" max="100" value="70" class="slider">
+    </div>
     
     <div class="language-selection-container">
         <section>
@@ -143,10 +148,6 @@
             <button data-language="cz"></button>
             <p>Czech</p>
         </section>
-    </div>
-
-    <div class="brightness-slider-container">
-        <input type="range" min="10" max="100" value="70" class="slider">
     </div>
 
     <div class="matrix-container"></div>
